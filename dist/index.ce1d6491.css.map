@@ -1,0 +1,1 @@
+{"mappings":"AAEA","sources":["src/index.scss"],"sourcesContent":["$color: steeleblue;\r\n\r\n.my-filx {\r\n  color: $color;\r\n}\r\n"],"names":[],"version":3,"file":"index.ce1d6491.css.map","sourceRoot":"/__parcel_source_root/"}
