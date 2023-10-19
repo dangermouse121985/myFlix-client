@@ -27312,92 +27312,52 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _movieCard = require("../movie-card/movie-card");
-var _movieCardDefault = parcelHelpers.interopDefault(_movieCard);
 var _movieView = require("../movie-view/movie-view");
-var _movieViewDefault = parcelHelpers.interopDefault(_movieView);
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "The Dark Knight",
-            description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-            genreName: "Action",
-            directorName: "Christopher Nolan",
-            actors: [
-                "Christian Bale",
-                "Heath Ledger",
-                "Aaron Echart"
-            ],
-            image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTdkJNhyQgUH-VQBVaeczyvAMEi78DeTFRMexMdUxpapinKBf1h",
-            featured: true
-        },
-        {
-            id: 2,
-            title: "The Godfather",
-            description: "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
-            genreName: "Drama",
-            directorName: "Francis Ford Coppola",
-            actors: [
-                "Marlon Brando",
-                "Al Pacino",
-                "James Caan"
-            ],
-            image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ6EAZYpFPv-j-msWE7uFUueby2qiH_lz67ryBOJ41kg4nKHJ6y",
-            featured: true
-        },
-        {
-            id: 3,
-            title: "Forest Gump",
-            description: "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart.",
-            genreName: "Drama",
-            directorName: "Robert Zemeckis",
-            actors: [
-                "Tom Hanks",
-                "Robin Wright",
-                "Gary Sinise"
-            ],
-            image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSC1pmwVs3b9KW0IT4ivccOXPYRQbAH2VpOWLwSumVqwAnJ1u8G",
-            featured: false
-        }
-    ]);
+    const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieViewDefault.default), {
+    (0, _react.useEffect)(()=>{
+        fetch("https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
+            console.log("movies: ", data);
+        });
+    }, []);
+    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 51,
+        lineNumber: 22,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "No results Found!"
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 59,
+        lineNumber: 30,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: movies.map((movie)=>{
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCardDefault.default), {
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                 movie: movie,
                 onMovieClick: (newSelectedMovie)=>{
                     setSelectedMovie(newSelectedMovie);
                 }
             }, movie.id, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 66,
+                lineNumber: 37,
                 columnNumber: 11
             }, undefined);
         })
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 63,
+        lineNumber: 34,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "ewSbRdmI/yv5F4lTWkf0AAxtfyM=");
+_s(MainView, "PO+XgOji7E32nFJj3H5UPLPJ7w4=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
