@@ -41,7 +41,7 @@ export const MainView = () => {
   }
 
   return (
-    <div>
+    <div className="main">
       {movies.map((movie) => {
         return (
           <MovieCard

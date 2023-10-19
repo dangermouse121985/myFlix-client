@@ -4,7 +4,18 @@ $color: steeleblue;
   color: $color;
 }
 
+.main {
+  margin: 0 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .movie-card {
+  width: 100px;
   margin: 20px;
   text-align: center;
+}
+
+.movie-card:hover {
+  background-color: orange;
 }
