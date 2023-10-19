@@ -23,9 +23,9 @@ export const MovieView = ({ movie, onBackClick }) => {
       <div>
         <span>Actor: </span>
         <span>
-          {movie.actors.map((actor) => {
-            <div>{actor}</div>;
-          })}
+          {movie.actors.map((actor) => (
+            <div key={actor}>{actor}</div>
+          ))}
         </span>
       </div>
       <button onClick={onBackClick}>Back</button>
