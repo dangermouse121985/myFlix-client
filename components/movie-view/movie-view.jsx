@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const MovieView = ({ movie, onBackClick }) => {
   const [selectedMovie, setMovie] = useState([]);
@@ -9,7 +10,6 @@ export const MovieView = ({ movie, onBackClick }) => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         const actorNames = data.actors.map((actors) => {
           return actors.name;
         });
@@ -22,7 +22,6 @@ export const MovieView = ({ movie, onBackClick }) => {
           genre: data.genre.name,
         };
 
-        console.log(dataFromMovie);
         setMovie(dataFromMovie);
       });
   }, []);
@@ -59,4 +58,14 @@ export const MovieView = ({ movie, onBackClick }) => {
       <button onClick={onBackClick}>Back</button>
     </div>
   );
+};
+
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    image: PropTypes.string,
+  }),
+  onBackClick: PropTypes.func.isRequired,
 };
