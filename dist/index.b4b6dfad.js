@@ -27320,7 +27320,15 @@ const MainView = ()=>{
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         fetch("https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
-            console.log("movies: ", data);
+            console.log(data);
+            const moviesFromApi = data.map((movie)=>{
+                return {
+                    id: movie.id,
+                    title: movie.title,
+                    image: movie.url
+                };
+            });
+            setMovies(moviesFromApi);
         });
     }, []);
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27328,14 +27336,14 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 22,
+        lineNumber: 31,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "No results Found!"
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 30,
+        lineNumber: 39,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27347,13 +27355,13 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 37,
+                lineNumber: 46,
                 columnNumber: 11
             }, undefined);
         })
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 34,
+        lineNumber: 43,
         columnNumber: 5
     }, undefined);
 };

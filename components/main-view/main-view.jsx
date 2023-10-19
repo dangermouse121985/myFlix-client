@@ -13,7 +13,16 @@ export const MainView = () => {
     fetch('https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies')
       .then((response) => response.json())
       .then((data) => {
-        console.log('movies: ', data);
+        console.log(data);
+        const moviesFromApi = data.map((movie) => {
+          return {
+            id: movie.id,
+            title: movie.title,
+            image: movie.url,
+          };
+        });
+
+        setMovies(moviesFromApi);
       });
   }, []);
 
