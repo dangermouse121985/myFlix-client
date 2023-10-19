@@ -1,7 +1,18 @@
+import { useEffect } from 'react';
+
 export const MovieView = ({ movie, onBackClick }) => {
-  return (
-    <div>
-      <div>
+  console.log(movie.url);
+  return useEffect(() => {
+    fetch(
+      `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com` + movie.url
+    )
+      .then((response) => response.json)
+      .then((data) => {
+        console.log(data);
+      });
+  });
+  /* <div>
+     <div>
         <img src={movie.image} alt={movie.title} width="500px" />
       </div>
       <div>
@@ -29,6 +40,5 @@ export const MovieView = ({ movie, onBackClick }) => {
         </span>
       </div>
       <button onClick={onBackClick}>Back</button>
-    </div>
-  );
+    </div> */
 };

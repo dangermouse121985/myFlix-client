@@ -16,9 +16,10 @@ export const MainView = () => {
         console.log(data);
         const moviesFromApi = data.map((movie) => {
           return {
-            id: movie.id,
+            id: movie._id,
             title: movie.title,
-            image: movie.url,
+            image: movie.imagePath,
+            url: movie.url,
           };
         });
 
