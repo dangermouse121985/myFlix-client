@@ -28,8 +28,10 @@ export const MainView = () => {
   }, []);
 
   if (selectedMovie) {
+    console.log(selectedMovie.id);
     return (
       <MovieView
+        key={selectedMovie.id}
         movie={selectedMovie}
         onBackClick={() => setSelectedMovie(null)}
       />
