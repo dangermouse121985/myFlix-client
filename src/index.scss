@@ -4,7 +4,10 @@ $color: steeleblue;
 
 body {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #2e5266;
 }
+
 .my-filx {
   color: $color;
 }
@@ -53,6 +56,60 @@ body {
   text-align: center;
   padding: 0 20px;
   width: 100%;
+}
+
+.one-movie--main {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.one-movie--view {
+  color: #eaf2ef;
+  display: flex;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 3px 10px #000;
+  width: 50%;
+  height: 70%;
+}
+
+.movie-view--text-heading {
+  width: 100%;
+  border-bottom: 1px solid #eaf2ef;
+  margin-bottom: 10px;
+}
+
+.movie-view--text {
+  width: 100%;
+  margin: 20px;
+  position: relative;
+}
+
+.one-movie--view h2 {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.movie-view--image {
+  height: 100%;
+}
+
+.back-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: 800;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #eaf2ef;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
 }
 
 @media (max-width: 700px) {

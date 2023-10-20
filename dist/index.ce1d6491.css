@@ -1,5 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap";
 body {
+  background-color: #2e5266;
+  margin: 0;
   font-family: Roboto, sans-serif;
 }
 
@@ -51,6 +53,59 @@ body {
   text-align: center;
   width: 100%;
   padding: 0 20px;
+}
+
+.one-movie--main {
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+.one-movie--view {
+  color: #eaf2ef;
+  background-color: #0000004d;
+  width: 50%;
+  height: 70%;
+  margin: 0 auto;
+  display: flex;
+  box-shadow: 1px 3px 10px #000;
+}
+
+.movie-view--text-heading {
+  border-bottom: 1px solid #eaf2ef;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.movie-view--text {
+  width: 100%;
+  margin: 20px;
+  position: relative;
+}
+
+.one-movie--view h2 {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.movie-view--image {
+  height: 100%;
+}
+
+.back-button {
+  color: inherit;
+  text-align: center;
+  background: none;
+  border: 2px solid #eaf2ef;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  font-weight: 800;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media (width <= 700px) {

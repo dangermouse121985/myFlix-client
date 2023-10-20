@@ -27,35 +27,43 @@ export const MovieView = ({ movie, onBackClick }) => {
   }, []);
 
   return (
-    <div>
-      <div>
-        <img src={movie.image} alt={movie.title} width="500px" />
+    <div className="one-movie--main">
+      <div className="one-movie--view">
+        <div>
+          <img
+            className="movie-view--image"
+            src={movie.image}
+            alt={movie.title}
+          />
+        </div>
+        <div className="movie-view--text">
+          <div className="movie-view--text-heading">
+            <h1>{selectedMovie.title}</h1>
+          </div>
+          <div>
+            <span>{selectedMovie.description}</span>
+          </div>
+          <div>
+            <h2>Genre</h2>
+            <span>{selectedMovie.genre}</span>
+          </div>
+          <div>
+            <h2>Director</h2>
+            <span>{selectedMovie.director}</span>
+          </div>
+          <div>
+            <h2>Actors</h2>
+            <span>
+              {selectedMovie.actors
+                ? selectedMovie.actors.map((name) => <div>{name}</div>)
+                : null}
+            </span>
+          </div>
+          <button className="back-button" onClick={onBackClick}>
+            X
+          </button>
+        </div>
       </div>
-      <div>
-        <span>Title: </span>
-        <span>{selectedMovie.title}</span>
-      </div>
-      <div>
-        <span>Description: </span>
-        <span>{selectedMovie.description}</span>
-      </div>
-      <div>
-        <span>Genre: </span>
-        <span>{selectedMovie.genre}</span>
-      </div>
-      <div>
-        <span>Director: </span>
-        <span>{selectedMovie.director}</span>
-      </div>
-      <div>
-        <span>Actors: </span>
-        <span>
-          {selectedMovie.actors
-            ? selectedMovie.actors.map((name) => <div>{name}</div>)
-            : null}
-        </span>
-      </div>
-      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };
