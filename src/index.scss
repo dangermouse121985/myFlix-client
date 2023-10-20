@@ -27,14 +27,12 @@ body {
 
 .movie-card img {
   width: 100%;
-}
-
-.movie-card:hover {
-  background-color: orange;
+  height: 100%;
 }
 
 .movie-title {
   display: flex;
+  font-size: 23px;
   align-items: center;
   color: rgba(255, 255, 255, 0);
   background-color: rgba(0, 0, 0, 0);
@@ -44,12 +42,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  box-shadow: 0 0 0 #000;
+  transition: all 0.3s ease-in-out;
 }
 
 .movie-card:hover .movie-title {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   color: rgba(255, 255, 255, 1);
+  box-shadow: 1px 3px 10px #000;
 }
 
 .titleText {
@@ -60,7 +60,7 @@ body {
 
 .one-movie--main {
   display: flex;
-  height: 100vh;
+  height: 75vh;
   align-items: center;
 }
 
@@ -110,6 +110,11 @@ body {
   border-radius: 50%;
   text-align: center;
   line-height: 20px;
+}
+
+.similar-movies {
+  display: flex;
+  flex-direction: row;
 }
 
 @media (max-width: 700px) {

@@ -13,28 +13,52 @@ export const MainView = () => {
     fetch('https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         const moviesFromApi = data.map((movie) => {
           return {
             id: movie._id,
             title: movie.title,
             image: movie.imagePath,
             url: movie.url,
+            actors: movie.actors,
+            director: movie.director,
+            genre: movie.genre.name,
+            featured: movie.featured,
           };
         });
-
         setMovies(moviesFromApi);
       });
   }, []);
 
   if (selectedMovie) {
-    console.log(selectedMovie.id);
+    let similarMovies = movies
+      .filter((movie) => {
+        return (
+          movie.genre.includes(selectedMovie.genre) && movie !== selectedMovie
+        );
+      })
+      .map((filteredName) => filteredName);
+
     return (
-      <MovieView
-        key={selectedMovie.id}
-        movie={selectedMovie}
-        onBackClick={() => setSelectedMovie(null)}
-      />
+      <>
+        <MovieView
+          key={selectedMovie.id}
+          movie={selectedMovie}
+          onBackClick={() => setSelectedMovie(null)}
+        />
+        <hr />
+        <h2>Similar Movies</h2>
+        <div className="similar-movies">
+          {similarMovies.map((movie) => (
+            <MovieCard
+              key={movie.id}
+              movie={movie}
+              onMovieClick={(newSelectedMovie) => {
+                setSelectedMovie(newSelectedMovie);
+              }}
+            />
+          ))}
+        </div>
+      </>
     );
   }
 
