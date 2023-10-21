@@ -3,7 +3,6 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export const MovieView = ({ movie, onBackClick }) => {
-  console.log(movie.id);
   const [selectedMovie, setMovie] = useState([]);
   let url =
     `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com` + movie.url;

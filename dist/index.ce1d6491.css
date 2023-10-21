@@ -80,6 +80,7 @@ body {
 .movie-view--text {
   width: 100%;
   margin: 20px;
+  display: inline-block;
   position: relative;
 }
 
@@ -109,8 +110,18 @@ body {
 }
 
 .similar-movies {
-  flex-direction: row;
+  color: #eaf2ef;
+  text-align: center;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
   display: flex;
+}
+
+h2.similar-movies {
+  margin-top: 20px;
 }
 
 @media (width <= 700px) {

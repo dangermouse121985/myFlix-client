@@ -46,7 +46,7 @@ export const MainView = () => {
           onBackClick={() => setSelectedMovie(null)}
         />
         <hr />
-        <h2>Similar Movies</h2>
+        <h2 className="similar-movies">Similar Movies</h2>
         <div className="similar-movies">
           {similarMovies.map((movie) => (
             <MovieCard
