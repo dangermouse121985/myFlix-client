@@ -72,6 +72,7 @@ body {
   box-shadow: 1px 3px 10px #000;
   width: 50%;
   height: 500px;
+  position: relative;
 
   h2 {
     font-size: 18px;
@@ -103,12 +104,12 @@ body {
   border: none;
   padding: 0;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
   font-weight: 800;
   height: 25px;
   width: 25px;
-  border: 2px solid #eaf2ef;
+  border: 3px solid #eaf2ef;
   border-radius: 50%;
   text-align: center;
   line-height: 20px;
@@ -185,6 +186,11 @@ h2.similar-movies {
 @media (max-width: 650) {
   .one-movie--view {
     height: 100%;
+
+    h1 {
+      position: relative;
+      margin-top: 610px;
+    }
   }
 
   .movie-view--image_container {
