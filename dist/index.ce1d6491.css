@@ -11,6 +11,7 @@ body {
 
 .main {
   flex-flow: wrap;
+  justify-content: center;
   margin: 0 200px;
   display: flex;
 }
@@ -57,7 +58,6 @@ body {
 
 .one-movie--main {
   align-items: center;
-  height: 75vh;
   display: flex;
 }
 
@@ -65,23 +65,9 @@ body {
   color: #eaf2ef;
   background-color: #0000004d;
   width: 50%;
-  height: 70%;
-  margin: 0 auto;
-  display: flex;
+  height: 500px;
+  margin: 20px auto;
   box-shadow: 1px 3px 10px #000;
-}
-
-.movie-view--text-heading {
-  border-bottom: 1px solid #eaf2ef;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.movie-view--text {
-  width: 100%;
-  margin: 20px;
-  display: inline-block;
-  position: relative;
 }
 
 .one-movie--view h2 {
@@ -89,8 +75,19 @@ body {
   text-decoration: underline;
 }
 
-.movie-view--image {
+.movie-view--image_container {
+  float: left;
   height: 100%;
+}
+
+.movie-view--image {
+  float: left;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.movie-view-text--heading, .movie-view-text--description {
+  margin: 0 20px 10px 10px;
 }
 
 .back-button {
@@ -124,9 +121,73 @@ h2.similar-movies {
   margin-top: 20px;
 }
 
-@media (width <= 700px) {
+@media (width <= 1500px) {
+  .main {
+    margin: 0 100px;
+  }
+
+  .one-movie--view, .similar-movies {
+    width: 75%;
+  }
+}
+
+@media (width <= 950px) {
+  .main {
+    margin: 0 50px;
+  }
+
+  .one-movie--view, .similar-movies {
+    width: 90%;
+  }
+}
+
+@media (width <= 800px) {
   .main {
     margin: 0 20px;
+  }
+
+  .one-movie--view, .movie-view--image_container {
+    height: 500px;
+  }
+
+  .movie-view-text--genre, .movie-view-text--director, .movie-view-text--actors {
+    float: left;
+    margin-bottom: 20px;
+  }
+
+  .movie-view-text--genre {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .movie-view-text--director {
+    margin-right: 30px;
+  }
+}
+
+@media (width <= 650px) {
+  .one-movie--view {
+    height: 100%;
+  }
+
+  .movie-view--image_container, .movie-view--image {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie-view-text--genre {
+    float: left;
+    margin-left: 10px;
+    margin-right: 30px;
+  }
+
+  .movie-view-text--director {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .movie-view-text--actors {
+    float: left;
   }
 }
 

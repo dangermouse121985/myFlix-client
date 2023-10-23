@@ -29,42 +29,39 @@ export const MovieView = ({ movie, onBackClick }) => {
   return (
     <div className="one-movie--main">
       <div className="one-movie--view">
-        <div>
+        <div className="movie-view--image_container">
           <img
             className="movie-view--image"
             src={movie.image}
             alt={movie.title}
           />
         </div>
-        <div className="movie-view--text">
-          <div className="movie-view--text-heading">
-            <h1>{selectedMovie.title}</h1>
-          </div>
-          <div>
-            <span>{selectedMovie.description}</span>
-          </div>
-          <div>
-            <h2>Genre</h2>
-            <span>{selectedMovie.genre}</span>
-          </div>
-          <div>
-            <h2>Director</h2>
-            <span>{selectedMovie.director}</span>
-          </div>
-          <div>
-            <h2>Actors</h2>
-            <span>
-              {selectedMovie.actors
-                ? selectedMovie.actors.map((name) => (
-                    <div key={name}>{name}</div>
-                  ))
-                : null}
-            </span>
-          </div>
-          <button className="back-button" onClick={onBackClick}>
-            X
-          </button>
+        <div className="movie-view-text--heading">
+          <h1>{selectedMovie.title}</h1>
+          <hr />
         </div>
+        <div className="movie-view-text--description">
+          <span>{selectedMovie.description}</span>
+        </div>
+        <div className="movie-view-text--genre">
+          <h2 className="movie-view-text--genre_heading">Genre</h2>
+          <span>{selectedMovie.genre}</span>
+        </div>
+        <div className="movie-view-text--director">
+          <h2>Director</h2>
+          <span>{selectedMovie.director}</span>
+        </div>
+        <div className="movie-view-text--actors">
+          <h2>Actors</h2>
+          <span>
+            {selectedMovie.actors
+              ? selectedMovie.actors.map((name) => <div key={name}>{name}</div>)
+              : null}
+          </span>
+        </div>
+        <button className="back-button" onClick={onBackClick}>
+          X
+        </button>
       </div>
     </div>
   );

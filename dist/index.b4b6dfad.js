@@ -28305,6 +28305,7 @@ const MovieView = ({ movie, onBackClick })=>{
             className: "one-movie--view",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-view--image_container",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: "movie-view--image",
                         src: movie.image,
@@ -28320,120 +28321,123 @@ const MovieView = ({ movie, onBackClick })=>{
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-view--text",
+                    className: "movie-view-text--heading",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "movie-view--text-heading",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                children: selectedMovie.title
-                            }, void 0, false, {
-                                fileName: "components/movie-view/movie-view.jsx",
-                                lineNumber: 41,
-                                columnNumber: 13
-                            }, undefined)
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: selectedMovie.title
                         }, void 0, false, {
                             fileName: "components/movie-view/movie-view.jsx",
                             lineNumber: 40,
                             columnNumber: 11
                         }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                children: selectedMovie.description
-                            }, void 0, false, {
-                                fileName: "components/movie-view/movie-view.jsx",
-                                lineNumber: 44,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                             fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 43,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                    children: "Genre"
-                                }, void 0, false, {
-                                    fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 47,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: selectedMovie.genre
-                                }, void 0, false, {
-                                    fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 48,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 46,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                    children: "Director"
-                                }, void 0, false, {
-                                    fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 51,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: selectedMovie.director
-                                }, void 0, false, {
-                                    fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 52,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 50,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                    children: "Actors"
-                                }, void 0, false, {
-                                    fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 55,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: selectedMovie.actors ? selectedMovie.actors.map((name)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            children: name
-                                        }, name, false, {
-                                            fileName: "components/movie-view/movie-view.jsx",
-                                            lineNumber: 59,
-                                            columnNumber: 21
-                                        }, undefined)) : null
-                                }, void 0, false, {
-                                    fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 56,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 54,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "back-button",
-                            onClick: onBackClick,
-                            children: "X"
-                        }, void 0, false, {
-                            fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 64,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/movie-view/movie-view.jsx",
                     lineNumber: 39,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-view-text--description",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: selectedMovie.description
+                    }, void 0, false, {
+                        fileName: "components/movie-view/movie-view.jsx",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "components/movie-view/movie-view.jsx",
+                    lineNumber: 43,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-view-text--genre",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            className: "movie-view-text--genre_heading",
+                            children: "Genre"
+                        }, void 0, false, {
+                            fileName: "components/movie-view/movie-view.jsx",
+                            lineNumber: 47,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: selectedMovie.genre
+                        }, void 0, false, {
+                            fileName: "components/movie-view/movie-view.jsx",
+                            lineNumber: 48,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/movie-view/movie-view.jsx",
+                    lineNumber: 46,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-view-text--director",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            children: "Director"
+                        }, void 0, false, {
+                            fileName: "components/movie-view/movie-view.jsx",
+                            lineNumber: 51,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: selectedMovie.director
+                        }, void 0, false, {
+                            fileName: "components/movie-view/movie-view.jsx",
+                            lineNumber: 52,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/movie-view/movie-view.jsx",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-view-text--actors",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            children: "Actors"
+                        }, void 0, false, {
+                            fileName: "components/movie-view/movie-view.jsx",
+                            lineNumber: 55,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: selectedMovie.actors ? selectedMovie.actors.map((name)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    children: name
+                                }, name, false, {
+                                    fileName: "components/movie-view/movie-view.jsx",
+                                    lineNumber: 58,
+                                    columnNumber: 52
+                                }, undefined)) : null
+                        }, void 0, false, {
+                            fileName: "components/movie-view/movie-view.jsx",
+                            lineNumber: 56,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/movie-view/movie-view.jsx",
+                    lineNumber: 54,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "back-button",
+                    onClick: onBackClick,
+                    children: "X"
+                }, void 0, false, {
+                    fileName: "components/movie-view/movie-view.jsx",
+                    lineNumber: 62,
                     columnNumber: 9
                 }, undefined)
             ]

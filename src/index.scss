@@ -17,17 +17,19 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
 .movie-card {
   width: 200px;
   margin: 20px;
   text-align: center;
   position: relative;
-}
 
-.movie-card img {
-  width: 100%;
-  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .movie-title {
@@ -60,42 +62,41 @@ body {
 
 .one-movie--main {
   display: flex;
-  height: 75vh;
   align-items: center;
 }
 
 .one-movie--view {
   color: #eaf2ef;
-  display: flex;
-  margin: 0 auto;
+  margin: 20px auto;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 1px 3px 10px #000;
   width: 50%;
-  height: 70%;
+  height: 500px;
+
+  h2 {
+    font-size: 18px;
+    text-decoration: underline;
+  }
 }
 
-.movie-view--text-heading {
-  width: 100%;
-  border-bottom: 1px solid #eaf2ef;
-  margin-bottom: 10px;
-}
-
-.movie-view--text {
-  display: inline-block;
-  width: 100%;
-  margin: 20px;
-  position: relative;
-}
-
-.one-movie--view h2 {
-  font-size: 18px;
-  text-decoration: underline;
-}
-
-.movie-view--image {
+.movie-view--image_container {
+  float: left;
   height: 100%;
 }
 
+.movie-view--image {
+  float: left;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.movie-view-text--heading {
+  margin: 0 20px 10px 10px;
+}
+
+.movie-view-text--description {
+  margin: 0 20px 10px 10px;
+}
 .back-button {
   background: none;
   color: inherit;
@@ -129,8 +130,84 @@ h2.similar-movies {
   margin-top: 20px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1500px) {
+  .main {
+    margin: 0 100px;
+  }
+
+  .one-movie--view,
+  .similar-movies {
+    width: 75%;
+  }
+}
+
+@media (max-width: 950px) {
+  .main {
+    margin: 0 50px;
+  }
+
+  .one-movie--view,
+  .similar-movies {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
   .main {
     margin: 0 20px;
+  }
+
+  .one-movie--view {
+    height: 500px;
+  }
+
+  .movie-view--image_container {
+    height: 500px;
+  }
+
+  .movie-view-text--genre,
+  .movie-view-text--director,
+  .movie-view-text--actors {
+    float: left;
+    margin-bottom: 20px;
+  }
+
+  .movie-view-text--genre {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .movie-view-text--director {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 650) {
+  .one-movie--view {
+    height: 100%;
+  }
+
+  .movie-view--image_container {
+    width: 100%;
+    height: auto;
+  }
+  .movie-view--image {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie-view-text--genre {
+    float: left;
+    margin-left: 10px;
+    margin-right: 30px;
+  }
+
+  .movie-view-text--director {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .movie-view-text--actors {
+    float: left;
   }
 }
