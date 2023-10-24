@@ -1,17 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap');
 
 $color: steeleblue;
-.logout--button {
-  background-color: red;
+.login--view,
+.signup--view {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
 
-.hideSignup {
+.login--form,
+.signup--form {
+  margin: 0 auto;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 10px;
+}
+
+.login--form input,
+.login--form button,
+.signup--form input,
+.signup--form button {
+  width: 100%;
+  box-sizing: border-box;
+}
+/* .logout--button {
+  background-color: red;
+} */
+
+.hide--signup-or-login {
   display: none;
 }
 
-.signup--button {
+/* .signup--button {
   background-color: red;
-}
+} */
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -146,18 +170,6 @@ body {
 
 h2.similar-movies {
   margin-top: 20px;
-}
-
-.logout--button {
-  background-color: red;
-}
-
-.hide--signup-or-login {
-  display: none;
-}
-
-.signup--button {
-  background-color: red;
 }
 
 @media (max-width: 1500px) {

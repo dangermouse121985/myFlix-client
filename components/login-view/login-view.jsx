@@ -35,9 +35,10 @@ export const LoginView = ({ onLoggedIn }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login--form" onSubmit={handleSubmit}>
       <label>
         Username:
+        <br />
         <input
           type="text"
           value={username}
@@ -47,6 +48,7 @@ export const LoginView = ({ onLoggedIn }) => {
       </label>
       <label>
         Password:
+        <br />
         <input
           type="password"
           value={password}
@@ -55,6 +57,17 @@ export const LoginView = ({ onLoggedIn }) => {
         />
       </label>
       <button type="submit">Submit</button>
+      <button
+        className="signup--button"
+        onClick={() => {
+          let loginView = document.querySelector('.login--view');
+          loginView.classList.add('hide--signup-or-login');
+          let signupView = document.querySelector('.signup--view');
+          signupView.classList.remove('hide--signup-or-login');
+        }}
+      >
+        Signup
+      </button>
     </form>
   );
 };

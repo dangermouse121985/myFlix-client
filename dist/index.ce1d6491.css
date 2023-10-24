@@ -1,5 +1,25 @@
 @import "https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap";
-.hideSignup {
+.login--view, .signup--view {
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+.login--form, .signup--form {
+  flex-direction: column;
+  align-content: center;
+  gap: 10px;
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.login--form input, .login--form button, .signup--form input, .signup--form button {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.hide--signup-or-login {
   display: none;
 }
 
@@ -129,18 +149,6 @@ body {
 
 h2.similar-movies {
   margin-top: 20px;
-}
-
-.logout--button {
-  background-color: red;
-}
-
-.hide--signup-or-login {
-  display: none;
-}
-
-.signup--button {
-  background-color: red;
 }
 
 @media (width <= 1500px) {

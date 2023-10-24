@@ -46,17 +46,6 @@ export const MainView = () => {
               setToken(token);
             }}
           />
-          <button
-            className="signup--button"
-            onClick={() => {
-              let loginView = document.querySelector('.login--view');
-              loginView.classList.add('hide--signup-or-login');
-              let signupView = document.querySelector('.signup--view');
-              signupView.classList.remove('hide--signup-or-login');
-            }}
-          >
-            Signup
-          </button>
         </div>
 
         <div className="signup--view hide--signup-or-login">
@@ -82,6 +71,7 @@ export const MainView = () => {
           onClick={() => {
             setUser(null);
             setToken(null);
+            localStorage.clear();
           }}
         >
           Logout
@@ -120,6 +110,7 @@ export const MainView = () => {
         onClick={() => {
           setUser(null);
           setToken(null);
+          localStorage.clear();
         }}
       >
         Logout
