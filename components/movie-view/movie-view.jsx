@@ -2,12 +2,19 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movie, onBackClick, token }) => {
   const [selectedMovie, setMovie] = useState([]);
+
   let url =
     `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com` + movie.url;
   useEffect(() => {
-    fetch(url)
+    if (!token) {
+      return;
+    }
+
+    fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((response) => response.json())
       .then((data) => {
         const actorNames = data.actors.map((actors) => {
