@@ -98,6 +98,7 @@ body {
 .movie-view-text--description {
   margin: 0 20px 10px 10px;
 }
+
 .back-button {
   background: none;
   color: inherit;
@@ -113,6 +114,11 @@ body {
   border-radius: 50%;
   text-align: center;
   line-height: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  box-shadow: 1px 3px 10px #000;
 }
 
 .similar-movies {
