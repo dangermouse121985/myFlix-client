@@ -30,6 +30,10 @@ export const SignupView = () => {
       if (response.ok) {
         alert('Signup Successful');
         window.location.reload();
+        let loginView = document.querySelector('.login--view');
+        loginView.classList.remove('hide--signup-or-login');
+        let signupView = document.querySelector('.signup--view');
+        signupView.classList.add('hide--signup-or-login');
       } else {
         alert('Signup Failed');
       }

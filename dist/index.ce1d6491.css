@@ -1,4 +1,8 @@
 @import "https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap";
+.hideSignup {
+  display: none;
+}
+
 body {
   background-color: #2e5266;
   margin: 0;
@@ -125,6 +129,18 @@ body {
 
 h2.similar-movies {
   margin-top: 20px;
+}
+
+.logout--button {
+  background-color: red;
+}
+
+.hide--signup-or-login {
+  display: none;
+}
+
+.signup--button {
+  background-color: red;
 }
 
 @media (width <= 1500px) {

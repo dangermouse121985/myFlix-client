@@ -4,6 +4,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { SignupView } from '../signup-view/signup-view';
+import { HeaderView } from '../header-view/header-view';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -38,14 +39,29 @@ export const MainView = () => {
   if (!user) {
     return (
       <>
-        <LoginView
-          onLoggedIn={(user, token) => {
-            setUser(user);
-            setToken(token);
-          }}
-        />
-        or
-        <SignupView />
+        <div className="login--view">
+          <LoginView
+            onLoggedIn={(user, token) => {
+              setUser(user);
+              setToken(token);
+            }}
+          />
+          <button
+            className="signup--button"
+            onClick={() => {
+              let loginView = document.querySelector('.login--view');
+              loginView.classList.add('hide--signup-or-login');
+              let signupView = document.querySelector('.signup--view');
+              signupView.classList.remove('hide--signup-or-login');
+            }}
+          >
+            Signup
+          </button>
+        </div>
+
+        <div className="signup--view hide--signup-or-login">
+          <SignupView />
+        </div>
       </>
     );
   }
@@ -61,11 +77,11 @@ export const MainView = () => {
 
     return (
       <>
+        {/* <HeaderView /> */}
         <button
           onClick={() => {
             setUser(null);
             setToken(null);
-            localStorage.clear();
           }}
         >
           Logout
@@ -100,8 +116,10 @@ export const MainView = () => {
   return (
     <>
       <button
+        className="logout--button"
         onClick={() => {
           setUser(null);
+          setToken(null);
         }}
       >
         Logout
