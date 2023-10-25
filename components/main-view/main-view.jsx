@@ -40,6 +40,7 @@ export const MainView = () => {
     return (
       <>
         <div className="login--view">
+          <div className="logo">myFLIX</div>
           <LoginView
             onLoggedIn={(user, token) => {
               setUser(user);
@@ -96,6 +97,7 @@ export const MainView = () => {
               movie={movie}
               onMovieClick={(newSelectedMovie) => {
                 setSelectedMovie(newSelectedMovie);
+                window.scrollTo(0, 0);
               }}
             />
           ))}
@@ -133,6 +135,7 @@ export const MainView = () => {
               movie={movie}
               onMovieClick={(newSelectedMovie) => {
                 setSelectedMovie(newSelectedMovie);
+                window.scrollTo(0, 0);
               }}
             />
           );
