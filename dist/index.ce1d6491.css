@@ -1,4 +1,9 @@
 @import "https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap";
+:root {
+  --background-color: #2e5266;
+  --font-color: #eaf2ef;
+}
+
 .login--view, .signup--view {
   align-items: center;
   height: 100vh;
@@ -19,18 +24,18 @@
   width: 100%;
 }
 
+.login--form label, .signup--form label {
+  color: var(--font-color);
+}
+
 .hide--signup-or-login {
   display: none;
 }
 
 body {
-  background-color: #2e5266;
   margin: 0;
   font-family: Roboto, sans-serif;
-}
-
-.my-filx {
-  color: steeleblue;
+  background-color: var(--background-color) !important;
 }
 
 .main {
@@ -86,7 +91,7 @@ body {
 }
 
 .one-movie--view {
-  color: #eaf2ef;
+  color: var(--font-color);
   background-color: #0000004d;
   width: 50%;
   height: 500px;
@@ -98,6 +103,10 @@ body {
 .one-movie--view h2 {
   font-size: 18px;
   text-decoration: underline;
+}
+
+.one-movie--view hr {
+  border-top: 1px solid var(--font-color);
 }
 
 .movie-view--image_container {
@@ -137,7 +146,7 @@ body {
 }
 
 .similar-movies {
-  color: #eaf2ef;
+  color: var(--font-color);
   text-align: center;
   flex-flow: wrap;
   justify-content: center;
@@ -223,6 +232,12 @@ h2.similar-movies {
 
   .movie-view-text--actors {
     float: left;
+  }
+}
+
+@media (width <= 450px) {
+  .one-movie--view h1 {
+    margin-top: 40px;
   }
 }
 

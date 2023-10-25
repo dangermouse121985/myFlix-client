@@ -27388,6 +27388,7 @@ const MainView = ()=>{
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    class: "btn btn-outline-success my-2 my-sm-0",
                     onClick: ()=>{
                         setUser(null);
                         setToken(null);
@@ -27396,7 +27397,7 @@ const MainView = ()=>{
                     children: "Logout"
                 }, void 0, false, {
                     fileName: "components/main-view/main-view.jsx",
-                    lineNumber: 70,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27405,12 +27406,12 @@ const MainView = ()=>{
                     token: token
                 }, selectedMovie.id, false, {
                     fileName: "components/main-view/main-view.jsx",
-                    lineNumber: 79,
+                    lineNumber: 84,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                     fileName: "components/main-view/main-view.jsx",
-                    lineNumber: 85,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -27418,7 +27419,7 @@ const MainView = ()=>{
                     children: "Similar Movies"
                 }, void 0, false, {
                     fileName: "components/main-view/main-view.jsx",
-                    lineNumber: 86,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27430,12 +27431,12 @@ const MainView = ()=>{
                             }
                         }, movie.id, false, {
                             fileName: "components/main-view/main-view.jsx",
-                            lineNumber: 89,
+                            lineNumber: 94,
                             columnNumber: 13
                         }, undefined))
                 }, void 0, false, {
                     fileName: "components/main-view/main-view.jsx",
-                    lineNumber: 87,
+                    lineNumber: 92,
                     columnNumber: 9
                 }, undefined)
             ]
@@ -27445,13 +27446,13 @@ const MainView = ()=>{
         children: "No results Found!"
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 103,
+        lineNumber: 108,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "logout--button",
+                class: "btn btn-outline-success my-2 my-sm-0",
                 onClick: ()=>{
                     setUser(null);
                     setToken(null);
@@ -27460,7 +27461,7 @@ const MainView = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 108,
+                lineNumber: 113,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27473,13 +27474,13 @@ const MainView = ()=>{
                         }
                     }, movie.id, false, {
                         fileName: "components/main-view/main-view.jsx",
-                        lineNumber: 121,
+                        lineNumber: 131,
                         columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 118,
+                lineNumber: 128,
                 columnNumber: 7
             }, undefined)
         ]
@@ -27495,7 +27496,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","../header-view/header-view":"53Jo5","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"8z54c":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","../header-view/header-view":"53Jo5"}],"8z54c":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28601,7 +28602,7 @@ const LoginView = ({ onLoggedIn })=>{
                     "Username:",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                         fileName: "components/login-view/login-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -28611,13 +28612,13 @@ const LoginView = ({ onLoggedIn })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "components/login-view/login-view.jsx",
-                        lineNumber: 42,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/login-view/login-view.jsx",
-                lineNumber: 39,
+                lineNumber: 40,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -28625,7 +28626,7 @@ const LoginView = ({ onLoggedIn })=>{
                     "Password:",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                         fileName: "components/login-view/login-view.jsx",
-                        lineNumber: 51,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -28635,13 +28636,13 @@ const LoginView = ({ onLoggedIn })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "components/login-view/login-view.jsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/login-view/login-view.jsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28649,7 +28650,7 @@ const LoginView = ({ onLoggedIn })=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "components/login-view/login-view.jsx",
-                lineNumber: 59,
+                lineNumber: 60,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28663,13 +28664,13 @@ const LoginView = ({ onLoggedIn })=>{
                 children: "Signup"
             }, void 0, false, {
                 fileName: "components/login-view/login-view.jsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/login-view/login-view.jsx",
-        lineNumber: 38,
+        lineNumber: 39,
         columnNumber: 5
     }, undefined);
 };
@@ -28934,52 +28935,268 @@ parcelHelpers.export(exports, "HeaderView", ()=>HeaderView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _mainView = require("../main-view/main-view");
-const HeaderView = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#",
-                        children: "Profile"
-                    }, void 0, false, {
-                        fileName: "components/header-view/header-view.jsx",
-                        lineNumber: 9,
-                        columnNumber: 11
-                    }, undefined)
+var _loginView = require("../login-view/login-view");
+var _signupView = require("../signup-view/signup-view");
+var _s = $RefreshSig$();
+const HeaderView = (user, storedToken, storedUser)=>{
+    _s();
+    [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
+    [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
+    if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "login--view",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
+                    onLoggedIn: (user, token1)=>{
+                        setUser(user);
+                        setToken(token1);
+                    }
                 }, void 0, false, {
                     fileName: "components/header-view/header-view.jsx",
-                    lineNumber: 8,
+                    lineNumber: 14,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "components/header-view/header-view.jsx",
+                lineNumber: 13,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "signup--view hide--signup-or-login",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
+                    fileName: "components/header-view/header-view.jsx",
+                    lineNumber: 23,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "components/header-view/header-view.jsx",
+                lineNumber: 22,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+            class: "navbar navbar-expand-lg navbar-light bg-light",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                    class: "navbar-brand",
+                    href: "#",
+                    children: "Navbar"
+                }, void 0, false, {
+                    fileName: "components/header-view/header-view.jsx",
+                    lineNumber: 32,
                     columnNumber: 9
                 }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        onClick: ()=>{
-                            localStorage.clear();
-                        },
-                        children: "Logout"
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    class: "navbar-toggler",
+                    type: "button",
+                    "data-toggle": "collapse",
+                    "data-target": "#navbarSupportedContent",
+                    "aria-controls": "navbarSupportedContent",
+                    "aria-expanded": "false",
+                    "aria-label": "Toggle navigation",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        class: "navbar-toggler-icon"
                     }, void 0, false, {
                         fileName: "components/header-view/header-view.jsx",
-                        lineNumber: 12,
+                        lineNumber: 44,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "components/header-view/header-view.jsx",
-                    lineNumber: 11,
+                    lineNumber: 35,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    class: "collapse navbar-collapse",
+                    id: "navbarSupportedContent",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                            class: "navbar-nav mr-auto",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    class: "nav-item active",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        class: "nav-link",
+                                        href: "#",
+                                        children: [
+                                            "Home ",
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                class: "sr-only",
+                                                children: "(current)"
+                                            }, void 0, false, {
+                                                fileName: "components/header-view/header-view.jsx",
+                                                lineNumber: 51,
+                                                columnNumber: 22
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/header-view/header-view.jsx",
+                                        lineNumber: 50,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "components/header-view/header-view.jsx",
+                                    lineNumber: 49,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    class: "nav-item",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        class: "nav-link",
+                                        href: "#",
+                                        children: "Link"
+                                    }, void 0, false, {
+                                        fileName: "components/header-view/header-view.jsx",
+                                        lineNumber: 55,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "components/header-view/header-view.jsx",
+                                    lineNumber: 54,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    class: "nav-item dropdown",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            class: "nav-link dropdown-toggle",
+                                            href: "#",
+                                            id: "navbarDropdown",
+                                            role: "button",
+                                            "data-toggle": "dropdown",
+                                            "aria-haspopup": "true",
+                                            "aria-expanded": "false",
+                                            children: "Dropdown"
+                                        }, void 0, false, {
+                                            fileName: "components/header-view/header-view.jsx",
+                                            lineNumber: 60,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "dropdown-menu",
+                                            "aria-labelledby": "navbarDropdown",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    class: "dropdown-item",
+                                                    href: "#",
+                                                    children: "Action"
+                                                }, void 0, false, {
+                                                    fileName: "components/header-view/header-view.jsx",
+                                                    lineNumber: 72,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    class: "dropdown-item",
+                                                    href: "#",
+                                                    children: "Another action"
+                                                }, void 0, false, {
+                                                    fileName: "components/header-view/header-view.jsx",
+                                                    lineNumber: 75,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                    class: "dropdown-divider"
+                                                }, void 0, false, {
+                                                    fileName: "components/header-view/header-view.jsx",
+                                                    lineNumber: 78,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    class: "dropdown-item",
+                                                    href: "#",
+                                                    children: "Something else here"
+                                                }, void 0, false, {
+                                                    fileName: "components/header-view/header-view.jsx",
+                                                    lineNumber: 79,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/header-view/header-view.jsx",
+                                            lineNumber: 71,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/header-view/header-view.jsx",
+                                    lineNumber: 59,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    class: "nav-item",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        class: "btn btn-outline-success my-2 my-sm-0",
+                                        onClick: ()=>{
+                                            setUser(null);
+                                            setToken(null);
+                                            localStorage.clear();
+                                        },
+                                        children: "Logout"
+                                    }, void 0, false, {
+                                        fileName: "components/header-view/header-view.jsx",
+                                        lineNumber: 85,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "components/header-view/header-view.jsx",
+                                    lineNumber: 84,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "components/header-view/header-view.jsx",
+                            lineNumber: 48,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                            class: "form-inline my-2 my-lg-0",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    class: "form-control mr-sm-2",
+                                    type: "search",
+                                    placeholder: "Search",
+                                    "aria-label": "Search"
+                                }, void 0, false, {
+                                    fileName: "components/header-view/header-view.jsx",
+                                    lineNumber: 98,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    class: "btn btn-outline-success my-2 my-sm-0",
+                                    type: "submit",
+                                    children: "Search"
+                                }, void 0, false, {
+                                    fileName: "components/header-view/header-view.jsx",
+                                    lineNumber: 104,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "components/header-view/header-view.jsx",
+                            lineNumber: 97,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/header-view/header-view.jsx",
+                    lineNumber: 47,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "components/header-view/header-view.jsx",
-            lineNumber: 7,
+            lineNumber: 31,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "components/header-view/header-view.jsx",
-        lineNumber: 6,
+        lineNumber: 30,
         columnNumber: 5
     }, undefined);
 };
+_s(HeaderView, "g5oHSh795mbzkwmIMkT7oNkg190=");
 _c = HeaderView;
 var _c;
 $RefreshReg$(_c, "HeaderView");
@@ -28989,6 +29206,6 @@ $RefreshReg$(_c, "HeaderView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../main-view/main-view":"bJOVs","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}]},["fvLlA","lt0Qw","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../main-view/main-view":"bJOVs","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}]},["fvLlA","lt0Qw","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

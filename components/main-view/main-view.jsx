@@ -66,8 +66,13 @@ export const MainView = () => {
 
     return (
       <>
-        {/* <HeaderView /> */}
+        {/* <HeaderView
+          storedToken={storedToken}
+          storedUser={storedUser}
+          user={user}
+        /> */}
         <button
+          class="btn btn-outline-success my-2 my-sm-0"
           onClick={() => {
             setUser(null);
             setToken(null);
@@ -106,7 +111,7 @@ export const MainView = () => {
   return (
     <>
       <button
-        className="logout--button"
+        class="btn btn-outline-success my-2 my-sm-0"
         onClick={() => {
           setUser(null);
           setToken(null);
@@ -115,6 +120,11 @@ export const MainView = () => {
       >
         Logout
       </button>
+      {/* <HeaderView
+        storedToken={storedToken}
+        storedUser={storedUser}
+        user={user}
+      /> */}
       <div className="main">
         {movies.map((movie) => {
           return (
