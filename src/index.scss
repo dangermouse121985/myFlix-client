@@ -1,20 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Permanent+Marker&family=Roboto:wght@500&display=swap');
 
+$body-bg: #2e5266;
+$primary: #d52941;
+$body-color: #eaf2ef;
+@import '~bootstrap/scss/bootstrap.scss';
 //@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Permanent+Marker&family=Roboto:wght@500&display=swap');
 /*font-family: 'Permanent Marker', cursive;
 font-family: 'PT Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Sedgwick Ave Display', cursive;
  */
+img {
+  width: 100%;
+  box-sizing: border-box;
+}
 
-:root {
+/* :root {
   --background-color: #2e5266;
   --font-color: #eaf2ef;
   --logo-color: #d52941;
 }
-
+*/
 .logo {
   font-family: 'Permanent Marker', cursive;
   font-size: 90px;
@@ -60,11 +67,15 @@ font-family: 'Sedgwick Ave Display', cursive;
 
 body {
   font-family: 'Roboto', sans-serif;
-  margin: 0;
-  //Remove !important when we learn how to import bootstrap into react app
-  background-color: var(--background-color) !important;
 }
 
+.movie-card:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 1px 1px 10px #000;
+}
+
+/*
 .main {
   margin: 0 200px;
   display: flex;
@@ -101,11 +112,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.movie-card:hover .movie-title {
-  background: rgba(0, 0, 0, 0.8);
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 1px 3px 10px #000;
-}
+
 
 .titleText {
   text-align: center;
@@ -117,26 +124,22 @@ body {
   display: flex;
   align-items: center;
 }
-
+*/
 .one-movie--view {
-  color: var(--font-color);
-  margin: 20px auto;
+  //color: var(--font-color);
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 1px 3px 10px #000;
-  width: 50%;
-  height: 500px;
-  position: relative;
+  box-sizing: border-box;
 
-  h2 {
-    font-size: 18px;
-    text-decoration: underline;
-  }
+  //position: relative;
 
-  hr {
-    border-top: 1px solid var(--font-color);
+  .col-md-6:first-child {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
+/*
 .movie-view--image_container {
   float: left;
   height: 100%;
@@ -155,7 +158,7 @@ body {
 .movie-view-text--description {
   margin: 0 20px 10px 10px;
 }
-
+/*
 .back-button {
   background: none;
   color: inherit;
@@ -170,7 +173,7 @@ body {
   border: 3px solid #eaf2ef;
   border-radius: 50%;
   text-align: center;
-  line-height: 20px;
+  
   transition: all 0.3s ease-in-out;
 }
 
@@ -310,3 +313,4 @@ h2.similar-movies {
     margin-top: 40px;
   }
 }
+ */

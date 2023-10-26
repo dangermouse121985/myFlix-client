@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -24,6 +26,7 @@ export const MainView = () => {
           return {
             id: movie._id,
             title: movie.title,
+            description: movie.description,
             image: movie.imagePath,
             url: movie.url,
             actors: movie.actors,
@@ -36,52 +39,51 @@ export const MainView = () => {
       });
   }, [token]);
 
-  if (!user) {
-    return (
-      <>
-        <div className="login--view">
-          <div className="logo">myFLIX</div>
-          <LoginView
-            onLoggedIn={(user, token) => {
-              setUser(user);
-              setToken(token);
-            }}
-          />
-        </div>
-
-        <div className="signup--view hide--signup-or-login">
-          <SignupView />
-        </div>
-      </>
-    );
-  }
-
+  let similarMovies;
   if (selectedMovie) {
-    let similarMovies = movies
+    similarMovies = movies
       .filter((movie) => {
         return (
           movie.genre.includes(selectedMovie.genre) && movie !== selectedMovie
         );
       })
       .map((filteredName) => filteredName);
+  }
 
-    return (
-      <>
-        {/* <HeaderView
-          storedToken={storedToken}
-          storedUser={storedUser}
-          user={user}
-        /> */}
-        <button
-          class="btn btn-outline-success my-2 my-sm-0"
-          onClick={() => {
-            setUser(null);
-            setToken(null);
-            localStorage.clear();
+  return !user ? (
+    <Row className="justify-content-md-center">
+      <div className="login--view">
+        <LoginView
+          onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
           }}
-        >
-          Logout
-        </button>
+        />
+      </div>
+
+      <div className="signup--view hide--signup-or-login">
+        <SignupView />
+      </div>
+    </Row>
+  ) : selectedMovie ? (
+    <>
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        onClick={() => {
+          setUser(null);
+          setToken(null);
+          localStorage.clear();
+        }}
+      >
+        Logout
+      </button>
+
+      {/* <HeaderView
+            storedToken={storedToken}
+            storedUser={storedUser}
+            user={user}
+          /> */}
+      <Row className="justify-content-md-center">
         <MovieView
           key={selectedMovie.id}
           movie={selectedMovie}
@@ -90,8 +92,9 @@ export const MainView = () => {
         />
         <hr />
         <h2 className="similar-movies">Similar Movies</h2>
-        <div className="similar-movies">
-          {similarMovies.map((movie) => (
+
+        {similarMovies.map((movie) => (
+          <Col md={3}>
             <MovieCard
               key={movie.id}
               movie={movie}
@@ -100,17 +103,13 @@ export const MainView = () => {
                 window.scrollTo(0, 0);
               }}
             />
-          ))}
-        </div>
-      </>
-    );
-  }
-
-  if (movies.length === 0) {
-    return <div>No results Found!</div>;
-  }
-
-  return (
+          </Col>
+        ))}
+      </Row>
+    </>
+  ) : movies.length === 0 ? (
+    <div>No results Found!</div>
+  ) : (
     <>
       <button
         class="btn btn-outline-success my-2 my-sm-0"
@@ -123,24 +122,25 @@ export const MainView = () => {
         Logout
       </button>
       {/* <HeaderView
-        storedToken={storedToken}
-        storedUser={storedUser}
-        user={user}
-      /> */}
-      <div className="main">
+          storedToken={storedToken}
+          storedUser={storedUser}
+          user={user}
+        /> */}
+      <Row className="justify-content-md-center">
         {movies.map((movie) => {
           return (
-            <MovieCard
-              key={movie.id}
-              movie={movie}
-              onMovieClick={(newSelectedMovie) => {
-                setSelectedMovie(newSelectedMovie);
-                window.scrollTo(0, 0);
-              }}
-            />
+            <Col className="mb-5" key={movie.id} md={3}>
+              <MovieCard
+                movie={movie}
+                onMovieClick={(newSelectedMovie) => {
+                  setSelectedMovie(newSelectedMovie);
+                  window.scrollTo(0, 0);
+                }}
+              />
+            </Col>
           );
         })}
-      </div>
+      </Row>
     </>
   );
 };

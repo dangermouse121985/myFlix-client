@@ -40,82 +40,85 @@ export const SignupView = () => {
     });
   };
   return (
-    <form className="signup--form" onSubmit={handleSubmit}>
-      <label>
-        First Name:
-        <br />
-        <input
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          required
-          minLength={2}
-        />
-      </label>
-      <label>
-        Last Name:
-        <br />
-        <input
-          type="text"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          required
-          minLength={2}
-        />
-      </label>
-      <label>
-        Email:
-        <br />
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Birthday:
-        <br />
-        <input
-          type="date"
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Username:
-        <br />
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          minLength={3}
-        />
-      </label>
-      <label>
-        Password:
-        <br />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Submit</button>
-      <button
-        className="signup--button"
-        onClick={() => {
-          let loginView = document.querySelector('.login--view');
-          loginView.classList.remove('hide--signup-or-login');
-          let signupView = document.querySelector('.signup--view');
-          signupView.classList.add('hide--signup-or-login');
-        }}
-      >
-        Return to Login
-      </button>
-    </form>
+    <>
+      <div className="logo">myFLIX</div>
+      <form className="signup--form" onSubmit={handleSubmit}>
+        <label>
+          First Name:
+          <br />
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+            minLength={2}
+          />
+        </label>
+        <label>
+          Last Name:
+          <br />
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+            minLength={2}
+          />
+        </label>
+        <label>
+          Email:
+          <br />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Birthday:
+          <br />
+          <input
+            type="date"
+            value={birthday}
+            onChange={(e) => setBirthday(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Username:
+          <br />
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            minLength={3}
+          />
+        </label>
+        <label>
+          Password:
+          <br />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Submit</button>
+        <button
+          className="signup--button"
+          onClick={() => {
+            let loginView = document.querySelector('.login--view');
+            loginView.classList.remove('hide--signup-or-login');
+            let signupView = document.querySelector('.signup--view');
+            signupView.classList.add('hide--signup-or-login');
+          }}
+        >
+          Return to Login
+        </button>
+      </form>
+    </>
   );
 };
