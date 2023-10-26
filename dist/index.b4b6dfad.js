@@ -27451,12 +27451,12 @@ const MainView = ()=>{
                                     setSelectedMovie(newSelectedMovie);
                                     window.scrollTo(0, 0);
                                 }
-                            }, movie.id, false, {
+                            }, void 0, false, {
                                 fileName: "components/main-view/main-view.jsx",
                                 lineNumber: 99,
                                 columnNumber: 13
                             }, undefined)
-                        }, void 0, false, {
+                        }, movie.id, false, {
                             fileName: "components/main-view/main-view.jsx",
                             lineNumber: 98,
                             columnNumber: 11
@@ -27472,7 +27472,7 @@ const MainView = ()=>{
         children: "No results Found!"
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 112,
+        lineNumber: 111,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -27486,7 +27486,7 @@ const MainView = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 115,
+                lineNumber: 114,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27503,18 +27503,18 @@ const MainView = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "components/main-view/main-view.jsx",
-                            lineNumber: 134,
+                            lineNumber: 133,
                             columnNumber: 15
                         }, undefined)
                     }, movie.id, false, {
                         fileName: "components/main-view/main-view.jsx",
-                        lineNumber: 133,
+                        lineNumber: 132,
                         columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 130,
+                lineNumber: 129,
                 columnNumber: 7
             }, undefined)
         ]
@@ -28765,7 +28765,7 @@ const MovieCard = ({ movie, onMovieClick })=>{
                 alt: movie.title
             }, void 0, false, {
                 fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 12,
+                lineNumber: 13,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -28777,12 +28777,12 @@ const MovieCard = ({ movie, onMovieClick })=>{
                             children: movie.title
                         }, void 0, false, {
                             fileName: "components/movie-card/movie-card.jsx",
-                            lineNumber: 15,
+                            lineNumber: 16,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/movie-card/movie-card.jsx",
-                        lineNumber: 14,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
@@ -28792,13 +28792,13 @@ const MovieCard = ({ movie, onMovieClick })=>{
                         ]
                     }, void 0, true, {
                         fileName: "components/movie-card/movie-card.jsx",
-                        lineNumber: 17,
+                        lineNumber: 18,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -28807,13 +28807,13 @@ const MovieCard = ({ movie, onMovieClick })=>{
                 children: "View"
             }, void 0, false, {
                 fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 19,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/movie-card/movie-card.jsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined);
 };

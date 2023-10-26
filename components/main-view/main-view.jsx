@@ -95,9 +95,8 @@ export const MainView = () => {
         <h2 className="similar-movies">Similar Movies</h2>
 
         {similarMovies.map((movie) => (
-          <Col md={3}>
+          <Col md={3} key={movie.id}>
             <MovieCard
-              key={movie.id}
               movie={movie}
               onMovieClick={(newSelectedMovie) => {
                 setSelectedMovie(newSelectedMovie);
