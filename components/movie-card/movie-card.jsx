@@ -16,6 +16,9 @@ export const MovieCard = ({ movie, onMovieClick }) => {
         </Card.Title>
         <Card.Text>{movie.description.slice(0, 50)}...</Card.Text>
       </Card.Body>
+      <Button variant="primary" className="movie-card--button">
+        View
+      </Button>
     </Card>
   );
 };

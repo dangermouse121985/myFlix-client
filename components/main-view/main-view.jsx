@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -67,8 +68,8 @@ export const MainView = () => {
     </Row>
   ) : selectedMovie ? (
     <>
-      <button
-        class="btn btn-outline-success my-2 my-sm-0"
+      <Button
+        variant="outline-primary"
         onClick={() => {
           setUser(null);
           setToken(null);
@@ -76,7 +77,7 @@ export const MainView = () => {
         }}
       >
         Logout
-      </button>
+      </Button>
 
       {/* <HeaderView
             storedToken={storedToken}
@@ -111,8 +112,8 @@ export const MainView = () => {
     <div>No results Found!</div>
   ) : (
     <>
-      <button
-        class="btn btn-outline-success my-2 my-sm-0"
+      <Button
+        variant="outline-primary"
         onClick={() => {
           setUser(null);
           setToken(null);
@@ -120,13 +121,13 @@ export const MainView = () => {
         }}
       >
         Logout
-      </button>
+      </Button>
       {/* <HeaderView
           storedToken={storedToken}
           storedUser={storedUser}
           user={user}
         /> */}
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-md-center home-page--main">
         {movies.map((movie) => {
           return (
             <Col className="mb-5" key={movie.id} md={3}>

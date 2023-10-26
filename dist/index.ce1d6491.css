@@ -13205,32 +13205,37 @@ textarea.form-control-lg {
   }
 }
 
+body {
+  font-family: Roboto, sans-serif;
+}
+
 img {
   box-sizing: border-box;
   width: 100%;
 }
 
+h1, .h1, h2, .h2 {
+  color: #d52941;
+}
+
+.login-signup--page {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
 .logo {
-  color: var(--logo-color);
+  color: #d52941;
+  text-align: center;
   margin: 0 auto;
   font-family: Permanent Marker, cursive;
   font-size: 90px;
-}
-
-.login--view, .signup--view {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  display: flex;
 }
 
 .login--form, .signup--form {
   flex-direction: column;
   align-content: center;
   gap: 10px;
-  width: 25%;
   margin: 0 auto;
   display: flex;
 }
@@ -13241,32 +13246,42 @@ img {
 }
 
 .login--form label, .signup--form label {
-  color: var(--font-color);
+  color: #eaf2ef;
 }
 
 .hide--signup-or-login {
   display: none;
 }
 
-body {
-  font-family: Roboto, sans-serif;
+.movie-card--button {
+  margin: 10px;
+  position: absolute;
 }
 
 .movie-card:hover {
-  color: #fff;
   background: #0000001a;
   box-shadow: 1px 1px 10px #000;
+}
+
+.home-page--main {
+  margin: 20px 5px;
 }
 
 .one-movie--view {
   box-sizing: border-box;
   background-color: #0000004d;
+  margin: 20px 0;
   box-shadow: 1px 3px 10px #000;
 }
 
 .one-movie--view .col-md-6:first-child {
   padding-left: 0;
   padding-right: 0;
+}
+
+.one-movie--view .col-md-6:last-child {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /*# sourceMappingURL=index.ce1d6491.css.map */

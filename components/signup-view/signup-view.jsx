@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export const SignupView = () => {
   const [firstName, setFirstName] = useState('');
@@ -40,85 +43,90 @@ export const SignupView = () => {
     });
   };
   return (
-    <>
-      <div className="logo">myFLIX</div>
-      <form className="signup--form" onSubmit={handleSubmit}>
-        <label>
-          First Name:
-          <br />
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-            minLength={2}
-          />
-        </label>
-        <label>
-          Last Name:
-          <br />
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-            minLength={2}
-          />
-        </label>
-        <label>
-          Email:
-          <br />
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Birthday:
-          <br />
-          <input
-            type="date"
-            value={birthday}
-            onChange={(e) => setBirthday(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Username:
-          <br />
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            minLength={3}
-          />
-        </label>
-        <label>
-          Password:
-          <br />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Submit</button>
-        <button
-          className="signup--button"
-          onClick={() => {
-            let loginView = document.querySelector('.login--view');
-            loginView.classList.remove('hide--signup-or-login');
-            let signupView = document.querySelector('.signup--view');
-            signupView.classList.add('hide--signup-or-login');
-          }}
-        >
-          Return to Login
-        </button>
-      </form>
-    </>
+    <Row className="justify-content-center">
+      <Col md={4} className="login-signup--page">
+        <div className="logo">myFLIX</div>
+        <form className="signup--form" onSubmit={handleSubmit}>
+          <label>
+            First Name:
+            <br />
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+              minLength={2}
+            />
+          </label>
+          <label>
+            Last Name:
+            <br />
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+              minLength={2}
+            />
+          </label>
+          <label>
+            Email:
+            <br />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Birthday:
+            <br />
+            <input
+              type="date"
+              value={birthday}
+              onChange={(e) => setBirthday(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Username:
+            <br />
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              minLength={3}
+            />
+          </label>
+          <label>
+            Password:
+            <br />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+          <Button
+            variant="outline-primary"
+            className="signup--button"
+            onClick={() => {
+              let loginView = document.querySelector('.login--view');
+              loginView.classList.remove('hide--signup-or-login');
+              let signupView = document.querySelector('.signup--view');
+              signupView.classList.add('hide--signup-or-login');
+            }}
+          >
+            Return to Login
+          </Button>
+        </form>
+      </Col>
+    </Row>
   );
 };

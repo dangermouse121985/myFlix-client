@@ -41,8 +41,8 @@ export const MovieView = ({ movie, onBackClick, token }) => {
       <Row className="justify-content-center">
         <Col md={8}>
           <Row className="justify-content-center one-movie--view " flex="1">
-            <Col md={6}>
-              <div className="movie-view--image_container">
+            <Col className="movie-view--image_container" md={6}>
+              <div>
                 <img
                   className="movie-view--image"
                   src={movie.image}
@@ -50,7 +50,7 @@ export const MovieView = ({ movie, onBackClick, token }) => {
                 />
               </div>
             </Col>
-            <Col md={6}>
+            <Col className="movie-view--text_container" md={6}>
               <div className="movie-view-text--heading">
                 <h1>{selectedMovie.title}</h1>
                 <hr />
