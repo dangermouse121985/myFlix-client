@@ -52,16 +52,7 @@ export const MainView = () => {
       });
   }, [token]);
 
-  let similarMovies;
-  if (selectedMovie) {
-    similarMovies = movies
-      .filter((movie) => {
-        return (
-          movie.genre.includes(selectedMovie.genre) && movie !== selectedMovie
-        );
-      })
-      .map((filteredName) => filteredName);
-  }
+  
 
   return (
     <BrowserRouter>
@@ -109,16 +100,27 @@ export const MainView = () => {
                 ) : movies.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
+                  let similarMovies;
+  if (selectedMovie) {
+    similarMovies = movies
+      .filter((movie) => {
+        return (
+          movie.genre.includes(selectedMovie.genre) && movie !== selectedMovie
+        );
+      })
+      .map((filteredName) => filteredName);
+  }
                   <>
+                  
                     <MovieView key={movies.id} movies={movies} />
-                    {/* <hr />
+                    <hr />
                     <h2 className="similar-movies">Similar Movies</h2>
 
                     {similarMovies.map((movie) => (
                       <Col md={3} key={movie.id}>
                         <MovieCard movie={movie} />
                       </Col>
-                    ))} */}
+                    ))}
                   </>
                 )}
               </>

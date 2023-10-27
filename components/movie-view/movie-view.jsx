@@ -39,7 +39,7 @@ export const MovieView = ({ movies, token }) => {
         setMovie(dataFromMovie);
       });
   }, []); */
-
+  console.log(movie.actors);
   return (
     <div className="one-movie--main">
       <Row className="justify-content-center">
@@ -68,18 +68,20 @@ export const MovieView = ({ movies, token }) => {
               </div>
               <div className="movie-view-text--director">
                 <h2>Director</h2>
-                <span>{movie.director}</span>
+                <span>{movie.director.name}</span>
               </div>
               <div className="movie-view-text--actors">
                 <h2>Actors</h2>
                 <span>
-                  {movie.actors
-                    ? movie.actors.map((name) => <div key={name}>{name}</div>)
-                    : null}
+                  {movie.actors.map((actor) => {
+                    return <div key={actor.id}>{actor.name}</div>;
+                  })}
                 </span>
               </div>
               <br />
-              <Button variant="outline-primary">Back to Menu</Button>
+              <Link to={'/'}>
+                <Button variant="outline-primary">Back to Menu</Button>
+              </Link>
             </Col>
           </Row>
         </Col>

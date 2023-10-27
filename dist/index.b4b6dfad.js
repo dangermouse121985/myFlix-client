@@ -27429,10 +27429,23 @@ const MainView = ()=>{
                             }, void 0, false, void 0, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                 children: "The list is empty!"
                             }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
-                                    movies: movies
-                                }, movies.id, false, void 0, void 0)
-                            }, void 0, false)
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
+                                        movies: movies
+                                    }, movies.id, false, void 0, void 0),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, void 0, void 0),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                        className: "similar-movies",
+                                        children: "Similar Movies"
+                                    }, void 0, false, void 0, void 0),
+                                    similarMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                            md: 3,
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                                movie: movie
+                                            }, void 0, false, void 0, void 0)
+                                        }, movie.id, false, void 0, void 0))
+                                ]
+                            }, void 0, true)
                         }, void 0, false)
                     }, void 0, false, {
                         fileName: "components/main-view/main-view.jsx",
@@ -47806,7 +47819,8 @@ const MovieView = ({ movies, token })=>{
 
         setMovie(dataFromMovie);
       });
-  }, []); */ return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+  }, []); */ console.log(movie.actors);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "one-movie--main",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
             className: "justify-content-center",
@@ -47913,7 +47927,7 @@ const MovieView = ({ movies, token })=>{
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                            children: movie.director
+                                            children: movie.director.name
                                         }, void 0, false, {
                                             fileName: "components/movie-view/movie-view.jsx",
                                             lineNumber: 71,
@@ -47936,13 +47950,15 @@ const MovieView = ({ movies, token })=>{
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                            children: movie.actors ? movie.actors.map((name)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                    children: name
-                                                }, name, false, {
+                                            children: movie.actors.map((actor)=>{
+                                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                    children: actor.name
+                                                }, actor.id, false, {
                                                     fileName: "components/movie-view/movie-view.jsx",
                                                     lineNumber: 77,
-                                                    columnNumber: 50
-                                                }, undefined)) : null
+                                                    columnNumber: 28
+                                                }, undefined);
+                                            })
                                         }, void 0, false, {
                                             fileName: "components/movie-view/movie-view.jsx",
                                             lineNumber: 75,
@@ -47959,9 +47975,16 @@ const MovieView = ({ movies, token })=>{
                                     lineNumber: 81,
                                     columnNumber: 15
                                 }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                    variant: "outline-primary",
-                                    children: "Back to Menu"
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                        variant: "outline-primary",
+                                        children: "Back to Menu"
+                                    }, void 0, false, {
+                                        fileName: "components/movie-view/movie-view.jsx",
+                                        lineNumber: 83,
+                                        columnNumber: 17
+                                    }, undefined)
                                 }, void 0, false, {
                                     fileName: "components/movie-view/movie-view.jsx",
                                     lineNumber: 82,
