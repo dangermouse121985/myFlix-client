@@ -27530,41 +27530,1271 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Button":"aPzUt","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","../header-view/header-view":"53Jo5","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"cMC39":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","../header-view/header-view":"53Jo5","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Button":"aPzUt"}],"8z54c":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$42ca.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+const MovieCard = ({ movie, onMovieClick })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+        className: "movie-card h-100",
+        onClick: ()=>{
+            onMovieClick(movie);
+        },
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
+                variant: "top",
+                src: movie.image,
+                alt: movie.title
+            }, void 0, false, {
+                fileName: "components/movie-card/movie-card.jsx",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
+                        className: "movie-title",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "titleText",
+                            children: movie.title
+                        }, void 0, false, {
+                            fileName: "components/movie-card/movie-card.jsx",
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/movie-card/movie-card.jsx",
+                        lineNumber: 15,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
+                        children: [
+                            movie.description.slice(0, 50),
+                            "..."
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/movie-card/movie-card.jsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/movie-card/movie-card.jsx",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                variant: "primary",
+                className: "movie-card--button",
+                children: "View"
+            }, void 0, false, {
+                fileName: "components/movie-card/movie-card.jsx",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/movie-card/movie-card.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined);
+};
+_c = MovieCard;
+MovieCard.propTypes = {
+    movie: (0, _propTypesDefault.default).shape({
+        id: (0, _propTypesDefault.default).string.isRequired,
+        title: (0, _propTypesDefault.default).string.isRequired,
+        image: (0, _propTypesDefault.default).string,
+        url: (0, _propTypesDefault.default).string.isRequired
+    }).isRequired,
+    onMovieClick: (0, _propTypesDefault.default).func.isRequired
+};
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$42ca.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","react-bootstrap":"3AD9A"}],"7wKI2":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var ReactIs = require("96e34ae03f5a2631");
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require("cb216452e2171041")(ReactIs.isElement, throwOnDirectAccess);
+
+},{"96e34ae03f5a2631":"7EuwB","cb216452e2171041":"bBUgD"}],"7EuwB":[function(require,module,exports) {
+"use strict";
+module.exports = require("2255125a8e8b1051");
+
+},{"2255125a8e8b1051":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === "function" && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
+    function isValidElementType(type) {
+        return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+        type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"bBUgD":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactIs = require("c437388b089702c3");
+var assign = require("c067a60101d8520c");
+var ReactPropTypesSecret = require("74a0f89a70b9f3c2");
+var has = require("18441b11647bc78");
+var checkPropTypes = require("bec3f6ff89f0b072");
+var printWarning = function() {};
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === "function") return iteratorFn;
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = "<<anonymous>>";
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker("array"),
+        bigint: createPrimitiveTypeChecker("bigint"),
+        bool: createPrimitiveTypeChecker("boolean"),
+        func: createPrimitiveTypeChecker("function"),
+        number: createPrimitiveTypeChecker("number"),
+        object: createPrimitiveTypeChecker("object"),
+        string: createPrimitiveTypeChecker("string"),
+        symbol: createPrimitiveTypeChecker("symbol"),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        return x !== 0 || 1 / x === 1 / y;
+        else // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === "object" ? data : {};
+        this.stack = "";
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        var manualPropTypeCallCache = {};
+        var manualPropTypeWarningCount = 0;
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+                    err.name = "Invariant Violation";
+                    throw err;
+                } else if (typeof console !== "undefined") {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ":" + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
+                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
+                }
+                return null;
+            } else return validate(props, propName, componentName, location, propFullName);
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
+                    expectedType: expectedType
+                });
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            {
+                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
+                else printWarning("Invalid argument supplied to oneOf, expected an array.");
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) return null;
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === "symbol") return String(value);
+                return value;
+            });
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            for(var key in propValue)if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== "function") {
+                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) return null;
+                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case "number":
+            case "string":
+            case "undefined":
+                return true;
+            case "boolean":
+                return !propValue;
+            case "object":
+                if (Array.isArray(propValue)) return propValue.every(isNode);
+                if (propValue === null || isValidElement(propValue)) return true;
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
+                        if (!isNode(step.value)) return false;
+                    }
+                    else // Iterator will provide entry [k,v] tuples rather than values.
+                    while(!(step = iterator.next()).done){
+                        var entry = step.value;
+                        if (entry) {
+                            if (!isNode(entry[1])) return false;
+                        }
+                    }
+                } else return false;
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === "symbol") return true;
+        // falsy value can't be a Symbol
+        if (!propValue) return false;
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue["@@toStringTag"] === "Symbol") return true;
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) return "array";
+        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
+        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+        // passes PropTypes.object.
+        return "object";
+        if (isSymbol(propType, propValue)) return "symbol";
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
+        var propType = getPropType(propValue);
+        if (propType === "object") {
+            if (propValue instanceof Date) return "date";
+            else if (propValue instanceof RegExp) return "regexp";
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case "array":
+            case "object":
+                return "an " + type;
+            case "boolean":
+            case "date":
+            case "regexp":
+                return "a " + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+
+},{"c437388b089702c3":"7EuwB","c067a60101d8520c":"7OXxh","74a0f89a70b9f3c2":"jZTZJ","18441b11647bc78":"fqKuf","bec3f6ff89f0b072":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ "use strict";
+/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
+    return Object(val);
+}
+function shouldUseNative() {
+    try {
+        if (!Object.assign) return false;
+        // Detect buggy property enumeration order in older V8 versions.
+        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
+        test1[5] = "de";
+        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test2 = {};
+        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join("") !== "0123456789") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test3 = {};
+        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
+        return true;
+    } catch (err) {
+        // We don't expect any of the above to throw, but better to be safe.
+        return false;
+    }
+}
+module.exports = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
+        }
+    }
+    return to;
+};
+
+},{}],"jZTZJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+module.exports = ReactPropTypesSecret;
+
+},{}],"fqKuf":[function(require,module,exports) {
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+},{}],"5VwyJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var printWarning = function() {};
+var ReactPropTypesSecret = require("24ba1e58d167a82c");
+var loggedTypeFailures = {};
+var has = require("898bc82f39d83f7c");
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+            // This is intentionally an invariant that gets caught. It's the same
+            // behavior as without this statement except with a better message.
+            if (typeof typeSpecs[typeSpecName] !== "function") {
+                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                err.name = "Invariant Violation";
+                throw err;
+            }
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+            error = ex;
+        }
+        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            // Only monitor this failure once because there tends to be a lot of the
+            // same error.
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : "";
+            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    loggedTypeFailures = {};
+};
+module.exports = checkPropTypes;
+
+},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"hPuYQ":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"3AD9A":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
+parcelHelpers.export(exports, "AccordionContext", ()=>(0, _accordionContextDefault.default));
+parcelHelpers.export(exports, "AccordionCollapse", ()=>(0, _accordionCollapseDefault.default));
+parcelHelpers.export(exports, "AccordionButton", ()=>(0, _accordionButtonDefault.default));
+parcelHelpers.export(exports, "useAccordionButton", ()=>(0, _accordionButton.useAccordionButton));
+parcelHelpers.export(exports, "AccordionHeader", ()=>(0, _accordionHeaderDefault.default));
+parcelHelpers.export(exports, "AccordionItem", ()=>(0, _accordionItemDefault.default));
+parcelHelpers.export(exports, "Alert", ()=>(0, _alertDefault.default));
+parcelHelpers.export(exports, "AlertHeading", ()=>(0, _alertHeadingDefault.default));
+parcelHelpers.export(exports, "AlertLink", ()=>(0, _alertLinkDefault.default));
+parcelHelpers.export(exports, "Anchor", ()=>(0, _anchorDefault.default));
+parcelHelpers.export(exports, "Badge", ()=>(0, _badgeDefault.default));
+parcelHelpers.export(exports, "Breadcrumb", ()=>(0, _breadcrumbDefault.default));
+parcelHelpers.export(exports, "BreadcrumbItem", ()=>(0, _breadcrumbItemDefault.default));
+parcelHelpers.export(exports, "Button", ()=>(0, _buttonDefault.default));
+parcelHelpers.export(exports, "ButtonGroup", ()=>(0, _buttonGroupDefault.default));
+parcelHelpers.export(exports, "ButtonToolbar", ()=>(0, _buttonToolbarDefault.default));
+parcelHelpers.export(exports, "Card", ()=>(0, _cardDefault.default));
+parcelHelpers.export(exports, "CardBody", ()=>(0, _cardBodyDefault.default));
+parcelHelpers.export(exports, "CardFooter", ()=>(0, _cardFooterDefault.default));
+parcelHelpers.export(exports, "CardGroup", ()=>(0, _cardGroupDefault.default));
+parcelHelpers.export(exports, "CardHeader", ()=>(0, _cardHeaderDefault.default));
+parcelHelpers.export(exports, "CardImg", ()=>(0, _cardImgDefault.default));
+parcelHelpers.export(exports, "CardImgOverlay", ()=>(0, _cardImgOverlayDefault.default));
+parcelHelpers.export(exports, "CardLink", ()=>(0, _cardLinkDefault.default));
+parcelHelpers.export(exports, "CardSubtitle", ()=>(0, _cardSubtitleDefault.default));
+parcelHelpers.export(exports, "CardText", ()=>(0, _cardTextDefault.default));
+parcelHelpers.export(exports, "CardTitle", ()=>(0, _cardTitleDefault.default));
+parcelHelpers.export(exports, "Carousel", ()=>(0, _carouselDefault.default));
+parcelHelpers.export(exports, "CarouselCaption", ()=>(0, _carouselCaptionDefault.default));
+parcelHelpers.export(exports, "CarouselItem", ()=>(0, _carouselItemDefault.default));
+parcelHelpers.export(exports, "CloseButton", ()=>(0, _closeButtonDefault.default));
+parcelHelpers.export(exports, "Col", ()=>(0, _colDefault.default));
+parcelHelpers.export(exports, "Collapse", ()=>(0, _collapseDefault.default));
+parcelHelpers.export(exports, "Container", ()=>(0, _containerDefault.default));
+parcelHelpers.export(exports, "Dropdown", ()=>(0, _dropdownDefault.default));
+parcelHelpers.export(exports, "DropdownButton", ()=>(0, _dropdownButtonDefault.default));
+parcelHelpers.export(exports, "DropdownDivider", ()=>(0, _dropdownDividerDefault.default));
+parcelHelpers.export(exports, "DropdownHeader", ()=>(0, _dropdownHeaderDefault.default));
+parcelHelpers.export(exports, "DropdownItem", ()=>(0, _dropdownItemDefault.default));
+parcelHelpers.export(exports, "DropdownItemText", ()=>(0, _dropdownItemTextDefault.default));
+parcelHelpers.export(exports, "DropdownMenu", ()=>(0, _dropdownMenuDefault.default));
+parcelHelpers.export(exports, "DropdownToggle", ()=>(0, _dropdownToggleDefault.default));
+parcelHelpers.export(exports, "Fade", ()=>(0, _fadeDefault.default));
+parcelHelpers.export(exports, "Figure", ()=>(0, _figureDefault.default));
+parcelHelpers.export(exports, "FigureCaption", ()=>(0, _figureCaptionDefault.default));
+parcelHelpers.export(exports, "FigureImage", ()=>(0, _figureImageDefault.default));
+parcelHelpers.export(exports, "Form", ()=>(0, _formDefault.default));
+parcelHelpers.export(exports, "FormControl", ()=>(0, _formControlDefault.default));
+parcelHelpers.export(exports, "FormCheck", ()=>(0, _formCheckDefault.default));
+parcelHelpers.export(exports, "FormFloating", ()=>(0, _formFloatingDefault.default));
+parcelHelpers.export(exports, "FloatingLabel", ()=>(0, _floatingLabelDefault.default));
+parcelHelpers.export(exports, "FormGroup", ()=>(0, _formGroupDefault.default));
+parcelHelpers.export(exports, "FormLabel", ()=>(0, _formLabelDefault.default));
+parcelHelpers.export(exports, "FormText", ()=>(0, _formTextDefault.default));
+parcelHelpers.export(exports, "FormSelect", ()=>(0, _formSelectDefault.default));
+parcelHelpers.export(exports, "Image", ()=>(0, _imageDefault.default));
+parcelHelpers.export(exports, "InputGroup", ()=>(0, _inputGroupDefault.default));
+parcelHelpers.export(exports, "ListGroup", ()=>(0, _listGroupDefault.default));
+parcelHelpers.export(exports, "ListGroupItem", ()=>(0, _listGroupItemDefault.default));
+parcelHelpers.export(exports, "Modal", ()=>(0, _modalDefault.default));
+parcelHelpers.export(exports, "ModalBody", ()=>(0, _modalBodyDefault.default));
+parcelHelpers.export(exports, "ModalDialog", ()=>(0, _modalDialogDefault.default));
+parcelHelpers.export(exports, "ModalFooter", ()=>(0, _modalFooterDefault.default));
+parcelHelpers.export(exports, "ModalHeader", ()=>(0, _modalHeaderDefault.default));
+parcelHelpers.export(exports, "ModalTitle", ()=>(0, _modalTitleDefault.default));
+parcelHelpers.export(exports, "Nav", ()=>(0, _navDefault.default));
+parcelHelpers.export(exports, "Navbar", ()=>(0, _navbarDefault.default));
+parcelHelpers.export(exports, "NavbarBrand", ()=>(0, _navbarBrandDefault.default));
+parcelHelpers.export(exports, "NavbarCollapse", ()=>(0, _navbarCollapseDefault.default));
+parcelHelpers.export(exports, "NavbarOffcanvas", ()=>(0, _navbarOffcanvasDefault.default));
+parcelHelpers.export(exports, "NavbarText", ()=>(0, _navbarTextDefault.default));
+parcelHelpers.export(exports, "NavbarToggle", ()=>(0, _navbarToggleDefault.default));
+parcelHelpers.export(exports, "NavDropdown", ()=>(0, _navDropdownDefault.default));
+parcelHelpers.export(exports, "NavItem", ()=>(0, _navItemDefault.default));
+parcelHelpers.export(exports, "NavLink", ()=>(0, _navLinkDefault.default));
+parcelHelpers.export(exports, "Offcanvas", ()=>(0, _offcanvasDefault.default));
+parcelHelpers.export(exports, "OffcanvasBody", ()=>(0, _offcanvasBodyDefault.default));
+parcelHelpers.export(exports, "OffcanvasHeader", ()=>(0, _offcanvasHeaderDefault.default));
+parcelHelpers.export(exports, "OffcanvasTitle", ()=>(0, _offcanvasTitleDefault.default));
+parcelHelpers.export(exports, "OffcanvasToggling", ()=>(0, _offcanvasTogglingDefault.default));
+parcelHelpers.export(exports, "Overlay", ()=>(0, _overlayDefault.default));
+parcelHelpers.export(exports, "OverlayTrigger", ()=>(0, _overlayTriggerDefault.default));
+parcelHelpers.export(exports, "PageItem", ()=>(0, _pageItemDefault.default));
+parcelHelpers.export(exports, "Pagination", ()=>(0, _paginationDefault.default));
+parcelHelpers.export(exports, "Placeholder", ()=>(0, _placeholderDefault.default));
+parcelHelpers.export(exports, "PlaceholderButton", ()=>(0, _placeholderButtonDefault.default));
+parcelHelpers.export(exports, "Popover", ()=>(0, _popoverDefault.default));
+parcelHelpers.export(exports, "PopoverBody", ()=>(0, _popoverBodyDefault.default));
+parcelHelpers.export(exports, "PopoverHeader", ()=>(0, _popoverHeaderDefault.default));
+parcelHelpers.export(exports, "ProgressBar", ()=>(0, _progressBarDefault.default));
+parcelHelpers.export(exports, "Ratio", ()=>(0, _ratioDefault.default));
+parcelHelpers.export(exports, "Row", ()=>(0, _rowDefault.default));
+parcelHelpers.export(exports, "Spinner", ()=>(0, _spinnerDefault.default));
+parcelHelpers.export(exports, "SplitButton", ()=>(0, _splitButtonDefault.default));
+parcelHelpers.export(exports, "SSRProvider", ()=>(0, _ssrproviderDefault.default));
+parcelHelpers.export(exports, "Stack", ()=>(0, _stackDefault.default));
+parcelHelpers.export(exports, "Tab", ()=>(0, _tabDefault.default));
+parcelHelpers.export(exports, "TabContainer", ()=>(0, _tabContainerDefault.default));
+parcelHelpers.export(exports, "TabContent", ()=>(0, _tabContentDefault.default));
+parcelHelpers.export(exports, "Table", ()=>(0, _tableDefault.default));
+parcelHelpers.export(exports, "TabPane", ()=>(0, _tabPaneDefault.default));
+parcelHelpers.export(exports, "Tabs", ()=>(0, _tabsDefault.default));
+parcelHelpers.export(exports, "ThemeProvider", ()=>(0, _themeProviderDefault.default));
+parcelHelpers.export(exports, "Toast", ()=>(0, _toastDefault.default));
+parcelHelpers.export(exports, "ToastBody", ()=>(0, _toastBodyDefault.default));
+parcelHelpers.export(exports, "ToastContainer", ()=>(0, _toastContainerDefault.default));
+parcelHelpers.export(exports, "ToastHeader", ()=>(0, _toastHeaderDefault.default));
+parcelHelpers.export(exports, "ToggleButton", ()=>(0, _toggleButtonDefault.default));
+parcelHelpers.export(exports, "ToggleButtonGroup", ()=>(0, _toggleButtonGroupDefault.default));
+parcelHelpers.export(exports, "Tooltip", ()=>(0, _tooltipDefault.default));
+var _accordion = require("./Accordion");
+var _accordionDefault = parcelHelpers.interopDefault(_accordion);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _accordionCollapse = require("./AccordionCollapse");
+var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
+var _accordionButton = require("./AccordionButton");
+var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
+var _accordionHeader = require("./AccordionHeader");
+var _accordionHeaderDefault = parcelHelpers.interopDefault(_accordionHeader);
+var _accordionItem = require("./AccordionItem");
+var _accordionItemDefault = parcelHelpers.interopDefault(_accordionItem);
+var _alert = require("./Alert");
+var _alertDefault = parcelHelpers.interopDefault(_alert);
+var _alertHeading = require("./AlertHeading");
+var _alertHeadingDefault = parcelHelpers.interopDefault(_alertHeading);
+var _alertLink = require("./AlertLink");
+var _alertLinkDefault = parcelHelpers.interopDefault(_alertLink);
+var _anchor = require("./Anchor");
+var _anchorDefault = parcelHelpers.interopDefault(_anchor);
+var _badge = require("./Badge");
+var _badgeDefault = parcelHelpers.interopDefault(_badge);
+var _breadcrumb = require("./Breadcrumb");
+var _breadcrumbDefault = parcelHelpers.interopDefault(_breadcrumb);
+var _breadcrumbItem = require("./BreadcrumbItem");
+var _breadcrumbItemDefault = parcelHelpers.interopDefault(_breadcrumbItem);
+var _button = require("./Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _buttonGroup = require("./ButtonGroup");
+var _buttonGroupDefault = parcelHelpers.interopDefault(_buttonGroup);
+var _buttonToolbar = require("./ButtonToolbar");
+var _buttonToolbarDefault = parcelHelpers.interopDefault(_buttonToolbar);
+var _card = require("./Card");
+var _cardDefault = parcelHelpers.interopDefault(_card);
+var _cardBody = require("./CardBody");
+var _cardBodyDefault = parcelHelpers.interopDefault(_cardBody);
+var _cardFooter = require("./CardFooter");
+var _cardFooterDefault = parcelHelpers.interopDefault(_cardFooter);
+var _cardGroup = require("./CardGroup");
+var _cardGroupDefault = parcelHelpers.interopDefault(_cardGroup);
+var _cardHeader = require("./CardHeader");
+var _cardHeaderDefault = parcelHelpers.interopDefault(_cardHeader);
+var _cardImg = require("./CardImg");
+var _cardImgDefault = parcelHelpers.interopDefault(_cardImg);
+var _cardImgOverlay = require("./CardImgOverlay");
+var _cardImgOverlayDefault = parcelHelpers.interopDefault(_cardImgOverlay);
+var _cardLink = require("./CardLink");
+var _cardLinkDefault = parcelHelpers.interopDefault(_cardLink);
+var _cardSubtitle = require("./CardSubtitle");
+var _cardSubtitleDefault = parcelHelpers.interopDefault(_cardSubtitle);
+var _cardText = require("./CardText");
+var _cardTextDefault = parcelHelpers.interopDefault(_cardText);
+var _cardTitle = require("./CardTitle");
+var _cardTitleDefault = parcelHelpers.interopDefault(_cardTitle);
+var _carousel = require("./Carousel");
+var _carouselDefault = parcelHelpers.interopDefault(_carousel);
+var _carouselCaption = require("./CarouselCaption");
+var _carouselCaptionDefault = parcelHelpers.interopDefault(_carouselCaption);
+var _carouselItem = require("./CarouselItem");
+var _carouselItemDefault = parcelHelpers.interopDefault(_carouselItem);
+var _closeButton = require("./CloseButton");
+var _closeButtonDefault = parcelHelpers.interopDefault(_closeButton);
+var _col = require("./Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _collapse = require("./Collapse");
+var _collapseDefault = parcelHelpers.interopDefault(_collapse);
+var _container = require("./Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _dropdown = require("./Dropdown");
+var _dropdownDefault = parcelHelpers.interopDefault(_dropdown);
+var _dropdownButton = require("./DropdownButton");
+var _dropdownButtonDefault = parcelHelpers.interopDefault(_dropdownButton);
+var _dropdownDivider = require("./DropdownDivider");
+var _dropdownDividerDefault = parcelHelpers.interopDefault(_dropdownDivider);
+var _dropdownHeader = require("./DropdownHeader");
+var _dropdownHeaderDefault = parcelHelpers.interopDefault(_dropdownHeader);
+var _dropdownItem = require("./DropdownItem");
+var _dropdownItemDefault = parcelHelpers.interopDefault(_dropdownItem);
+var _dropdownItemText = require("./DropdownItemText");
+var _dropdownItemTextDefault = parcelHelpers.interopDefault(_dropdownItemText);
+var _dropdownMenu = require("./DropdownMenu");
+var _dropdownMenuDefault = parcelHelpers.interopDefault(_dropdownMenu);
+var _dropdownToggle = require("./DropdownToggle");
+var _dropdownToggleDefault = parcelHelpers.interopDefault(_dropdownToggle);
+var _fade = require("./Fade");
+var _fadeDefault = parcelHelpers.interopDefault(_fade);
+var _figure = require("./Figure");
+var _figureDefault = parcelHelpers.interopDefault(_figure);
+var _figureCaption = require("./FigureCaption");
+var _figureCaptionDefault = parcelHelpers.interopDefault(_figureCaption);
+var _figureImage = require("./FigureImage");
+var _figureImageDefault = parcelHelpers.interopDefault(_figureImage);
+var _form = require("./Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _formControl = require("./FormControl");
+var _formControlDefault = parcelHelpers.interopDefault(_formControl);
+var _formCheck = require("./FormCheck");
+var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
+var _formFloating = require("./FormFloating");
+var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
+var _floatingLabel = require("./FloatingLabel");
+var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
+var _formGroup = require("./FormGroup");
+var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
+var _formLabel = require("./FormLabel");
+var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
+var _formText = require("./FormText");
+var _formTextDefault = parcelHelpers.interopDefault(_formText);
+var _formSelect = require("./FormSelect");
+var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
+var _image = require("./Image");
+var _imageDefault = parcelHelpers.interopDefault(_image);
+var _inputGroup = require("./InputGroup");
+var _inputGroupDefault = parcelHelpers.interopDefault(_inputGroup);
+var _listGroup = require("./ListGroup");
+var _listGroupDefault = parcelHelpers.interopDefault(_listGroup);
+var _listGroupItem = require("./ListGroupItem");
+var _listGroupItemDefault = parcelHelpers.interopDefault(_listGroupItem);
+var _modal = require("./Modal");
+var _modalDefault = parcelHelpers.interopDefault(_modal);
+var _modalBody = require("./ModalBody");
+var _modalBodyDefault = parcelHelpers.interopDefault(_modalBody);
+var _modalDialog = require("./ModalDialog");
+var _modalDialogDefault = parcelHelpers.interopDefault(_modalDialog);
+var _modalFooter = require("./ModalFooter");
+var _modalFooterDefault = parcelHelpers.interopDefault(_modalFooter);
+var _modalHeader = require("./ModalHeader");
+var _modalHeaderDefault = parcelHelpers.interopDefault(_modalHeader);
+var _modalTitle = require("./ModalTitle");
+var _modalTitleDefault = parcelHelpers.interopDefault(_modalTitle);
+var _nav = require("./Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+var _navbar = require("./Navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _navbarBrand = require("./NavbarBrand");
+var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
+var _navbarCollapse = require("./NavbarCollapse");
+var _navbarCollapseDefault = parcelHelpers.interopDefault(_navbarCollapse);
+var _navbarOffcanvas = require("./NavbarOffcanvas");
+var _navbarOffcanvasDefault = parcelHelpers.interopDefault(_navbarOffcanvas);
+var _navbarText = require("./NavbarText");
+var _navbarTextDefault = parcelHelpers.interopDefault(_navbarText);
+var _navbarToggle = require("./NavbarToggle");
+var _navbarToggleDefault = parcelHelpers.interopDefault(_navbarToggle);
+var _navDropdown = require("./NavDropdown");
+var _navDropdownDefault = parcelHelpers.interopDefault(_navDropdown);
+var _navItem = require("./NavItem");
+var _navItemDefault = parcelHelpers.interopDefault(_navItem);
+var _navLink = require("./NavLink");
+var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
+var _offcanvas = require("./Offcanvas");
+var _offcanvasDefault = parcelHelpers.interopDefault(_offcanvas);
+var _offcanvasBody = require("./OffcanvasBody");
+var _offcanvasBodyDefault = parcelHelpers.interopDefault(_offcanvasBody);
+var _offcanvasHeader = require("./OffcanvasHeader");
+var _offcanvasHeaderDefault = parcelHelpers.interopDefault(_offcanvasHeader);
+var _offcanvasTitle = require("./OffcanvasTitle");
+var _offcanvasTitleDefault = parcelHelpers.interopDefault(_offcanvasTitle);
+var _offcanvasToggling = require("./OffcanvasToggling");
+var _offcanvasTogglingDefault = parcelHelpers.interopDefault(_offcanvasToggling);
+var _overlay = require("./Overlay");
+var _overlayDefault = parcelHelpers.interopDefault(_overlay);
+var _overlayTrigger = require("./OverlayTrigger");
+var _overlayTriggerDefault = parcelHelpers.interopDefault(_overlayTrigger);
+var _pageItem = require("./PageItem");
+var _pageItemDefault = parcelHelpers.interopDefault(_pageItem);
+var _pagination = require("./Pagination");
+var _paginationDefault = parcelHelpers.interopDefault(_pagination);
+var _placeholder = require("./Placeholder");
+var _placeholderDefault = parcelHelpers.interopDefault(_placeholder);
+var _placeholderButton = require("./PlaceholderButton");
+var _placeholderButtonDefault = parcelHelpers.interopDefault(_placeholderButton);
+var _popover = require("./Popover");
+var _popoverDefault = parcelHelpers.interopDefault(_popover);
+var _popoverBody = require("./PopoverBody");
+var _popoverBodyDefault = parcelHelpers.interopDefault(_popoverBody);
+var _popoverHeader = require("./PopoverHeader");
+var _popoverHeaderDefault = parcelHelpers.interopDefault(_popoverHeader);
+var _progressBar = require("./ProgressBar");
+var _progressBarDefault = parcelHelpers.interopDefault(_progressBar);
+var _ratio = require("./Ratio");
+var _ratioDefault = parcelHelpers.interopDefault(_ratio);
+var _row = require("./Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _spinner = require("./Spinner");
+var _spinnerDefault = parcelHelpers.interopDefault(_spinner);
+var _splitButton = require("./SplitButton");
+var _splitButtonDefault = parcelHelpers.interopDefault(_splitButton);
+var _ssrprovider = require("./SSRProvider");
+var _ssrproviderDefault = parcelHelpers.interopDefault(_ssrprovider);
+var _stack = require("./Stack");
+var _stackDefault = parcelHelpers.interopDefault(_stack);
+var _tab = require("./Tab");
+var _tabDefault = parcelHelpers.interopDefault(_tab);
+var _tabContainer = require("./TabContainer");
+var _tabContainerDefault = parcelHelpers.interopDefault(_tabContainer);
+var _tabContent = require("./TabContent");
+var _tabContentDefault = parcelHelpers.interopDefault(_tabContent);
+var _table = require("./Table");
+var _tableDefault = parcelHelpers.interopDefault(_table);
+var _tabPane = require("./TabPane");
+var _tabPaneDefault = parcelHelpers.interopDefault(_tabPane);
+var _tabs = require("./Tabs");
+var _tabsDefault = parcelHelpers.interopDefault(_tabs);
+var _themeProvider = require("./ThemeProvider");
+var _themeProviderDefault = parcelHelpers.interopDefault(_themeProvider);
+var _toast = require("./Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+var _toastBody = require("./ToastBody");
+var _toastBodyDefault = parcelHelpers.interopDefault(_toastBody);
+var _toastContainer = require("./ToastContainer");
+var _toastContainerDefault = parcelHelpers.interopDefault(_toastContainer);
+var _toastHeader = require("./ToastHeader");
+var _toastHeaderDefault = parcelHelpers.interopDefault(_toastHeader);
+var _toggleButton = require("./ToggleButton");
+var _toggleButtonDefault = parcelHelpers.interopDefault(_toggleButton);
+var _toggleButtonGroup = require("./ToggleButtonGroup");
+var _toggleButtonGroupDefault = parcelHelpers.interopDefault(_toggleButtonGroup);
+var _tooltip = require("./Tooltip");
+var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
+
+},{"./Accordion":"1m6xp","./AccordionContext":"e5D96","./AccordionCollapse":"kI8r5","./AccordionButton":"hkYfS","./AccordionHeader":"LJXVf","./AccordionItem":"8sXhn","./Alert":"e3Xec","./AlertHeading":"dS03P","./AlertLink":"glcYq","./Anchor":"lwVpH","./Badge":"eEyks","./Breadcrumb":"hOow1","./BreadcrumbItem":"bWkuO","./Button":"aPzUt","./ButtonGroup":"gXYCe","./ButtonToolbar":"k88gW","./Card":"lAynp","./CardBody":"iN1Jc","./CardFooter":"jUi26","./CardGroup":"2j3Ij","./CardHeader":"dXnnx","./CardImg":"1reTi","./CardImgOverlay":"Bi8dC","./CardLink":"9uFCo","./CardSubtitle":"i2BiN","./CardText":"aUUmg","./CardTitle":"79rSZ","./Carousel":"bsGhm","./CarouselCaption":"dH56B","./CarouselItem":"9A3DI","./CloseButton":"1wmVl","./Col":"2L2I6","./Collapse":"acuzI","./Container":"hEdsw","./Dropdown":"88m2L","./DropdownButton":"5sMVB","./DropdownDivider":"hrud4","./DropdownHeader":"j4F3w","./DropdownItem":"xQ9Cw","./DropdownItemText":"9Y4vI","./DropdownMenu":"6UpAn","./DropdownToggle":"gCRNt","./Fade":"aH18S","./Figure":"7Eckp","./FigureCaption":"aGvgd","./FigureImage":"jhS47","./Form":"iBZ80","./FormControl":"iynMc","./FormCheck":"idkr0","./FormFloating":"aj346","./FloatingLabel":"coYzo","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormText":"ffeC7","./FormSelect":"hHWyB","./Image":"cyVPa","./InputGroup":"htx7r","./ListGroup":"4tGXh","./ListGroupItem":"9U5b8","./Modal":"aNVmp","./ModalBody":"e0aNG","./ModalDialog":"cwGGq","./ModalFooter":"9SLlP","./ModalHeader":"cxgdE","./ModalTitle":"kYqJp","./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":"iOo4v","./NavbarCollapse":"eNSCC","./NavbarOffcanvas":"fOxoE","./NavbarText":"76xFa","./NavbarToggle":"7vOXv","./NavDropdown":"8e6QB","./NavItem":"ew05W","./NavLink":"7geL8","./Offcanvas":"eC3RS","./OffcanvasBody":"fX7Bo","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./OffcanvasToggling":"eGvzt","./Overlay":"bHdwO","./OverlayTrigger":"acOnV","./PageItem":"i0zxH","./Pagination":"6yvxS","./Placeholder":"fw5xV","./PlaceholderButton":"dRc7O","./Popover":"afWr1","./PopoverBody":"amJTZ","./PopoverHeader":"1rLXn","./ProgressBar":"cCHIb","./Ratio":"ioXys","./Row":"cMC39","./Spinner":"2r8jr","./SplitButton":"fWabe","./SSRProvider":"kdCr8","./Stack":"eZkZ1","./Tab":"kfiWM","./TabContainer":"hkO95","./TabContent":"fQxYB","./Table":"3UQc3","./TabPane":"4jWis","./Tabs":"cq1ML","./ThemeProvider":"dVixI","./Toast":"iyxlo","./ToastBody":"30cvm","./ToastContainer":"kqOPy","./ToastHeader":"gsTvK","./ToggleButton":"dCmeV","./ToggleButtonGroup":"2t8MV","./Tooltip":"ajjgB","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"1m6xp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
+var _uncontrollable = require("uncontrollable");
 var _themeProvider = require("./ThemeProvider");
+var _accordionBody = require("./AccordionBody");
+var _accordionBodyDefault = parcelHelpers.interopDefault(_accordionBody);
+var _accordionButton = require("./AccordionButton");
+var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
+var _accordionCollapse = require("./AccordionCollapse");
+var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _accordionHeader = require("./AccordionHeader");
+var _accordionHeaderDefault = parcelHelpers.interopDefault(_accordionHeader);
+var _accordionItem = require("./AccordionItem");
+var _accordionItemDefault = parcelHelpers.interopDefault(_accordionItem);
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
-const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div", ...props }, ref)=>{
-    const decoratedBsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "row");
-    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
-    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
-    const sizePrefix = `${decoratedBsPrefix}-cols`;
-    const classes = [];
-    breakpoints.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let cols;
-        if (propValue != null && typeof propValue === "object") ({ cols } = propValue);
-        else cols = propValue;
-        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
-        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
+const Accordion = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = "div", activeKey, bsPrefix, className, onSelect, flush, alwaysOpen, ...controlledProps } = (0, _uncontrollable.useUncontrolled)(props, {
+        activeKey: "onSelect"
     });
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ref: ref,
-        ...props,
-        className: (0, _classnamesDefault.default)(className, decoratedBsPrefix, ...classes)
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion");
+    const contextValue = (0, _react.useMemo)(()=>({
+            activeEventKey: activeKey,
+            onSelect,
+            alwaysOpen
+        }), [
+        activeKey,
+        onSelect,
+        alwaysOpen
+    ]);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _accordionContextDefault.default).Provider, {
+        value: contextValue,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+            ref: ref,
+            ...controlledProps,
+            className: (0, _classnamesDefault.default)(className, prefix, flush && `${prefix}-flush`)
+        })
     });
 });
-Row.displayName = "Row";
-exports.default = Row;
+Accordion.displayName = "Accordion";
+exports.default = Object.assign(Accordion, {
+    Button: (0, _accordionButtonDefault.default),
+    Collapse: (0, _accordionCollapseDefault.default),
+    Item: (0, _accordionItemDefault.default),
+    Header: (0, _accordionHeaderDefault.default),
+    Body: (0, _accordionBodyDefault.default)
+});
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"jocGM":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","uncontrollable":"b3yWY","./ThemeProvider":"dVixI","./AccordionBody":"2p9OR","./AccordionButton":"hkYfS","./AccordionCollapse":"kI8r5","./AccordionContext":"e5D96","./AccordionHeader":"LJXVf","./AccordionItem":"8sXhn","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"jocGM":[function(require,module,exports) {
 /*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
@@ -27605,7 +28835,461 @@ exports.default = Row;
     else window.classNames = classNames;
 })();
 
-},{}],"dVixI":[function(require,module,exports) {
+},{}],"b3yWY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useUncontrolled", ()=>(0, _hookDefault.default));
+parcelHelpers.export(exports, "useUncontrolledProp", ()=>(0, _hook.useUncontrolledProp));
+parcelHelpers.export(exports, "uncontrollable", ()=>(0, _uncontrollableDefault.default));
+var _hook = require("./hook");
+var _hookDefault = parcelHelpers.interopDefault(_hook);
+var _uncontrollable = require("./uncontrollable");
+var _uncontrollableDefault = parcelHelpers.interopDefault(_uncontrollable);
+
+},{"./hook":"cv9oS","./uncontrollable":"aqbCD","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"cv9oS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useUncontrolledProp", ()=>useUncontrolledProp);
+parcelHelpers.export(exports, "default", ()=>useUncontrolled);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _react = require("react");
+var _utils = require("./utils");
+function _toPropertyKey(arg) {
+    var key = _toPrimitive(arg, "string");
+    return typeof key === "symbol" ? key : String(key);
+}
+function _toPrimitive(input, hint) {
+    if (typeof input !== "object" || input === null) return input;
+    var prim = input[Symbol.toPrimitive];
+    if (prim !== undefined) {
+        var res = prim.call(input, hint || "default");
+        if (typeof res !== "object") return res;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return (hint === "string" ? String : Number)(input);
+}
+function useUncontrolledProp(propValue, defaultValue, handler) {
+    var wasPropRef = (0, _react.useRef)(propValue !== undefined);
+    var _useState = (0, _react.useState)(defaultValue), stateValue = _useState[0], setState = _useState[1];
+    var isProp = propValue !== undefined;
+    var wasProp = wasPropRef.current;
+    wasPropRef.current = isProp;
+    /**
+   * If a prop switches from controlled to Uncontrolled
+   * reset its value to the defaultValue
+   */ if (!isProp && wasProp && stateValue !== defaultValue) setState(defaultValue);
+    return [
+        isProp ? propValue : stateValue,
+        (0, _react.useCallback)(function(value) {
+            for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)args[_key - 1] = arguments[_key];
+            if (handler) handler.apply(void 0, [
+                value
+            ].concat(args));
+            setState(value);
+        }, [
+            handler
+        ])
+    ];
+}
+function useUncontrolled(props, config) {
+    return Object.keys(config).reduce(function(result, fieldName) {
+        var _extends2;
+        var _ref = result, defaultValue = _ref[_utils.defaultKey(fieldName)], propsValue = _ref[fieldName], rest = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, [
+            _utils.defaultKey(fieldName),
+            fieldName
+        ].map(_toPropertyKey));
+        var handlerName = config[fieldName];
+        var _useUncontrolledProp = useUncontrolledProp(propsValue, defaultValue, props[handlerName]), value = _useUncontrolledProp[0], handler = _useUncontrolledProp[1];
+        return (0, _extendsDefault.default)({}, rest, (_extends2 = {}, _extends2[fieldName] = value, _extends2[handlerName] = handler, _extends2));
+    }, props);
+}
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"fTBFS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_extends);
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"adHgr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_objectWithoutPropertiesLoose);
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"7UQ73":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "uncontrolledPropTypes", ()=>uncontrolledPropTypes);
+parcelHelpers.export(exports, "isProp", ()=>isProp);
+parcelHelpers.export(exports, "defaultKey", ()=>defaultKey);
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */ parcelHelpers.export(exports, "canAcceptRef", ()=>canAcceptRef);
+var _invariant = require("invariant");
+var _invariantDefault = parcelHelpers.interopDefault(_invariant);
+var noop = function noop() {};
+function readOnlyPropType(handler, name) {
+    return function(props, propName) {
+        if (props[propName] !== undefined) {
+            if (!props[handler]) return new Error("You have provided a `" + propName + "` prop to `" + name + "` " + ("without an `" + handler + "` handler prop. This will render a read-only field. ") + ("If the field should be mutable use `" + defaultKey(propName) + "`. ") + ("Otherwise, set `" + handler + "`."));
+        }
+    };
+}
+function uncontrolledPropTypes(controlledValues, displayName) {
+    var propTypes = {};
+    Object.keys(controlledValues).forEach(function(prop) {
+        // add default propTypes for folks that use runtime checks
+        propTypes[defaultKey(prop)] = noop;
+        var handler = controlledValues[prop];
+        !(typeof handler === "string" && handler.trim().length) && (0, _invariantDefault.default)(false, "Uncontrollable - [%s]: the prop `%s` needs a valid handler key name in order to make it uncontrollable", displayName, prop);
+        propTypes[prop] = readOnlyPropType(handler, displayName);
+    });
+    return propTypes;
+}
+function isProp(props, prop) {
+    return props[prop] !== undefined;
+}
+function defaultKey(key) {
+    return "default" + key.charAt(0).toUpperCase() + key.substr(1);
+}
+function canAcceptRef(component) {
+    return !!component && (typeof component !== "function" || component.prototype && component.prototype.isReactComponent);
+}
+
+},{"invariant":"d1QgR","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"d1QgR":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */ var invariant = function(condition, format, a, b, c, d, e, f) {
+    if (format === undefined) throw new Error("invariant requires an error message argument");
+    if (!condition) {
+        var error;
+        if (format === undefined) error = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
+        else {
+            var args = [
+                a,
+                b,
+                c,
+                d,
+                e,
+                f
+            ];
+            var argIndex = 0;
+            error = new Error(format.replace(/%s/g, function() {
+                return args[argIndex++];
+            }));
+            error.name = "Invariant Violation";
+        }
+        error.framesToPop = 1; // we don't care about invariant's own frame
+        throw error;
+    }
+};
+module.exports = invariant;
+
+},{}],"aqbCD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>uncontrollable);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactLifecyclesCompat = require("react-lifecycles-compat");
+var _invariant = require("invariant");
+var _invariantDefault = parcelHelpers.interopDefault(_invariant);
+var _utils = require("./utils");
+var _jsxFileName = "/Users/jquense/src/uncontrollable/src/uncontrollable.js";
+function uncontrollable(Component, controlledValues, methods) {
+    if (methods === void 0) methods = [];
+    var displayName = Component.displayName || Component.name || "Component";
+    var canAcceptRef = _utils.canAcceptRef(Component);
+    var controlledProps = Object.keys(controlledValues);
+    var PROPS_TO_OMIT = controlledProps.map(_utils.defaultKey);
+    !(canAcceptRef || !methods.length) && (0, _invariantDefault.default)(false, "[uncontrollable] stateless function components cannot pass through methods because they have no associated instances. Check component: " + displayName + ", " + "attempting to pass through methods: " + methods.join(", "));
+    var UncontrolledComponent = /*#__PURE__*/ function(_React$Component) {
+        (0, _inheritsLooseDefault.default)(UncontrolledComponent, _React$Component);
+        function UncontrolledComponent() {
+            var _this;
+            for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+            _this = _React$Component.call.apply(_React$Component, [
+                this
+            ].concat(args)) || this;
+            _this.handlers = Object.create(null);
+            controlledProps.forEach(function(propName) {
+                var handlerName = controlledValues[propName];
+                var handleChange = function handleChange(value) {
+                    if (_this.props[handlerName]) {
+                        var _this$props;
+                        _this._notifying = true;
+                        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
+                        (_this$props = _this.props)[handlerName].apply(_this$props, [
+                            value
+                        ].concat(args));
+                        _this._notifying = false;
+                    }
+                    if (!_this.unmounted) _this.setState(function(_ref) {
+                        var _extends2;
+                        var values = _ref.values;
+                        return {
+                            values: (0, _extendsDefault.default)(Object.create(null), values, (_extends2 = {}, _extends2[propName] = value, _extends2))
+                        };
+                    });
+                };
+                _this.handlers[handlerName] = handleChange;
+            });
+            if (methods.length) _this.attachRef = function(ref) {
+                _this.inner = ref;
+            };
+            var values = Object.create(null);
+            controlledProps.forEach(function(key) {
+                values[key] = _this.props[_utils.defaultKey(key)];
+            });
+            _this.state = {
+                values: values,
+                prevProps: {}
+            };
+            return _this;
+        }
+        var _proto = UncontrolledComponent.prototype;
+        _proto.shouldComponentUpdate = function shouldComponentUpdate() {
+            //let setState trigger the update
+            return !this._notifying;
+        };
+        UncontrolledComponent.getDerivedStateFromProps = function getDerivedStateFromProps(props, _ref2) {
+            var values = _ref2.values, prevProps = _ref2.prevProps;
+            var nextState = {
+                values: (0, _extendsDefault.default)(Object.create(null), values),
+                prevProps: {}
+            };
+            controlledProps.forEach(function(key) {
+                /**
+         * If a prop switches from controlled to Uncontrolled
+         * reset its value to the defaultValue
+         */ nextState.prevProps[key] = props[key];
+                if (!_utils.isProp(props, key) && _utils.isProp(prevProps, key)) nextState.values[key] = props[_utils.defaultKey(key)];
+            });
+            return nextState;
+        };
+        _proto.componentWillUnmount = function componentWillUnmount() {
+            this.unmounted = true;
+        };
+        _proto.render = function render() {
+            var _this2 = this;
+            var _this$props2 = this.props, innerRef = _this$props2.innerRef, props = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props2, [
+                "innerRef"
+            ]);
+            PROPS_TO_OMIT.forEach(function(prop) {
+                delete props[prop];
+            });
+            var newProps = {};
+            controlledProps.forEach(function(propName) {
+                var propValue = _this2.props[propName];
+                newProps[propName] = propValue !== undefined ? propValue : _this2.state.values[propName];
+            });
+            return (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, newProps, this.handlers, {
+                ref: innerRef || this.attachRef
+            }));
+        };
+        return UncontrolledComponent;
+    }((0, _reactDefault.default).Component);
+    (0, _reactLifecyclesCompat.polyfill)(UncontrolledComponent);
+    UncontrolledComponent.displayName = "Uncontrolled(" + displayName + ")";
+    UncontrolledComponent.propTypes = (0, _extendsDefault.default)({
+        innerRef: function innerRef() {}
+    }, _utils.uncontrolledPropTypes(controlledValues, displayName));
+    methods.forEach(function(method) {
+        UncontrolledComponent.prototype[method] = function $proxiedMethod() {
+            var _this$inner;
+            return (_this$inner = this.inner)[method].apply(_this$inner, arguments);
+        };
+    });
+    var WrappedComponent = UncontrolledComponent;
+    if ((0, _reactDefault.default).forwardRef) {
+        WrappedComponent = (0, _reactDefault.default).forwardRef(function(props, ref) {
+            return (0, _reactDefault.default).createElement(UncontrolledComponent, (0, _extendsDefault.default)({}, props, {
+                innerRef: ref,
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 128
+                },
+                __self: this
+            }));
+        });
+        WrappedComponent.propTypes = UncontrolledComponent.propTypes;
+    }
+    WrappedComponent.ControlledComponent = Component;
+    /**
+   * useful when wrapping a Component and you want to control
+   * everything
+   */ WrappedComponent.deferControlTo = function(newComponent, additions, nextMethods) {
+        if (additions === void 0) additions = {};
+        return uncontrollable(newComponent, (0, _extendsDefault.default)({}, controlledValues, additions), nextMethods);
+    };
+    return WrappedComponent;
+}
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","react":"21dqq","react-lifecycles-compat":"3f3fU","invariant":"d1QgR","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"9u2Z8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_inheritsLoose);
+var _setPrototypeOfJs = require("./setPrototypeOf.js");
+var _setPrototypeOfJsDefault = parcelHelpers.interopDefault(_setPrototypeOfJs);
+function _inheritsLoose(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    (0, _setPrototypeOfJsDefault.default)(subClass, superClass);
+}
+
+},{"./setPrototypeOf.js":"3XDFA","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"3XDFA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_setPrototypeOf);
+function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+        o.__proto__ = p;
+        return o;
+    };
+    return _setPrototypeOf(o, p);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"3f3fU":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "polyfill", ()=>polyfill);
+function componentWillMount() {
+    // Call this.constructor.gDSFP to support sub-classes.
+    var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
+    if (state !== null && state !== undefined) this.setState(state);
+}
+function componentWillReceiveProps(nextProps) {
+    // Call this.constructor.gDSFP to support sub-classes.
+    // Use the setState() updater to ensure state isn't stale in certain edge cases.
+    function updater(prevState) {
+        var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
+        return state !== null && state !== undefined ? state : null;
+    }
+    // Binding "this" is important for shallow renderer support.
+    this.setState(updater.bind(this));
+}
+function componentWillUpdate(nextProps, nextState) {
+    try {
+        var prevProps = this.props;
+        var prevState = this.state;
+        this.props = nextProps;
+        this.state = nextState;
+        this.__reactInternalSnapshotFlag = true;
+        this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(prevProps, prevState);
+    } finally{
+        this.props = prevProps;
+        this.state = prevState;
+    }
+}
+// React may warn about cWM/cWRP/cWU methods being deprecated.
+// Add a flag to suppress these warnings for this special case.
+componentWillMount.__suppressDeprecationWarning = true;
+componentWillReceiveProps.__suppressDeprecationWarning = true;
+componentWillUpdate.__suppressDeprecationWarning = true;
+function polyfill(Component) {
+    var prototype = Component.prototype;
+    if (!prototype || !prototype.isReactComponent) throw new Error("Can only polyfill class components");
+    if (typeof Component.getDerivedStateFromProps !== "function" && typeof prototype.getSnapshotBeforeUpdate !== "function") return Component;
+    // If new component APIs are defined, "unsafe" lifecycles won't be called.
+    // Error if any of these lifecycles are present,
+    // Because they would work differently between older and newer (16.3+) versions of React.
+    var foundWillMountName = null;
+    var foundWillReceivePropsName = null;
+    var foundWillUpdateName = null;
+    if (typeof prototype.componentWillMount === "function") foundWillMountName = "componentWillMount";
+    else if (typeof prototype.UNSAFE_componentWillMount === "function") foundWillMountName = "UNSAFE_componentWillMount";
+    if (typeof prototype.componentWillReceiveProps === "function") foundWillReceivePropsName = "componentWillReceiveProps";
+    else if (typeof prototype.UNSAFE_componentWillReceiveProps === "function") foundWillReceivePropsName = "UNSAFE_componentWillReceiveProps";
+    if (typeof prototype.componentWillUpdate === "function") foundWillUpdateName = "componentWillUpdate";
+    else if (typeof prototype.UNSAFE_componentWillUpdate === "function") foundWillUpdateName = "UNSAFE_componentWillUpdate";
+    if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
+        var componentName = Component.displayName || Component.name;
+        var newApiName = typeof Component.getDerivedStateFromProps === "function" ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
+        throw Error("Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n" + componentName + " uses " + newApiName + " but also contains the following legacy lifecycles:" + (foundWillMountName !== null ? "\n  " + foundWillMountName : "") + (foundWillReceivePropsName !== null ? "\n  " + foundWillReceivePropsName : "") + (foundWillUpdateName !== null ? "\n  " + foundWillUpdateName : "") + "\n\nThe above lifecycles should be removed. Learn more about this warning here:\n" + "https://fb.me/react-async-component-lifecycle-hooks");
+    }
+    // React <= 16.2 does not support static getDerivedStateFromProps.
+    // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
+    // Newer versions of React will ignore these lifecycles if gDSFP exists.
+    if (typeof Component.getDerivedStateFromProps === "function") {
+        prototype.componentWillMount = componentWillMount;
+        prototype.componentWillReceiveProps = componentWillReceiveProps;
+    }
+    // React <= 16.2 does not support getSnapshotBeforeUpdate.
+    // As a workaround, use cWU to invoke the new lifecycle.
+    // Newer versions of React will ignore that lifecycle if gSBU exists.
+    if (typeof prototype.getSnapshotBeforeUpdate === "function") {
+        if (typeof prototype.componentDidUpdate !== "function") throw new Error("Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype");
+        prototype.componentWillUpdate = componentWillUpdate;
+        var componentDidUpdate = prototype.componentDidUpdate;
+        prototype.componentDidUpdate = function componentDidUpdatePolyfill(prevProps, prevState, maybeSnapshot) {
+            // 16.3+ will not execute our will-update method;
+            // It will pass a snapshot value to did-update though.
+            // Older versions will require our polyfilled will-update value.
+            // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
+            // Because for <= 15.x versions this might be a "prevContext" object.
+            // We also can't just check "__reactInternalSnapshot",
+            // Because get-snapshot might return a falsy value.
+            // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
+            var snapshot = this.__reactInternalSnapshotFlag ? this.__reactInternalSnapshot : maybeSnapshot;
+            componentDidUpdate.call(this, prevProps, prevState, snapshot);
+        };
+    }
+    return Component;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"dVixI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "DEFAULT_BREAKPOINTS", ()=>DEFAULT_BREAKPOINTS);
@@ -28536,1897 +30220,7 @@ module.exports = require("c4c10cbba9862d5f");
     exports.jsxs = jsxs;
 })();
 
-},{"593632ccebda0d3a":"21dqq"}],"hPuYQ":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"2L2I6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useCol", ()=>useCol);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-"use client";
-function useCol({ as, bsPrefix, className, ...props }) {
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "col");
-    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
-    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
-    const spans = [];
-    const classes = [];
-    breakpoints.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let span;
-        let offset;
-        let order;
-        if (typeof propValue === "object" && propValue != null) ({ span, offset, order } = propValue);
-        else span = propValue;
-        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
-        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
-        if (order != null) classes.push(`order${infix}-${order}`);
-        if (offset != null) classes.push(`offset${infix}-${offset}`);
-    });
-    return [
-        {
-            ...props,
-            className: (0, _classnamesDefault.default)(className, ...spans, ...classes)
-        },
-        {
-            as,
-            bsPrefix,
-            spans
-        }
-    ];
-}
-const Col = /*#__PURE__*/ _react.forwardRef(// Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-(props, ref)=>{
-    const [{ className, ...colProps }, { as: Component = "div", bsPrefix, spans }] = useCol(props);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...colProps,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, !spans.length && bsPrefix)
-    });
-});
-Col.displayName = "Col";
-exports.default = Col;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"aPzUt":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _button = require("@restart/ui/Button");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-"use client";
-const Button = /*#__PURE__*/ _react.forwardRef(({ as, bsPrefix, variant = "primary", size, active = false, disabled = false, className, ...props }, ref)=>{
-    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "btn");
-    const [buttonProps, { tagName }] = (0, _button.useButtonProps)({
-        tagName: as,
-        disabled,
-        ...props
-    });
-    const Component = tagName;
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...buttonProps,
-        ...props,
-        ref: ref,
-        disabled: disabled,
-        className: (0, _classnamesDefault.default)(className, prefix, active && "active", variant && `${prefix}-${variant}`, size && `${prefix}-${size}`, props.href && disabled && "disabled")
-    });
-});
-Button.displayName = "Button";
-exports.default = Button;
-
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Button":"8YUbR","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"8YUbR":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref);
-parcelHelpers.export(exports, "useButtonProps", ()=>useButtonProps);
-var _react = require("react");
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "as",
-    "disabled"
-];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
-function isTrivialHref(href) {
-    return !href || href.trim() === "#";
-}
-function useButtonProps({ tagName, disabled, href, target, rel, role, onClick, tabIndex = 0, type }) {
-    if (!tagName) {
-        if (href != null || target != null || rel != null) tagName = "a";
-        else tagName = "button";
-    }
-    const meta = {
-        tagName
-    };
-    if (tagName === "button") return [
-        {
-            type: type || "button",
-            disabled
-        },
-        meta
-    ];
-    const handleClick = (event)=>{
-        if (disabled || tagName === "a" && isTrivialHref(href)) event.preventDefault();
-        if (disabled) {
-            event.stopPropagation();
-            return;
-        }
-        onClick == null || onClick(event);
-    };
-    const handleKeyDown = (event)=>{
-        if (event.key === " ") {
-            event.preventDefault();
-            handleClick(event);
-        }
-    };
-    if (tagName === "a") {
-        // Ensure there's a href so Enter can trigger anchor button.
-        href || (href = "#");
-        if (disabled) href = undefined;
-    }
-    return [
-        {
-            role: role != null ? role : "button",
-            // explicitly undefined so that it overrides the props disabled in a spread
-            // e.g. <Tag {...props} {...hookProps} />
-            disabled: undefined,
-            tabIndex: disabled ? undefined : tabIndex,
-            href,
-            target: tagName === "a" ? target : undefined,
-            "aria-disabled": !disabled ? undefined : disabled,
-            rel: tagName === "a" ? rel : undefined,
-            onClick: handleClick,
-            onKeyDown: handleKeyDown
-        },
-        meta
-    ];
-}
-const Button = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
-    let { as: asProp, disabled } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
-    const [buttonProps, { tagName: Component }] = useButtonProps(Object.assign({
-        tagName: asProp,
-        disabled
-    }, props));
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, Object.assign({}, props, buttonProps, {
-        ref: ref
-    }));
-});
-Button.displayName = "Button";
-exports.default = Button;
-
-},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"8z54c":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$42ca.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactBootstrap = require("react-bootstrap");
-const MovieCard = ({ movie, onMovieClick })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-        className: "movie-card h-100",
-        onClick: ()=>{
-            onMovieClick(movie);
-        },
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
-                variant: "top",
-                src: movie.image,
-                alt: movie.title
-            }, void 0, false, {
-                fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 13,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
-                        className: "movie-title",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "titleText",
-                            children: movie.title
-                        }, void 0, false, {
-                            fileName: "components/movie-card/movie-card.jsx",
-                            lineNumber: 16,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "components/movie-card/movie-card.jsx",
-                        lineNumber: 15,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
-                        children: [
-                            movie.description.slice(0, 50),
-                            "..."
-                        ]
-                    }, void 0, true, {
-                        fileName: "components/movie-card/movie-card.jsx",
-                        lineNumber: 18,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 14,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                variant: "primary",
-                className: "movie-card--button",
-                children: "View"
-            }, void 0, false, {
-                fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 20,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "components/movie-card/movie-card.jsx",
-        lineNumber: 7,
-        columnNumber: 5
-    }, undefined);
-};
-_c = MovieCard;
-MovieCard.propTypes = {
-    movie: (0, _propTypesDefault.default).shape({
-        id: (0, _propTypesDefault.default).string.isRequired,
-        title: (0, _propTypesDefault.default).string.isRequired,
-        image: (0, _propTypesDefault.default).string,
-        url: (0, _propTypesDefault.default).string.isRequired
-    }).isRequired,
-    onMovieClick: (0, _propTypesDefault.default).func.isRequired
-};
-var _c;
-$RefreshReg$(_c, "MovieCard");
-
-  $parcel$ReactRefreshHelpers$42ca.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"7wKI2":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ var ReactIs = require("96e34ae03f5a2631");
-// By explicitly using `prop-types` you are opting into new development behavior.
-// http://fb.me/prop-types-in-prod
-var throwOnDirectAccess = true;
-module.exports = require("cb216452e2171041")(ReactIs.isElement, throwOnDirectAccess);
-
-},{"96e34ae03f5a2631":"7EuwB","cb216452e2171041":"bBUgD"}],"7EuwB":[function(require,module,exports) {
-"use strict";
-module.exports = require("2255125a8e8b1051");
-
-},{"2255125a8e8b1051":"5DsXl"}],"5DsXl":[function(require,module,exports) {
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var hasSymbol = typeof Symbol === "function" && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-    // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
-    function isValidElementType(type) {
-        return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-        type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-    }
-    function typeOf(object) {
-        if (typeof object === "object" && object !== null) {
-            var $$typeof = object.$$typeof;
-            switch($$typeof){
-                case REACT_ELEMENT_TYPE:
-                    var type = object.type;
-                    switch(type){
-                        case REACT_ASYNC_MODE_TYPE:
-                        case REACT_CONCURRENT_MODE_TYPE:
-                        case REACT_FRAGMENT_TYPE:
-                        case REACT_PROFILER_TYPE:
-                        case REACT_STRICT_MODE_TYPE:
-                        case REACT_SUSPENSE_TYPE:
-                            return type;
-                        default:
-                            var $$typeofType = type && type.$$typeof;
-                            switch($$typeofType){
-                                case REACT_CONTEXT_TYPE:
-                                case REACT_FORWARD_REF_TYPE:
-                                case REACT_LAZY_TYPE:
-                                case REACT_MEMO_TYPE:
-                                case REACT_PROVIDER_TYPE:
-                                    return $$typeofType;
-                                default:
-                                    return $$typeof;
-                            }
-                    }
-                case REACT_PORTAL_TYPE:
-                    return $$typeof;
-            }
-        }
-        return undefined;
-    } // AsyncMode is deprecated along with isAsyncMode
-    var AsyncMode = REACT_ASYNC_MODE_TYPE;
-    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-    var ContextConsumer = REACT_CONTEXT_TYPE;
-    var ContextProvider = REACT_PROVIDER_TYPE;
-    var Element = REACT_ELEMENT_TYPE;
-    var ForwardRef = REACT_FORWARD_REF_TYPE;
-    var Fragment = REACT_FRAGMENT_TYPE;
-    var Lazy = REACT_LAZY_TYPE;
-    var Memo = REACT_MEMO_TYPE;
-    var Portal = REACT_PORTAL_TYPE;
-    var Profiler = REACT_PROFILER_TYPE;
-    var StrictMode = REACT_STRICT_MODE_TYPE;
-    var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-    function isAsyncMode(object) {
-        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
-        }
-        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-    }
-    function isConcurrentMode(object) {
-        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-    }
-    function isContextConsumer(object) {
-        return typeOf(object) === REACT_CONTEXT_TYPE;
-    }
-    function isContextProvider(object) {
-        return typeOf(object) === REACT_PROVIDER_TYPE;
-    }
-    function isElement(object) {
-        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    }
-    function isForwardRef(object) {
-        return typeOf(object) === REACT_FORWARD_REF_TYPE;
-    }
-    function isFragment(object) {
-        return typeOf(object) === REACT_FRAGMENT_TYPE;
-    }
-    function isLazy(object) {
-        return typeOf(object) === REACT_LAZY_TYPE;
-    }
-    function isMemo(object) {
-        return typeOf(object) === REACT_MEMO_TYPE;
-    }
-    function isPortal(object) {
-        return typeOf(object) === REACT_PORTAL_TYPE;
-    }
-    function isProfiler(object) {
-        return typeOf(object) === REACT_PROFILER_TYPE;
-    }
-    function isStrictMode(object) {
-        return typeOf(object) === REACT_STRICT_MODE_TYPE;
-    }
-    function isSuspense(object) {
-        return typeOf(object) === REACT_SUSPENSE_TYPE;
-    }
-    exports.AsyncMode = AsyncMode;
-    exports.ConcurrentMode = ConcurrentMode;
-    exports.ContextConsumer = ContextConsumer;
-    exports.ContextProvider = ContextProvider;
-    exports.Element = Element;
-    exports.ForwardRef = ForwardRef;
-    exports.Fragment = Fragment;
-    exports.Lazy = Lazy;
-    exports.Memo = Memo;
-    exports.Portal = Portal;
-    exports.Profiler = Profiler;
-    exports.StrictMode = StrictMode;
-    exports.Suspense = Suspense;
-    exports.isAsyncMode = isAsyncMode;
-    exports.isConcurrentMode = isConcurrentMode;
-    exports.isContextConsumer = isContextConsumer;
-    exports.isContextProvider = isContextProvider;
-    exports.isElement = isElement;
-    exports.isForwardRef = isForwardRef;
-    exports.isFragment = isFragment;
-    exports.isLazy = isLazy;
-    exports.isMemo = isMemo;
-    exports.isPortal = isPortal;
-    exports.isProfiler = isProfiler;
-    exports.isStrictMode = isStrictMode;
-    exports.isSuspense = isSuspense;
-    exports.isValidElementType = isValidElementType;
-    exports.typeOf = typeOf;
-})();
-
-},{}],"bBUgD":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactIs = require("c437388b089702c3");
-var assign = require("c067a60101d8520c");
-var ReactPropTypesSecret = require("74a0f89a70b9f3c2");
-var has = require("18441b11647bc78");
-var checkPropTypes = require("bec3f6ff89f0b072");
-var printWarning = function() {};
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-function emptyFunctionThatReturnsNull() {
-    return null;
-}
-module.exports = function(isValidElement, throwOnDirectAccess) {
-    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
-    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
-    /**
-   * Returns the iterator method function contained on the iterable object.
-   *
-   * Be sure to invoke the function with the iterable as context:
-   *
-   *     var iteratorFn = getIteratorFn(myIterable);
-   *     if (iteratorFn) {
-   *       var iterator = iteratorFn.call(myIterable);
-   *       ...
-   *     }
-   *
-   * @param {?object} maybeIterable
-   * @return {?function}
-   */ function getIteratorFn(maybeIterable) {
-        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-        if (typeof iteratorFn === "function") return iteratorFn;
-    }
-    /**
-   * Collection of methods that allow declaration and validation of props that are
-   * supplied to React components. Example usage:
-   *
-   *   var Props = require('ReactPropTypes');
-   *   var MyArticle = React.createClass({
-   *     propTypes: {
-   *       // An optional string prop named "description".
-   *       description: Props.string,
-   *
-   *       // A required enum prop named "category".
-   *       category: Props.oneOf(['News','Photos']).isRequired,
-   *
-   *       // A prop named "dialog" that requires an instance of Dialog.
-   *       dialog: Props.instanceOf(Dialog).isRequired
-   *     },
-   *     render: function() { ... }
-   *   });
-   *
-   * A more formal specification of how these methods are used:
-   *
-   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-   *   decl := ReactPropTypes.{type}(.isRequired)?
-   *
-   * Each and every declaration produces a function with the same signature. This
-   * allows the creation of custom validation functions. For example:
-   *
-   *  var MyLink = React.createClass({
-   *    propTypes: {
-   *      // An optional string or URI prop named "href".
-   *      href: function(props, propName, componentName) {
-   *        var propValue = props[propName];
-   *        if (propValue != null && typeof propValue !== 'string' &&
-   *            !(propValue instanceof URI)) {
-   *          return new Error(
-   *            'Expected a string or an URI for ' + propName + ' in ' +
-   *            componentName
-   *          );
-   *        }
-   *      }
-   *    },
-   *    render: function() {...}
-   *  });
-   *
-   * @internal
-   */ var ANONYMOUS = "<<anonymous>>";
-    // Important!
-    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-    var ReactPropTypes = {
-        array: createPrimitiveTypeChecker("array"),
-        bigint: createPrimitiveTypeChecker("bigint"),
-        bool: createPrimitiveTypeChecker("boolean"),
-        func: createPrimitiveTypeChecker("function"),
-        number: createPrimitiveTypeChecker("number"),
-        object: createPrimitiveTypeChecker("object"),
-        string: createPrimitiveTypeChecker("string"),
-        symbol: createPrimitiveTypeChecker("symbol"),
-        any: createAnyTypeChecker(),
-        arrayOf: createArrayOfTypeChecker,
-        element: createElementTypeChecker(),
-        elementType: createElementTypeTypeChecker(),
-        instanceOf: createInstanceTypeChecker,
-        node: createNodeChecker(),
-        objectOf: createObjectOfTypeChecker,
-        oneOf: createEnumTypeChecker,
-        oneOfType: createUnionTypeChecker,
-        shape: createShapeTypeChecker,
-        exact: createStrictShapeTypeChecker
-    };
-    /**
-   * inlined Object.is polyfill to avoid requiring consumers ship their own
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-   */ /*eslint-disable no-self-compare*/ function is(x, y) {
-        // SameValue algorithm
-        if (x === y) // Steps 1-5, 7-10
-        // Steps 6.b-6.e: +0 != -0
-        return x !== 0 || 1 / x === 1 / y;
-        else // Step 6.a: NaN == NaN
-        return x !== x && y !== y;
-    }
-    /*eslint-enable no-self-compare*/ /**
-   * We use an Error-like object for backward compatibility as people may call
-   * PropTypes directly and inspect their output. However, we don't use real
-   * Errors anymore. We don't inspect their stack anyway, and creating them
-   * is prohibitively expensive if they are created too often, such as what
-   * happens in oneOfType() for any type before the one that matched.
-   */ function PropTypeError(message, data) {
-        this.message = message;
-        this.data = data && typeof data === "object" ? data : {};
-        this.stack = "";
-    }
-    // Make `instanceof Error` still work for returned errors.
-    PropTypeError.prototype = Error.prototype;
-    function createChainableTypeChecker(validate) {
-        var manualPropTypeCallCache = {};
-        var manualPropTypeWarningCount = 0;
-        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-            componentName = componentName || ANONYMOUS;
-            propFullName = propFullName || propName;
-            if (secret !== ReactPropTypesSecret) {
-                if (throwOnDirectAccess) {
-                    // New behavior only for users of `prop-types` package
-                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
-                    err.name = "Invariant Violation";
-                    throw err;
-                } else if (typeof console !== "undefined") {
-                    // Old behavior for people using React.PropTypes
-                    var cacheKey = componentName + ":" + propName;
-                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
-                    manualPropTypeWarningCount < 3) {
-                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
-                        manualPropTypeCallCache[cacheKey] = true;
-                        manualPropTypeWarningCount++;
-                    }
-                }
-            }
-            if (props[propName] == null) {
-                if (isRequired) {
-                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
-                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
-                }
-                return null;
-            } else return validate(props, propName, componentName, location, propFullName);
-        }
-        var chainedCheckType = checkType.bind(null, false);
-        chainedCheckType.isRequired = checkType.bind(null, true);
-        return chainedCheckType;
-    }
-    function createPrimitiveTypeChecker(expectedType) {
-        function validate(props, propName, componentName, location, propFullName, secret) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== expectedType) {
-                // `propValue` being instance of, say, date/regexp, pass the 'object'
-                // check, but we can offer a more precise error message here rather than
-                // 'of type `object`'.
-                var preciseType = getPreciseType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
-                    expectedType: expectedType
-                });
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createAnyTypeChecker() {
-        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-    }
-    function createArrayOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
-            var propValue = props[propName];
-            if (!Array.isArray(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
-            }
-            for(var i = 0; i < propValue.length; i++){
-                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!isValidElement(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!ReactIs.isValidElementType(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createInstanceTypeChecker(expectedClass) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!(props[propName] instanceof expectedClass)) {
-                var expectedClassName = expectedClass.name || ANONYMOUS;
-                var actualClassName = getClassName(props[propName]);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createEnumTypeChecker(expectedValues) {
-        if (!Array.isArray(expectedValues)) {
-            {
-                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
-                else printWarning("Invalid argument supplied to oneOf, expected an array.");
-            }
-            return emptyFunctionThatReturnsNull;
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            for(var i = 0; i < expectedValues.length; i++){
-                if (is(propValue, expectedValues[i])) return null;
-            }
-            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-                var type = getPreciseType(value);
-                if (type === "symbol") return String(value);
-                return value;
-            });
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createObjectOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
-            for(var key in propValue)if (has(propValue, key)) {
-                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createUnionTypeChecker(arrayOfTypeCheckers) {
-        if (!Array.isArray(arrayOfTypeCheckers)) {
-            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
-            return emptyFunctionThatReturnsNull;
-        }
-        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-            var checker = arrayOfTypeCheckers[i];
-            if (typeof checker !== "function") {
-                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
-                return emptyFunctionThatReturnsNull;
-            }
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var expectedTypes = [];
-            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-                var checker = arrayOfTypeCheckers[i];
-                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
-                if (checkerResult == null) return null;
-                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
-            }
-            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createNodeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function invalidValidatorError(componentName, location, propFullName, key, type) {
-        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
-    }
-    function createShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            for(var key in shapeTypes){
-                var checker = shapeTypes[key];
-                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createStrictShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            // We need to check all keys in case some are required but missing from props.
-            var allKeys = assign({}, props[propName], shapeTypes);
-            for(var key in allKeys){
-                var checker = shapeTypes[key];
-                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function isNode(propValue) {
-        switch(typeof propValue){
-            case "number":
-            case "string":
-            case "undefined":
-                return true;
-            case "boolean":
-                return !propValue;
-            case "object":
-                if (Array.isArray(propValue)) return propValue.every(isNode);
-                if (propValue === null || isValidElement(propValue)) return true;
-                var iteratorFn = getIteratorFn(propValue);
-                if (iteratorFn) {
-                    var iterator = iteratorFn.call(propValue);
-                    var step;
-                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
-                        if (!isNode(step.value)) return false;
-                    }
-                    else // Iterator will provide entry [k,v] tuples rather than values.
-                    while(!(step = iterator.next()).done){
-                        var entry = step.value;
-                        if (entry) {
-                            if (!isNode(entry[1])) return false;
-                        }
-                    }
-                } else return false;
-                return true;
-            default:
-                return false;
-        }
-    }
-    function isSymbol(propType, propValue) {
-        // Native Symbol.
-        if (propType === "symbol") return true;
-        // falsy value can't be a Symbol
-        if (!propValue) return false;
-        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-        if (propValue["@@toStringTag"] === "Symbol") return true;
-        // Fallback for non-spec compliant Symbols which are polyfilled.
-        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
-        return false;
-    }
-    // Equivalent of `typeof` but with special handling for array and regexp.
-    function getPropType(propValue) {
-        var propType = typeof propValue;
-        if (Array.isArray(propValue)) return "array";
-        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
-        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-        // passes PropTypes.object.
-        return "object";
-        if (isSymbol(propType, propValue)) return "symbol";
-        return propType;
-    }
-    // This handles more types than `getPropType`. Only used for error messages.
-    // See `createPrimitiveTypeChecker`.
-    function getPreciseType(propValue) {
-        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
-        var propType = getPropType(propValue);
-        if (propType === "object") {
-            if (propValue instanceof Date) return "date";
-            else if (propValue instanceof RegExp) return "regexp";
-        }
-        return propType;
-    }
-    // Returns a string that is postfixed to a warning about an invalid type.
-    // For example, "undefined" or "of type array"
-    function getPostfixForTypeWarning(value) {
-        var type = getPreciseType(value);
-        switch(type){
-            case "array":
-            case "object":
-                return "an " + type;
-            case "boolean":
-            case "date":
-            case "regexp":
-                return "a " + type;
-            default:
-                return type;
-        }
-    }
-    // Returns class name of the object, if any.
-    function getClassName(propValue) {
-        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
-        return propValue.constructor.name;
-    }
-    ReactPropTypes.checkPropTypes = checkPropTypes;
-    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-    ReactPropTypes.PropTypes = ReactPropTypes;
-    return ReactPropTypes;
-};
-
-},{"c437388b089702c3":"7EuwB","c067a60101d8520c":"7OXxh","74a0f89a70b9f3c2":"jZTZJ","18441b11647bc78":"fqKuf","bec3f6ff89f0b072":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/ "use strict";
-/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-function toObject(val) {
-    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
-    return Object(val);
-}
-function shouldUseNative() {
-    try {
-        if (!Object.assign) return false;
-        // Detect buggy property enumeration order in older V8 versions.
-        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
-        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
-        test1[5] = "de";
-        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test2 = {};
-        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
-        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
-            return test2[n];
-        });
-        if (order2.join("") !== "0123456789") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test3 = {};
-        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
-            test3[letter] = letter;
-        });
-        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
-        return true;
-    } catch (err) {
-        // We don't expect any of the above to throw, but better to be safe.
-        return false;
-    }
-}
-module.exports = shouldUseNative() ? Object.assign : function(target, source) {
-    var from;
-    var to = toObject(target);
-    var symbols;
-    for(var s = 1; s < arguments.length; s++){
-        from = Object(arguments[s]);
-        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
-        if (getOwnPropertySymbols) {
-            symbols = getOwnPropertySymbols(from);
-            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
-        }
-    }
-    return to;
-};
-
-},{}],"jZTZJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
-module.exports = ReactPropTypesSecret;
-
-},{}],"fqKuf":[function(require,module,exports) {
-module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
-
-},{}],"5VwyJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var printWarning = function() {};
-var ReactPropTypesSecret = require("24ba1e58d167a82c");
-var loggedTypeFailures = {};
-var has = require("898bc82f39d83f7c");
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-/**
- * Assert that the values match with the type specs.
- * Error messages are memorized and will only be shown once.
- *
- * @param {object} typeSpecs Map of name to a ReactPropType
- * @param {object} values Runtime values that need to be type-checked
- * @param {string} location e.g. "prop", "context", "child context"
- * @param {string} componentName Name of the component for error messages.
- * @param {?Function} getStack Returns the component stack.
- * @private
- */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
-        var error;
-        // Prop type validation may throw. In case they do, we don't want to
-        // fail the render phase where it didn't fail before. So we log it.
-        // After these have been cleaned up, we'll let them throw.
-        try {
-            // This is intentionally an invariant that gets caught. It's the same
-            // behavior as without this statement except with a better message.
-            if (typeof typeSpecs[typeSpecName] !== "function") {
-                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                err.name = "Invariant Violation";
-                throw err;
-            }
-            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-        } catch (ex) {
-            error = ex;
-        }
-        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
-        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-            // Only monitor this failure once because there tends to be a lot of the
-            // same error.
-            loggedTypeFailures[error.message] = true;
-            var stack = getStack ? getStack() : "";
-            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
-        }
-    }
-}
-/**
- * Resets warning cache when testing.
- *
- * @private
- */ checkPropTypes.resetWarningCache = function() {
-    loggedTypeFailures = {};
-};
-module.exports = checkPropTypes;
-
-},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"3AD9A":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
-parcelHelpers.export(exports, "AccordionContext", ()=>(0, _accordionContextDefault.default));
-parcelHelpers.export(exports, "AccordionCollapse", ()=>(0, _accordionCollapseDefault.default));
-parcelHelpers.export(exports, "AccordionButton", ()=>(0, _accordionButtonDefault.default));
-parcelHelpers.export(exports, "useAccordionButton", ()=>(0, _accordionButton.useAccordionButton));
-parcelHelpers.export(exports, "AccordionHeader", ()=>(0, _accordionHeaderDefault.default));
-parcelHelpers.export(exports, "AccordionItem", ()=>(0, _accordionItemDefault.default));
-parcelHelpers.export(exports, "Alert", ()=>(0, _alertDefault.default));
-parcelHelpers.export(exports, "AlertHeading", ()=>(0, _alertHeadingDefault.default));
-parcelHelpers.export(exports, "AlertLink", ()=>(0, _alertLinkDefault.default));
-parcelHelpers.export(exports, "Anchor", ()=>(0, _anchorDefault.default));
-parcelHelpers.export(exports, "Badge", ()=>(0, _badgeDefault.default));
-parcelHelpers.export(exports, "Breadcrumb", ()=>(0, _breadcrumbDefault.default));
-parcelHelpers.export(exports, "BreadcrumbItem", ()=>(0, _breadcrumbItemDefault.default));
-parcelHelpers.export(exports, "Button", ()=>(0, _buttonDefault.default));
-parcelHelpers.export(exports, "ButtonGroup", ()=>(0, _buttonGroupDefault.default));
-parcelHelpers.export(exports, "ButtonToolbar", ()=>(0, _buttonToolbarDefault.default));
-parcelHelpers.export(exports, "Card", ()=>(0, _cardDefault.default));
-parcelHelpers.export(exports, "CardBody", ()=>(0, _cardBodyDefault.default));
-parcelHelpers.export(exports, "CardFooter", ()=>(0, _cardFooterDefault.default));
-parcelHelpers.export(exports, "CardGroup", ()=>(0, _cardGroupDefault.default));
-parcelHelpers.export(exports, "CardHeader", ()=>(0, _cardHeaderDefault.default));
-parcelHelpers.export(exports, "CardImg", ()=>(0, _cardImgDefault.default));
-parcelHelpers.export(exports, "CardImgOverlay", ()=>(0, _cardImgOverlayDefault.default));
-parcelHelpers.export(exports, "CardLink", ()=>(0, _cardLinkDefault.default));
-parcelHelpers.export(exports, "CardSubtitle", ()=>(0, _cardSubtitleDefault.default));
-parcelHelpers.export(exports, "CardText", ()=>(0, _cardTextDefault.default));
-parcelHelpers.export(exports, "CardTitle", ()=>(0, _cardTitleDefault.default));
-parcelHelpers.export(exports, "Carousel", ()=>(0, _carouselDefault.default));
-parcelHelpers.export(exports, "CarouselCaption", ()=>(0, _carouselCaptionDefault.default));
-parcelHelpers.export(exports, "CarouselItem", ()=>(0, _carouselItemDefault.default));
-parcelHelpers.export(exports, "CloseButton", ()=>(0, _closeButtonDefault.default));
-parcelHelpers.export(exports, "Col", ()=>(0, _colDefault.default));
-parcelHelpers.export(exports, "Collapse", ()=>(0, _collapseDefault.default));
-parcelHelpers.export(exports, "Container", ()=>(0, _containerDefault.default));
-parcelHelpers.export(exports, "Dropdown", ()=>(0, _dropdownDefault.default));
-parcelHelpers.export(exports, "DropdownButton", ()=>(0, _dropdownButtonDefault.default));
-parcelHelpers.export(exports, "DropdownDivider", ()=>(0, _dropdownDividerDefault.default));
-parcelHelpers.export(exports, "DropdownHeader", ()=>(0, _dropdownHeaderDefault.default));
-parcelHelpers.export(exports, "DropdownItem", ()=>(0, _dropdownItemDefault.default));
-parcelHelpers.export(exports, "DropdownItemText", ()=>(0, _dropdownItemTextDefault.default));
-parcelHelpers.export(exports, "DropdownMenu", ()=>(0, _dropdownMenuDefault.default));
-parcelHelpers.export(exports, "DropdownToggle", ()=>(0, _dropdownToggleDefault.default));
-parcelHelpers.export(exports, "Fade", ()=>(0, _fadeDefault.default));
-parcelHelpers.export(exports, "Figure", ()=>(0, _figureDefault.default));
-parcelHelpers.export(exports, "FigureCaption", ()=>(0, _figureCaptionDefault.default));
-parcelHelpers.export(exports, "FigureImage", ()=>(0, _figureImageDefault.default));
-parcelHelpers.export(exports, "Form", ()=>(0, _formDefault.default));
-parcelHelpers.export(exports, "FormControl", ()=>(0, _formControlDefault.default));
-parcelHelpers.export(exports, "FormCheck", ()=>(0, _formCheckDefault.default));
-parcelHelpers.export(exports, "FormFloating", ()=>(0, _formFloatingDefault.default));
-parcelHelpers.export(exports, "FloatingLabel", ()=>(0, _floatingLabelDefault.default));
-parcelHelpers.export(exports, "FormGroup", ()=>(0, _formGroupDefault.default));
-parcelHelpers.export(exports, "FormLabel", ()=>(0, _formLabelDefault.default));
-parcelHelpers.export(exports, "FormText", ()=>(0, _formTextDefault.default));
-parcelHelpers.export(exports, "FormSelect", ()=>(0, _formSelectDefault.default));
-parcelHelpers.export(exports, "Image", ()=>(0, _imageDefault.default));
-parcelHelpers.export(exports, "InputGroup", ()=>(0, _inputGroupDefault.default));
-parcelHelpers.export(exports, "ListGroup", ()=>(0, _listGroupDefault.default));
-parcelHelpers.export(exports, "ListGroupItem", ()=>(0, _listGroupItemDefault.default));
-parcelHelpers.export(exports, "Modal", ()=>(0, _modalDefault.default));
-parcelHelpers.export(exports, "ModalBody", ()=>(0, _modalBodyDefault.default));
-parcelHelpers.export(exports, "ModalDialog", ()=>(0, _modalDialogDefault.default));
-parcelHelpers.export(exports, "ModalFooter", ()=>(0, _modalFooterDefault.default));
-parcelHelpers.export(exports, "ModalHeader", ()=>(0, _modalHeaderDefault.default));
-parcelHelpers.export(exports, "ModalTitle", ()=>(0, _modalTitleDefault.default));
-parcelHelpers.export(exports, "Nav", ()=>(0, _navDefault.default));
-parcelHelpers.export(exports, "Navbar", ()=>(0, _navbarDefault.default));
-parcelHelpers.export(exports, "NavbarBrand", ()=>(0, _navbarBrandDefault.default));
-parcelHelpers.export(exports, "NavbarCollapse", ()=>(0, _navbarCollapseDefault.default));
-parcelHelpers.export(exports, "NavbarOffcanvas", ()=>(0, _navbarOffcanvasDefault.default));
-parcelHelpers.export(exports, "NavbarText", ()=>(0, _navbarTextDefault.default));
-parcelHelpers.export(exports, "NavbarToggle", ()=>(0, _navbarToggleDefault.default));
-parcelHelpers.export(exports, "NavDropdown", ()=>(0, _navDropdownDefault.default));
-parcelHelpers.export(exports, "NavItem", ()=>(0, _navItemDefault.default));
-parcelHelpers.export(exports, "NavLink", ()=>(0, _navLinkDefault.default));
-parcelHelpers.export(exports, "Offcanvas", ()=>(0, _offcanvasDefault.default));
-parcelHelpers.export(exports, "OffcanvasBody", ()=>(0, _offcanvasBodyDefault.default));
-parcelHelpers.export(exports, "OffcanvasHeader", ()=>(0, _offcanvasHeaderDefault.default));
-parcelHelpers.export(exports, "OffcanvasTitle", ()=>(0, _offcanvasTitleDefault.default));
-parcelHelpers.export(exports, "OffcanvasToggling", ()=>(0, _offcanvasTogglingDefault.default));
-parcelHelpers.export(exports, "Overlay", ()=>(0, _overlayDefault.default));
-parcelHelpers.export(exports, "OverlayTrigger", ()=>(0, _overlayTriggerDefault.default));
-parcelHelpers.export(exports, "PageItem", ()=>(0, _pageItemDefault.default));
-parcelHelpers.export(exports, "Pagination", ()=>(0, _paginationDefault.default));
-parcelHelpers.export(exports, "Placeholder", ()=>(0, _placeholderDefault.default));
-parcelHelpers.export(exports, "PlaceholderButton", ()=>(0, _placeholderButtonDefault.default));
-parcelHelpers.export(exports, "Popover", ()=>(0, _popoverDefault.default));
-parcelHelpers.export(exports, "PopoverBody", ()=>(0, _popoverBodyDefault.default));
-parcelHelpers.export(exports, "PopoverHeader", ()=>(0, _popoverHeaderDefault.default));
-parcelHelpers.export(exports, "ProgressBar", ()=>(0, _progressBarDefault.default));
-parcelHelpers.export(exports, "Ratio", ()=>(0, _ratioDefault.default));
-parcelHelpers.export(exports, "Row", ()=>(0, _rowDefault.default));
-parcelHelpers.export(exports, "Spinner", ()=>(0, _spinnerDefault.default));
-parcelHelpers.export(exports, "SplitButton", ()=>(0, _splitButtonDefault.default));
-parcelHelpers.export(exports, "SSRProvider", ()=>(0, _ssrproviderDefault.default));
-parcelHelpers.export(exports, "Stack", ()=>(0, _stackDefault.default));
-parcelHelpers.export(exports, "Tab", ()=>(0, _tabDefault.default));
-parcelHelpers.export(exports, "TabContainer", ()=>(0, _tabContainerDefault.default));
-parcelHelpers.export(exports, "TabContent", ()=>(0, _tabContentDefault.default));
-parcelHelpers.export(exports, "Table", ()=>(0, _tableDefault.default));
-parcelHelpers.export(exports, "TabPane", ()=>(0, _tabPaneDefault.default));
-parcelHelpers.export(exports, "Tabs", ()=>(0, _tabsDefault.default));
-parcelHelpers.export(exports, "ThemeProvider", ()=>(0, _themeProviderDefault.default));
-parcelHelpers.export(exports, "Toast", ()=>(0, _toastDefault.default));
-parcelHelpers.export(exports, "ToastBody", ()=>(0, _toastBodyDefault.default));
-parcelHelpers.export(exports, "ToastContainer", ()=>(0, _toastContainerDefault.default));
-parcelHelpers.export(exports, "ToastHeader", ()=>(0, _toastHeaderDefault.default));
-parcelHelpers.export(exports, "ToggleButton", ()=>(0, _toggleButtonDefault.default));
-parcelHelpers.export(exports, "ToggleButtonGroup", ()=>(0, _toggleButtonGroupDefault.default));
-parcelHelpers.export(exports, "Tooltip", ()=>(0, _tooltipDefault.default));
-var _accordion = require("./Accordion");
-var _accordionDefault = parcelHelpers.interopDefault(_accordion);
-var _accordionContext = require("./AccordionContext");
-var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
-var _accordionCollapse = require("./AccordionCollapse");
-var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
-var _accordionButton = require("./AccordionButton");
-var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
-var _accordionHeader = require("./AccordionHeader");
-var _accordionHeaderDefault = parcelHelpers.interopDefault(_accordionHeader);
-var _accordionItem = require("./AccordionItem");
-var _accordionItemDefault = parcelHelpers.interopDefault(_accordionItem);
-var _alert = require("./Alert");
-var _alertDefault = parcelHelpers.interopDefault(_alert);
-var _alertHeading = require("./AlertHeading");
-var _alertHeadingDefault = parcelHelpers.interopDefault(_alertHeading);
-var _alertLink = require("./AlertLink");
-var _alertLinkDefault = parcelHelpers.interopDefault(_alertLink);
-var _anchor = require("./Anchor");
-var _anchorDefault = parcelHelpers.interopDefault(_anchor);
-var _badge = require("./Badge");
-var _badgeDefault = parcelHelpers.interopDefault(_badge);
-var _breadcrumb = require("./Breadcrumb");
-var _breadcrumbDefault = parcelHelpers.interopDefault(_breadcrumb);
-var _breadcrumbItem = require("./BreadcrumbItem");
-var _breadcrumbItemDefault = parcelHelpers.interopDefault(_breadcrumbItem);
-var _button = require("./Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _buttonGroup = require("./ButtonGroup");
-var _buttonGroupDefault = parcelHelpers.interopDefault(_buttonGroup);
-var _buttonToolbar = require("./ButtonToolbar");
-var _buttonToolbarDefault = parcelHelpers.interopDefault(_buttonToolbar);
-var _card = require("./Card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
-var _cardBody = require("./CardBody");
-var _cardBodyDefault = parcelHelpers.interopDefault(_cardBody);
-var _cardFooter = require("./CardFooter");
-var _cardFooterDefault = parcelHelpers.interopDefault(_cardFooter);
-var _cardGroup = require("./CardGroup");
-var _cardGroupDefault = parcelHelpers.interopDefault(_cardGroup);
-var _cardHeader = require("./CardHeader");
-var _cardHeaderDefault = parcelHelpers.interopDefault(_cardHeader);
-var _cardImg = require("./CardImg");
-var _cardImgDefault = parcelHelpers.interopDefault(_cardImg);
-var _cardImgOverlay = require("./CardImgOverlay");
-var _cardImgOverlayDefault = parcelHelpers.interopDefault(_cardImgOverlay);
-var _cardLink = require("./CardLink");
-var _cardLinkDefault = parcelHelpers.interopDefault(_cardLink);
-var _cardSubtitle = require("./CardSubtitle");
-var _cardSubtitleDefault = parcelHelpers.interopDefault(_cardSubtitle);
-var _cardText = require("./CardText");
-var _cardTextDefault = parcelHelpers.interopDefault(_cardText);
-var _cardTitle = require("./CardTitle");
-var _cardTitleDefault = parcelHelpers.interopDefault(_cardTitle);
-var _carousel = require("./Carousel");
-var _carouselDefault = parcelHelpers.interopDefault(_carousel);
-var _carouselCaption = require("./CarouselCaption");
-var _carouselCaptionDefault = parcelHelpers.interopDefault(_carouselCaption);
-var _carouselItem = require("./CarouselItem");
-var _carouselItemDefault = parcelHelpers.interopDefault(_carouselItem);
-var _closeButton = require("./CloseButton");
-var _closeButtonDefault = parcelHelpers.interopDefault(_closeButton);
-var _col = require("./Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _collapse = require("./Collapse");
-var _collapseDefault = parcelHelpers.interopDefault(_collapse);
-var _container = require("./Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _dropdown = require("./Dropdown");
-var _dropdownDefault = parcelHelpers.interopDefault(_dropdown);
-var _dropdownButton = require("./DropdownButton");
-var _dropdownButtonDefault = parcelHelpers.interopDefault(_dropdownButton);
-var _dropdownDivider = require("./DropdownDivider");
-var _dropdownDividerDefault = parcelHelpers.interopDefault(_dropdownDivider);
-var _dropdownHeader = require("./DropdownHeader");
-var _dropdownHeaderDefault = parcelHelpers.interopDefault(_dropdownHeader);
-var _dropdownItem = require("./DropdownItem");
-var _dropdownItemDefault = parcelHelpers.interopDefault(_dropdownItem);
-var _dropdownItemText = require("./DropdownItemText");
-var _dropdownItemTextDefault = parcelHelpers.interopDefault(_dropdownItemText);
-var _dropdownMenu = require("./DropdownMenu");
-var _dropdownMenuDefault = parcelHelpers.interopDefault(_dropdownMenu);
-var _dropdownToggle = require("./DropdownToggle");
-var _dropdownToggleDefault = parcelHelpers.interopDefault(_dropdownToggle);
-var _fade = require("./Fade");
-var _fadeDefault = parcelHelpers.interopDefault(_fade);
-var _figure = require("./Figure");
-var _figureDefault = parcelHelpers.interopDefault(_figure);
-var _figureCaption = require("./FigureCaption");
-var _figureCaptionDefault = parcelHelpers.interopDefault(_figureCaption);
-var _figureImage = require("./FigureImage");
-var _figureImageDefault = parcelHelpers.interopDefault(_figureImage);
-var _form = require("./Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _formControl = require("./FormControl");
-var _formControlDefault = parcelHelpers.interopDefault(_formControl);
-var _formCheck = require("./FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _formFloating = require("./FormFloating");
-var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
-var _floatingLabel = require("./FloatingLabel");
-var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
-var _formGroup = require("./FormGroup");
-var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
-var _formLabel = require("./FormLabel");
-var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
-var _formText = require("./FormText");
-var _formTextDefault = parcelHelpers.interopDefault(_formText);
-var _formSelect = require("./FormSelect");
-var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
-var _image = require("./Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _inputGroup = require("./InputGroup");
-var _inputGroupDefault = parcelHelpers.interopDefault(_inputGroup);
-var _listGroup = require("./ListGroup");
-var _listGroupDefault = parcelHelpers.interopDefault(_listGroup);
-var _listGroupItem = require("./ListGroupItem");
-var _listGroupItemDefault = parcelHelpers.interopDefault(_listGroupItem);
-var _modal = require("./Modal");
-var _modalDefault = parcelHelpers.interopDefault(_modal);
-var _modalBody = require("./ModalBody");
-var _modalBodyDefault = parcelHelpers.interopDefault(_modalBody);
-var _modalDialog = require("./ModalDialog");
-var _modalDialogDefault = parcelHelpers.interopDefault(_modalDialog);
-var _modalFooter = require("./ModalFooter");
-var _modalFooterDefault = parcelHelpers.interopDefault(_modalFooter);
-var _modalHeader = require("./ModalHeader");
-var _modalHeaderDefault = parcelHelpers.interopDefault(_modalHeader);
-var _modalTitle = require("./ModalTitle");
-var _modalTitleDefault = parcelHelpers.interopDefault(_modalTitle);
-var _nav = require("./Nav");
-var _navDefault = parcelHelpers.interopDefault(_nav);
-var _navbar = require("./Navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _navbarBrand = require("./NavbarBrand");
-var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
-var _navbarCollapse = require("./NavbarCollapse");
-var _navbarCollapseDefault = parcelHelpers.interopDefault(_navbarCollapse);
-var _navbarOffcanvas = require("./NavbarOffcanvas");
-var _navbarOffcanvasDefault = parcelHelpers.interopDefault(_navbarOffcanvas);
-var _navbarText = require("./NavbarText");
-var _navbarTextDefault = parcelHelpers.interopDefault(_navbarText);
-var _navbarToggle = require("./NavbarToggle");
-var _navbarToggleDefault = parcelHelpers.interopDefault(_navbarToggle);
-var _navDropdown = require("./NavDropdown");
-var _navDropdownDefault = parcelHelpers.interopDefault(_navDropdown);
-var _navItem = require("./NavItem");
-var _navItemDefault = parcelHelpers.interopDefault(_navItem);
-var _navLink = require("./NavLink");
-var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
-var _offcanvas = require("./Offcanvas");
-var _offcanvasDefault = parcelHelpers.interopDefault(_offcanvas);
-var _offcanvasBody = require("./OffcanvasBody");
-var _offcanvasBodyDefault = parcelHelpers.interopDefault(_offcanvasBody);
-var _offcanvasHeader = require("./OffcanvasHeader");
-var _offcanvasHeaderDefault = parcelHelpers.interopDefault(_offcanvasHeader);
-var _offcanvasTitle = require("./OffcanvasTitle");
-var _offcanvasTitleDefault = parcelHelpers.interopDefault(_offcanvasTitle);
-var _offcanvasToggling = require("./OffcanvasToggling");
-var _offcanvasTogglingDefault = parcelHelpers.interopDefault(_offcanvasToggling);
-var _overlay = require("./Overlay");
-var _overlayDefault = parcelHelpers.interopDefault(_overlay);
-var _overlayTrigger = require("./OverlayTrigger");
-var _overlayTriggerDefault = parcelHelpers.interopDefault(_overlayTrigger);
-var _pageItem = require("./PageItem");
-var _pageItemDefault = parcelHelpers.interopDefault(_pageItem);
-var _pagination = require("./Pagination");
-var _paginationDefault = parcelHelpers.interopDefault(_pagination);
-var _placeholder = require("./Placeholder");
-var _placeholderDefault = parcelHelpers.interopDefault(_placeholder);
-var _placeholderButton = require("./PlaceholderButton");
-var _placeholderButtonDefault = parcelHelpers.interopDefault(_placeholderButton);
-var _popover = require("./Popover");
-var _popoverDefault = parcelHelpers.interopDefault(_popover);
-var _popoverBody = require("./PopoverBody");
-var _popoverBodyDefault = parcelHelpers.interopDefault(_popoverBody);
-var _popoverHeader = require("./PopoverHeader");
-var _popoverHeaderDefault = parcelHelpers.interopDefault(_popoverHeader);
-var _progressBar = require("./ProgressBar");
-var _progressBarDefault = parcelHelpers.interopDefault(_progressBar);
-var _ratio = require("./Ratio");
-var _ratioDefault = parcelHelpers.interopDefault(_ratio);
-var _row = require("./Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _spinner = require("./Spinner");
-var _spinnerDefault = parcelHelpers.interopDefault(_spinner);
-var _splitButton = require("./SplitButton");
-var _splitButtonDefault = parcelHelpers.interopDefault(_splitButton);
-var _ssrprovider = require("./SSRProvider");
-var _ssrproviderDefault = parcelHelpers.interopDefault(_ssrprovider);
-var _stack = require("./Stack");
-var _stackDefault = parcelHelpers.interopDefault(_stack);
-var _tab = require("./Tab");
-var _tabDefault = parcelHelpers.interopDefault(_tab);
-var _tabContainer = require("./TabContainer");
-var _tabContainerDefault = parcelHelpers.interopDefault(_tabContainer);
-var _tabContent = require("./TabContent");
-var _tabContentDefault = parcelHelpers.interopDefault(_tabContent);
-var _table = require("./Table");
-var _tableDefault = parcelHelpers.interopDefault(_table);
-var _tabPane = require("./TabPane");
-var _tabPaneDefault = parcelHelpers.interopDefault(_tabPane);
-var _tabs = require("./Tabs");
-var _tabsDefault = parcelHelpers.interopDefault(_tabs);
-var _themeProvider = require("./ThemeProvider");
-var _themeProviderDefault = parcelHelpers.interopDefault(_themeProvider);
-var _toast = require("./Toast");
-var _toastDefault = parcelHelpers.interopDefault(_toast);
-var _toastBody = require("./ToastBody");
-var _toastBodyDefault = parcelHelpers.interopDefault(_toastBody);
-var _toastContainer = require("./ToastContainer");
-var _toastContainerDefault = parcelHelpers.interopDefault(_toastContainer);
-var _toastHeader = require("./ToastHeader");
-var _toastHeaderDefault = parcelHelpers.interopDefault(_toastHeader);
-var _toggleButton = require("./ToggleButton");
-var _toggleButtonDefault = parcelHelpers.interopDefault(_toggleButton);
-var _toggleButtonGroup = require("./ToggleButtonGroup");
-var _toggleButtonGroupDefault = parcelHelpers.interopDefault(_toggleButtonGroup);
-var _tooltip = require("./Tooltip");
-var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
-
-},{"./Accordion":"1m6xp","./AccordionContext":"e5D96","./AccordionCollapse":"kI8r5","./AccordionButton":"hkYfS","./AccordionHeader":"LJXVf","./AccordionItem":"8sXhn","./Alert":"e3Xec","./AlertHeading":"dS03P","./AlertLink":"glcYq","./Anchor":"lwVpH","./Badge":"eEyks","./Breadcrumb":"hOow1","./BreadcrumbItem":"bWkuO","./Button":"aPzUt","./ButtonGroup":"gXYCe","./ButtonToolbar":"k88gW","./Card":"lAynp","./CardBody":"iN1Jc","./CardFooter":"jUi26","./CardGroup":"2j3Ij","./CardHeader":"dXnnx","./CardImg":"1reTi","./CardImgOverlay":"Bi8dC","./CardLink":"9uFCo","./CardSubtitle":"i2BiN","./CardText":"aUUmg","./CardTitle":"79rSZ","./Carousel":"bsGhm","./CarouselCaption":"dH56B","./CarouselItem":"9A3DI","./CloseButton":"1wmVl","./Col":"2L2I6","./Collapse":"acuzI","./Container":"hEdsw","./Dropdown":"88m2L","./DropdownButton":"5sMVB","./DropdownDivider":"hrud4","./DropdownHeader":"j4F3w","./DropdownItem":"xQ9Cw","./DropdownItemText":"9Y4vI","./DropdownMenu":"6UpAn","./DropdownToggle":"gCRNt","./Fade":"aH18S","./Figure":"7Eckp","./FigureCaption":"aGvgd","./FigureImage":"jhS47","./Form":"iBZ80","./FormControl":"iynMc","./FormCheck":"idkr0","./FormFloating":"aj346","./FloatingLabel":"coYzo","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormText":"ffeC7","./FormSelect":"hHWyB","./Image":"cyVPa","./InputGroup":"htx7r","./ListGroup":"4tGXh","./ListGroupItem":"9U5b8","./Modal":"aNVmp","./ModalBody":"e0aNG","./ModalDialog":"cwGGq","./ModalFooter":"9SLlP","./ModalHeader":"cxgdE","./ModalTitle":"kYqJp","./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":"iOo4v","./NavbarCollapse":"eNSCC","./NavbarOffcanvas":"fOxoE","./NavbarText":"76xFa","./NavbarToggle":"7vOXv","./NavDropdown":"8e6QB","./NavItem":"ew05W","./NavLink":"7geL8","./Offcanvas":"eC3RS","./OffcanvasBody":"fX7Bo","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./OffcanvasToggling":"eGvzt","./Overlay":"bHdwO","./OverlayTrigger":"acOnV","./PageItem":"i0zxH","./Pagination":"6yvxS","./Placeholder":"fw5xV","./PlaceholderButton":"dRc7O","./Popover":"afWr1","./PopoverBody":"amJTZ","./PopoverHeader":"1rLXn","./ProgressBar":"cCHIb","./Ratio":"ioXys","./Row":"cMC39","./Spinner":"2r8jr","./SplitButton":"fWabe","./SSRProvider":"kdCr8","./Stack":"eZkZ1","./Tab":"kfiWM","./TabContainer":"hkO95","./TabContent":"fQxYB","./Table":"3UQc3","./TabPane":"4jWis","./Tabs":"cq1ML","./ThemeProvider":"dVixI","./Toast":"iyxlo","./ToastBody":"30cvm","./ToastContainer":"kqOPy","./ToastHeader":"gsTvK","./ToggleButton":"dCmeV","./ToggleButtonGroup":"2t8MV","./Tooltip":"ajjgB","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"1m6xp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _uncontrollable = require("uncontrollable");
-var _themeProvider = require("./ThemeProvider");
-var _accordionBody = require("./AccordionBody");
-var _accordionBodyDefault = parcelHelpers.interopDefault(_accordionBody);
-var _accordionButton = require("./AccordionButton");
-var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
-var _accordionCollapse = require("./AccordionCollapse");
-var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
-var _accordionContext = require("./AccordionContext");
-var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
-var _accordionHeader = require("./AccordionHeader");
-var _accordionHeaderDefault = parcelHelpers.interopDefault(_accordionHeader);
-var _accordionItem = require("./AccordionItem");
-var _accordionItemDefault = parcelHelpers.interopDefault(_accordionItem);
-var _jsxRuntime = require("react/jsx-runtime");
-"use client";
-const Accordion = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
-    const { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-    as: Component = "div", activeKey, bsPrefix, className, onSelect, flush, alwaysOpen, ...controlledProps } = (0, _uncontrollable.useUncontrolled)(props, {
-        activeKey: "onSelect"
-    });
-    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion");
-    const contextValue = (0, _react.useMemo)(()=>({
-            activeEventKey: activeKey,
-            onSelect,
-            alwaysOpen
-        }), [
-        activeKey,
-        onSelect,
-        alwaysOpen
-    ]);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _accordionContextDefault.default).Provider, {
-        value: contextValue,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-            ref: ref,
-            ...controlledProps,
-            className: (0, _classnamesDefault.default)(className, prefix, flush && `${prefix}-flush`)
-        })
-    });
-});
-Accordion.displayName = "Accordion";
-exports.default = Object.assign(Accordion, {
-    Button: (0, _accordionButtonDefault.default),
-    Collapse: (0, _accordionCollapseDefault.default),
-    Item: (0, _accordionItemDefault.default),
-    Header: (0, _accordionHeaderDefault.default),
-    Body: (0, _accordionBodyDefault.default)
-});
-
-},{"classnames":"jocGM","react":"21dqq","uncontrollable":"b3yWY","./ThemeProvider":"dVixI","./AccordionBody":"2p9OR","./AccordionButton":"hkYfS","./AccordionCollapse":"kI8r5","./AccordionContext":"e5D96","./AccordionHeader":"LJXVf","./AccordionItem":"8sXhn","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"b3yWY":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useUncontrolled", ()=>(0, _hookDefault.default));
-parcelHelpers.export(exports, "useUncontrolledProp", ()=>(0, _hook.useUncontrolledProp));
-parcelHelpers.export(exports, "uncontrollable", ()=>(0, _uncontrollableDefault.default));
-var _hook = require("./hook");
-var _hookDefault = parcelHelpers.interopDefault(_hook);
-var _uncontrollable = require("./uncontrollable");
-var _uncontrollableDefault = parcelHelpers.interopDefault(_uncontrollable);
-
-},{"./hook":"cv9oS","./uncontrollable":"aqbCD","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"cv9oS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useUncontrolledProp", ()=>useUncontrolledProp);
-parcelHelpers.export(exports, "default", ()=>useUncontrolled);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _react = require("react");
-var _utils = require("./utils");
-function _toPropertyKey(arg) {
-    var key = _toPrimitive(arg, "string");
-    return typeof key === "symbol" ? key : String(key);
-}
-function _toPrimitive(input, hint) {
-    if (typeof input !== "object" || input === null) return input;
-    var prim = input[Symbol.toPrimitive];
-    if (prim !== undefined) {
-        var res = prim.call(input, hint || "default");
-        if (typeof res !== "object") return res;
-        throw new TypeError("@@toPrimitive must return a primitive value.");
-    }
-    return (hint === "string" ? String : Number)(input);
-}
-function useUncontrolledProp(propValue, defaultValue, handler) {
-    var wasPropRef = (0, _react.useRef)(propValue !== undefined);
-    var _useState = (0, _react.useState)(defaultValue), stateValue = _useState[0], setState = _useState[1];
-    var isProp = propValue !== undefined;
-    var wasProp = wasPropRef.current;
-    wasPropRef.current = isProp;
-    /**
-   * If a prop switches from controlled to Uncontrolled
-   * reset its value to the defaultValue
-   */ if (!isProp && wasProp && stateValue !== defaultValue) setState(defaultValue);
-    return [
-        isProp ? propValue : stateValue,
-        (0, _react.useCallback)(function(value) {
-            for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)args[_key - 1] = arguments[_key];
-            if (handler) handler.apply(void 0, [
-                value
-            ].concat(args));
-            setState(value);
-        }, [
-            handler
-        ])
-    ];
-}
-function useUncontrolled(props, config) {
-    return Object.keys(config).reduce(function(result, fieldName) {
-        var _extends2;
-        var _ref = result, defaultValue = _ref[_utils.defaultKey(fieldName)], propsValue = _ref[fieldName], rest = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, [
-            _utils.defaultKey(fieldName),
-            fieldName
-        ].map(_toPropertyKey));
-        var handlerName = config[fieldName];
-        var _useUncontrolledProp = useUncontrolledProp(propsValue, defaultValue, props[handlerName]), value = _useUncontrolledProp[0], handler = _useUncontrolledProp[1];
-        return (0, _extendsDefault.default)({}, rest, (_extends2 = {}, _extends2[fieldName] = value, _extends2[handlerName] = handler, _extends2));
-    }, props);
-}
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"fTBFS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>_extends);
-function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return _extends.apply(this, arguments);
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"adHgr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>_objectWithoutPropertiesLoose);
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"7UQ73":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "uncontrolledPropTypes", ()=>uncontrolledPropTypes);
-parcelHelpers.export(exports, "isProp", ()=>isProp);
-parcelHelpers.export(exports, "defaultKey", ()=>defaultKey);
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */ parcelHelpers.export(exports, "canAcceptRef", ()=>canAcceptRef);
-var _invariant = require("invariant");
-var _invariantDefault = parcelHelpers.interopDefault(_invariant);
-var noop = function noop() {};
-function readOnlyPropType(handler, name) {
-    return function(props, propName) {
-        if (props[propName] !== undefined) {
-            if (!props[handler]) return new Error("You have provided a `" + propName + "` prop to `" + name + "` " + ("without an `" + handler + "` handler prop. This will render a read-only field. ") + ("If the field should be mutable use `" + defaultKey(propName) + "`. ") + ("Otherwise, set `" + handler + "`."));
-        }
-    };
-}
-function uncontrolledPropTypes(controlledValues, displayName) {
-    var propTypes = {};
-    Object.keys(controlledValues).forEach(function(prop) {
-        // add default propTypes for folks that use runtime checks
-        propTypes[defaultKey(prop)] = noop;
-        var handler = controlledValues[prop];
-        !(typeof handler === "string" && handler.trim().length) && (0, _invariantDefault.default)(false, "Uncontrollable - [%s]: the prop `%s` needs a valid handler key name in order to make it uncontrollable", displayName, prop);
-        propTypes[prop] = readOnlyPropType(handler, displayName);
-    });
-    return propTypes;
-}
-function isProp(props, prop) {
-    return props[prop] !== undefined;
-}
-function defaultKey(key) {
-    return "default" + key.charAt(0).toUpperCase() + key.substr(1);
-}
-function canAcceptRef(component) {
-    return !!component && (typeof component !== "function" || component.prototype && component.prototype.isReactComponent);
-}
-
-},{"invariant":"d1QgR","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"d1QgR":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */ var invariant = function(condition, format, a, b, c, d, e, f) {
-    if (format === undefined) throw new Error("invariant requires an error message argument");
-    if (!condition) {
-        var error;
-        if (format === undefined) error = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
-        else {
-            var args = [
-                a,
-                b,
-                c,
-                d,
-                e,
-                f
-            ];
-            var argIndex = 0;
-            error = new Error(format.replace(/%s/g, function() {
-                return args[argIndex++];
-            }));
-            error.name = "Invariant Violation";
-        }
-        error.framesToPop = 1; // we don't care about invariant's own frame
-        throw error;
-    }
-};
-module.exports = invariant;
-
-},{}],"aqbCD":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>uncontrollable);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactLifecyclesCompat = require("react-lifecycles-compat");
-var _invariant = require("invariant");
-var _invariantDefault = parcelHelpers.interopDefault(_invariant);
-var _utils = require("./utils");
-var _jsxFileName = "/Users/jquense/src/uncontrollable/src/uncontrollable.js";
-function uncontrollable(Component, controlledValues, methods) {
-    if (methods === void 0) methods = [];
-    var displayName = Component.displayName || Component.name || "Component";
-    var canAcceptRef = _utils.canAcceptRef(Component);
-    var controlledProps = Object.keys(controlledValues);
-    var PROPS_TO_OMIT = controlledProps.map(_utils.defaultKey);
-    !(canAcceptRef || !methods.length) && (0, _invariantDefault.default)(false, "[uncontrollable] stateless function components cannot pass through methods because they have no associated instances. Check component: " + displayName + ", " + "attempting to pass through methods: " + methods.join(", "));
-    var UncontrolledComponent = /*#__PURE__*/ function(_React$Component) {
-        (0, _inheritsLooseDefault.default)(UncontrolledComponent, _React$Component);
-        function UncontrolledComponent() {
-            var _this;
-            for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
-            _this = _React$Component.call.apply(_React$Component, [
-                this
-            ].concat(args)) || this;
-            _this.handlers = Object.create(null);
-            controlledProps.forEach(function(propName) {
-                var handlerName = controlledValues[propName];
-                var handleChange = function handleChange(value) {
-                    if (_this.props[handlerName]) {
-                        var _this$props;
-                        _this._notifying = true;
-                        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
-                        (_this$props = _this.props)[handlerName].apply(_this$props, [
-                            value
-                        ].concat(args));
-                        _this._notifying = false;
-                    }
-                    if (!_this.unmounted) _this.setState(function(_ref) {
-                        var _extends2;
-                        var values = _ref.values;
-                        return {
-                            values: (0, _extendsDefault.default)(Object.create(null), values, (_extends2 = {}, _extends2[propName] = value, _extends2))
-                        };
-                    });
-                };
-                _this.handlers[handlerName] = handleChange;
-            });
-            if (methods.length) _this.attachRef = function(ref) {
-                _this.inner = ref;
-            };
-            var values = Object.create(null);
-            controlledProps.forEach(function(key) {
-                values[key] = _this.props[_utils.defaultKey(key)];
-            });
-            _this.state = {
-                values: values,
-                prevProps: {}
-            };
-            return _this;
-        }
-        var _proto = UncontrolledComponent.prototype;
-        _proto.shouldComponentUpdate = function shouldComponentUpdate() {
-            //let setState trigger the update
-            return !this._notifying;
-        };
-        UncontrolledComponent.getDerivedStateFromProps = function getDerivedStateFromProps(props, _ref2) {
-            var values = _ref2.values, prevProps = _ref2.prevProps;
-            var nextState = {
-                values: (0, _extendsDefault.default)(Object.create(null), values),
-                prevProps: {}
-            };
-            controlledProps.forEach(function(key) {
-                /**
-         * If a prop switches from controlled to Uncontrolled
-         * reset its value to the defaultValue
-         */ nextState.prevProps[key] = props[key];
-                if (!_utils.isProp(props, key) && _utils.isProp(prevProps, key)) nextState.values[key] = props[_utils.defaultKey(key)];
-            });
-            return nextState;
-        };
-        _proto.componentWillUnmount = function componentWillUnmount() {
-            this.unmounted = true;
-        };
-        _proto.render = function render() {
-            var _this2 = this;
-            var _this$props2 = this.props, innerRef = _this$props2.innerRef, props = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props2, [
-                "innerRef"
-            ]);
-            PROPS_TO_OMIT.forEach(function(prop) {
-                delete props[prop];
-            });
-            var newProps = {};
-            controlledProps.forEach(function(propName) {
-                var propValue = _this2.props[propName];
-                newProps[propName] = propValue !== undefined ? propValue : _this2.state.values[propName];
-            });
-            return (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, newProps, this.handlers, {
-                ref: innerRef || this.attachRef
-            }));
-        };
-        return UncontrolledComponent;
-    }((0, _reactDefault.default).Component);
-    (0, _reactLifecyclesCompat.polyfill)(UncontrolledComponent);
-    UncontrolledComponent.displayName = "Uncontrolled(" + displayName + ")";
-    UncontrolledComponent.propTypes = (0, _extendsDefault.default)({
-        innerRef: function innerRef() {}
-    }, _utils.uncontrolledPropTypes(controlledValues, displayName));
-    methods.forEach(function(method) {
-        UncontrolledComponent.prototype[method] = function $proxiedMethod() {
-            var _this$inner;
-            return (_this$inner = this.inner)[method].apply(_this$inner, arguments);
-        };
-    });
-    var WrappedComponent = UncontrolledComponent;
-    if ((0, _reactDefault.default).forwardRef) {
-        WrappedComponent = (0, _reactDefault.default).forwardRef(function(props, ref) {
-            return (0, _reactDefault.default).createElement(UncontrolledComponent, (0, _extendsDefault.default)({}, props, {
-                innerRef: ref,
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 128
-                },
-                __self: this
-            }));
-        });
-        WrappedComponent.propTypes = UncontrolledComponent.propTypes;
-    }
-    WrappedComponent.ControlledComponent = Component;
-    /**
-   * useful when wrapping a Component and you want to control
-   * everything
-   */ WrappedComponent.deferControlTo = function(newComponent, additions, nextMethods) {
-        if (additions === void 0) additions = {};
-        return uncontrollable(newComponent, (0, _extendsDefault.default)({}, controlledValues, additions), nextMethods);
-    };
-    return WrappedComponent;
-}
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","react":"21dqq","react-lifecycles-compat":"3f3fU","invariant":"d1QgR","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"9u2Z8":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>_inheritsLoose);
-var _setPrototypeOfJs = require("./setPrototypeOf.js");
-var _setPrototypeOfJsDefault = parcelHelpers.interopDefault(_setPrototypeOfJs);
-function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    (0, _setPrototypeOfJsDefault.default)(subClass, superClass);
-}
-
-},{"./setPrototypeOf.js":"3XDFA","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"3XDFA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>_setPrototypeOf);
-function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-        o.__proto__ = p;
-        return o;
-    };
-    return _setPrototypeOf(o, p);
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"3f3fU":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "polyfill", ()=>polyfill);
-function componentWillMount() {
-    // Call this.constructor.gDSFP to support sub-classes.
-    var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
-    if (state !== null && state !== undefined) this.setState(state);
-}
-function componentWillReceiveProps(nextProps) {
-    // Call this.constructor.gDSFP to support sub-classes.
-    // Use the setState() updater to ensure state isn't stale in certain edge cases.
-    function updater(prevState) {
-        var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
-        return state !== null && state !== undefined ? state : null;
-    }
-    // Binding "this" is important for shallow renderer support.
-    this.setState(updater.bind(this));
-}
-function componentWillUpdate(nextProps, nextState) {
-    try {
-        var prevProps = this.props;
-        var prevState = this.state;
-        this.props = nextProps;
-        this.state = nextState;
-        this.__reactInternalSnapshotFlag = true;
-        this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(prevProps, prevState);
-    } finally{
-        this.props = prevProps;
-        this.state = prevState;
-    }
-}
-// React may warn about cWM/cWRP/cWU methods being deprecated.
-// Add a flag to suppress these warnings for this special case.
-componentWillMount.__suppressDeprecationWarning = true;
-componentWillReceiveProps.__suppressDeprecationWarning = true;
-componentWillUpdate.__suppressDeprecationWarning = true;
-function polyfill(Component) {
-    var prototype = Component.prototype;
-    if (!prototype || !prototype.isReactComponent) throw new Error("Can only polyfill class components");
-    if (typeof Component.getDerivedStateFromProps !== "function" && typeof prototype.getSnapshotBeforeUpdate !== "function") return Component;
-    // If new component APIs are defined, "unsafe" lifecycles won't be called.
-    // Error if any of these lifecycles are present,
-    // Because they would work differently between older and newer (16.3+) versions of React.
-    var foundWillMountName = null;
-    var foundWillReceivePropsName = null;
-    var foundWillUpdateName = null;
-    if (typeof prototype.componentWillMount === "function") foundWillMountName = "componentWillMount";
-    else if (typeof prototype.UNSAFE_componentWillMount === "function") foundWillMountName = "UNSAFE_componentWillMount";
-    if (typeof prototype.componentWillReceiveProps === "function") foundWillReceivePropsName = "componentWillReceiveProps";
-    else if (typeof prototype.UNSAFE_componentWillReceiveProps === "function") foundWillReceivePropsName = "UNSAFE_componentWillReceiveProps";
-    if (typeof prototype.componentWillUpdate === "function") foundWillUpdateName = "componentWillUpdate";
-    else if (typeof prototype.UNSAFE_componentWillUpdate === "function") foundWillUpdateName = "UNSAFE_componentWillUpdate";
-    if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
-        var componentName = Component.displayName || Component.name;
-        var newApiName = typeof Component.getDerivedStateFromProps === "function" ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
-        throw Error("Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n" + componentName + " uses " + newApiName + " but also contains the following legacy lifecycles:" + (foundWillMountName !== null ? "\n  " + foundWillMountName : "") + (foundWillReceivePropsName !== null ? "\n  " + foundWillReceivePropsName : "") + (foundWillUpdateName !== null ? "\n  " + foundWillUpdateName : "") + "\n\nThe above lifecycles should be removed. Learn more about this warning here:\n" + "https://fb.me/react-async-component-lifecycle-hooks");
-    }
-    // React <= 16.2 does not support static getDerivedStateFromProps.
-    // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
-    // Newer versions of React will ignore these lifecycles if gDSFP exists.
-    if (typeof Component.getDerivedStateFromProps === "function") {
-        prototype.componentWillMount = componentWillMount;
-        prototype.componentWillReceiveProps = componentWillReceiveProps;
-    }
-    // React <= 16.2 does not support getSnapshotBeforeUpdate.
-    // As a workaround, use cWU to invoke the new lifecycle.
-    // Newer versions of React will ignore that lifecycle if gSBU exists.
-    if (typeof prototype.getSnapshotBeforeUpdate === "function") {
-        if (typeof prototype.componentDidUpdate !== "function") throw new Error("Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype");
-        prototype.componentWillUpdate = componentWillUpdate;
-        var componentDidUpdate = prototype.componentDidUpdate;
-        prototype.componentDidUpdate = function componentDidUpdatePolyfill(prevProps, prevState, maybeSnapshot) {
-            // 16.3+ will not execute our will-update method;
-            // It will pass a snapshot value to did-update though.
-            // Older versions will require our polyfilled will-update value.
-            // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
-            // Because for <= 15.x versions this might be a "prevContext" object.
-            // We also can't just check "__reactInternalSnapshot",
-            // Because get-snapshot might return a falsy value.
-            // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
-            var snapshot = this.__reactInternalSnapshotFlag ? this.__reactInternalSnapshot : maybeSnapshot;
-            componentDidUpdate.call(this, prevProps, prevState, snapshot);
-        };
-    }
-    return Component;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"2p9OR":[function(require,module,exports) {
+},{"593632ccebda0d3a":"21dqq"}],"2p9OR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32298,7 +32092,97 @@ const isDOM = typeof document !== "undefined";
  * @category effects
  */ exports.default = isDOM || isReactNative ? (0, _react.useLayoutEffect) : (0, _react.useEffect);
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"aH18S":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"8YUbR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref);
+parcelHelpers.export(exports, "useButtonProps", ()=>useButtonProps);
+var _react = require("react");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "as",
+    "disabled"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+function isTrivialHref(href) {
+    return !href || href.trim() === "#";
+}
+function useButtonProps({ tagName, disabled, href, target, rel, role, onClick, tabIndex = 0, type }) {
+    if (!tagName) {
+        if (href != null || target != null || rel != null) tagName = "a";
+        else tagName = "button";
+    }
+    const meta = {
+        tagName
+    };
+    if (tagName === "button") return [
+        {
+            type: type || "button",
+            disabled
+        },
+        meta
+    ];
+    const handleClick = (event)=>{
+        if (disabled || tagName === "a" && isTrivialHref(href)) event.preventDefault();
+        if (disabled) {
+            event.stopPropagation();
+            return;
+        }
+        onClick == null || onClick(event);
+    };
+    const handleKeyDown = (event)=>{
+        if (event.key === " ") {
+            event.preventDefault();
+            handleClick(event);
+        }
+    };
+    if (tagName === "a") {
+        // Ensure there's a href so Enter can trigger anchor button.
+        href || (href = "#");
+        if (disabled) href = undefined;
+    }
+    return [
+        {
+            role: role != null ? role : "button",
+            // explicitly undefined so that it overrides the props disabled in a spread
+            // e.g. <Tag {...props} {...hookProps} />
+            disabled: undefined,
+            tabIndex: disabled ? undefined : tabIndex,
+            href,
+            target: tagName === "a" ? target : undefined,
+            "aria-disabled": !disabled ? undefined : disabled,
+            rel: tagName === "a" ? rel : undefined,
+            onClick: handleClick,
+            onKeyDown: handleKeyDown
+        },
+        meta
+    ];
+}
+const Button = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { as: asProp, disabled } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const [buttonProps, { tagName: Component }] = useButtonProps(Object.assign({
+        tagName: asProp,
+        disabled
+    }, props));
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, Object.assign({}, props, buttonProps, {
+        ref: ref
+    }));
+});
+Button.displayName = "Button";
+exports.default = Button;
+
+},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"aH18S":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32468,7 +32352,36 @@ as: Component = "li", linkAs: LinkComponent = (0, _anchorDefault.default), linkP
 BreadcrumbItem.displayName = "BreadcrumbItem";
 exports.default = BreadcrumbItem;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"gXYCe":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"aPzUt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _button = require("@restart/ui/Button");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+"use client";
+const Button = /*#__PURE__*/ _react.forwardRef(({ as, bsPrefix, variant = "primary", size, active = false, disabled = false, className, ...props }, ref)=>{
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "btn");
+    const [buttonProps, { tagName }] = (0, _button.useButtonProps)({
+        tagName: as,
+        disabled,
+        ...props
+    });
+    const Component = tagName;
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...buttonProps,
+        ...props,
+        ref: ref,
+        disabled: disabled,
+        className: (0, _classnamesDefault.default)(className, prefix, active && "active", variant && `${prefix}-${variant}`, size && `${prefix}-${size}`, props.href && disabled && "disabled")
+    });
+});
+Button.displayName = "Button";
+exports.default = Button;
+
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/Button":"8YUbR","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"gXYCe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -33298,7 +33211,60 @@ var _react = require("react");
     return _react.Children.toArray(children).some((child)=>/*#__PURE__*/ _react.isValidElement(child) && child.type === type);
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"hEdsw":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"2L2I6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCol", ()=>useCol);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+"use client";
+function useCol({ as, bsPrefix, className, ...props }) {
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "col");
+    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
+    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
+    const spans = [];
+    const classes = [];
+    breakpoints.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let span;
+        let offset;
+        let order;
+        if (typeof propValue === "object" && propValue != null) ({ span, offset, order } = propValue);
+        else span = propValue;
+        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
+        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
+        if (order != null) classes.push(`order${infix}-${order}`);
+        if (offset != null) classes.push(`offset${infix}-${offset}`);
+    });
+    return [
+        {
+            ...props,
+            className: (0, _classnamesDefault.default)(className, ...spans, ...classes)
+        },
+        {
+            as,
+            bsPrefix,
+            spans
+        }
+    ];
+}
+const Col = /*#__PURE__*/ _react.forwardRef(// Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+(props, ref)=>{
+    const [{ className, ...colProps }, { as: Component = "div", bsPrefix, spans }] = useCol(props);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...colProps,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, !spans.length && bsPrefix)
+    });
+});
+Col.displayName = "Col";
+exports.default = Col;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"hEdsw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -40682,6 +40648,40 @@ const Ratio = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, children, 
 });
 exports.default = Ratio;
 
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"cMC39":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+"use client";
+const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div", ...props }, ref)=>{
+    const decoratedBsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "row");
+    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
+    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
+    const sizePrefix = `${decoratedBsPrefix}-cols`;
+    const classes = [];
+    breakpoints.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let cols;
+        if (propValue != null && typeof propValue === "object") ({ cols } = propValue);
+        else cols = propValue;
+        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
+        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ref: ref,
+        ...props,
+        className: (0, _classnamesDefault.default)(className, decoratedBsPrefix, ...classes)
+    });
+});
+Row.displayName = "Row";
+exports.default = Row;
+
 },{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"2r8jr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -41857,7 +41857,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"82yVY":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Button":"aPzUt"}],"82yVY":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$cb9c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42021,7 +42021,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"jDmiJ":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6"}],"jDmiJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7971 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42204,7 +42204,7 @@ const SignupView = ()=>{
                                     value: username,
                                     onChange: (e)=>setUsername(e.target.value),
                                     required: true,
-                                    minLength: 3
+                                    minLength: 5
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
                                     lineNumber: 95,
@@ -42292,7 +42292,7 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"53Jo5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6"}],"53Jo5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a65a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
