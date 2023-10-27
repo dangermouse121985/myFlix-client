@@ -10,6 +10,17 @@ import { LoginView } from '../login-view/login-view';
 import { SignupView } from '../signup-view/signup-view';
 import { HeaderView } from '../header-view/header-view';
 
+<Button
+  variant="outline-primary"
+  onClick={() => {
+    setUser(null);
+    setToken(null);
+    localStorage.clear();
+  }}
+>
+  Logout
+</Button>;
+
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const storedToken = localStorage.getItem('token');
@@ -52,96 +63,92 @@ export const MainView = () => {
       .map((filteredName) => filteredName);
   }
 
-  return !user ? (
-    <Row className="justify-content-md-center">
-      <div className="login--view">
-        <LoginView
-          onLoggedIn={(user, token) => {
-            setUser(user);
-            setToken(token);
-          }}
-        />
-      </div>
-
-      <div className="signup--view hide--signup-or-login">
-        <SignupView />
-      </div>
-    </Row>
-  ) : selectedMovie ? (
-    <>
-      <Button
-        variant="outline-primary"
-        onClick={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
-        }}
-      >
-        Logout
-      </Button>
-
-      {/* <HeaderView
-            storedToken={storedToken}
-            storedUser={storedUser}
-            user={user}
-          /> */}
+  return (
+    <BrowserRouter>
       <Row className="justify-content-md-center">
-        <MovieView
-          key={selectedMovie.id}
-          movie={selectedMovie}
-          onBackClick={() => setSelectedMovie(null)}
-          token={token}
-        />
-        <hr />
-        <h2 className="similar-movies">Similar Movies</h2>
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <div className="login--view">
+                    <LoginView
+                      onLoggedIn={(user, token) => {
+                        setUser(user);
+                        setToken(token);
+                      }}
+                    />
+                  </div>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <div className="signup--view hide--signup-or-login">
+                    <SignupView />
+                  </div>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/movies/:movieId"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : movies.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <>
+                    <MovieView key={movies.id} movies={movies} />
+                    {/* <hr />
+                    <h2 className="similar-movies">Similar Movies</h2>
 
-        {similarMovies.map((movie) => (
-          <Col md={3} key={movie.id}>
-            <MovieCard
-              movie={movie}
-              onMovieClick={(newSelectedMovie) => {
-                setSelectedMovie(newSelectedMovie);
-                window.scrollTo(0, 0);
-              }}
-            />
-          </Col>
-        ))}
+                    {similarMovies.map((movie) => (
+                      <Col md={3} key={movie.id}>
+                        <MovieCard movie={movie} />
+                      </Col>
+                    ))} */}
+                  </>
+                )}
+              </>
+            }
+          />
+          {/* <Row className="justify-content-md-center home-page--main"> */}
+          <Route
+            path="/"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : movies.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <>
+                    {movies.map((movie) => {
+                      return (
+                        <Col className="mb-5" key={movie.id} md={3}>
+                          <MovieCard movie={movie} />
+                        </Col>
+                      );
+                    })}
+                  </>
+                )}
+              </>
+            }
+          />
+        </Routes>
       </Row>
-    </>
-  ) : movies.length === 0 ? (
-    <div>No results Found!</div>
-  ) : (
-    <>
-      <Button
-        variant="outline-primary"
-        onClick={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
-        }}
-      >
-        Logout
-      </Button>
-      {/* <HeaderView
-          storedToken={storedToken}
-          storedUser={storedUser}
-          user={user}
-        /> */}
-      <Row className="justify-content-md-center home-page--main">
-        {movies.map((movie) => {
-          return (
-            <Col className="mb-5" key={movie.id} md={3}>
-              <MovieCard
-                movie={movie}
-                onMovieClick={(newSelectedMovie) => {
-                  setSelectedMovie(newSelectedMovie);
-                  window.scrollTo(0, 0);
-                }}
-              />
-            </Col>
-          );
-        })}
-      </Row>
-    </>
+    </BrowserRouter>
   );
 };

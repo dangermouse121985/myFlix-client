@@ -4,11 +4,15 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 
-export const MovieView = ({ movie, onBackClick, token }) => {
-  const [selectedMovie, setMovie] = useState([]);
+export const MovieView = ({ movies, token }) => {
+  const { movieId } = useParams();
 
-  let url =
+  const movie = movies.find((m) => m.id === movieId);
+  console.log(movie);
+  /*  let url =
     `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com` + movie.url;
   useEffect(() => {
     if (!token) {
@@ -34,7 +38,7 @@ export const MovieView = ({ movie, onBackClick, token }) => {
 
         setMovie(dataFromMovie);
       });
-  }, []);
+  }, []); */
 
   return (
     <div className="one-movie--main">
@@ -52,34 +56,30 @@ export const MovieView = ({ movie, onBackClick, token }) => {
             </Col>
             <Col className="movie-view--text_container" md={6}>
               <div className="movie-view-text--heading">
-                <h1>{selectedMovie.title}</h1>
+                <h1>{movie.title}</h1>
                 <hr />
               </div>
               <div className="movie-view-text--description">
-                <span>{selectedMovie.description}</span>
+                <span>{movie.description}</span>
               </div>
               <div className="movie-view-text--genre">
                 <h2 className="movie-view-text--genre_heading">Genre</h2>
-                <span>{selectedMovie.genre}</span>
+                <span>{movie.genre}</span>
               </div>
               <div className="movie-view-text--director">
                 <h2>Director</h2>
-                <span>{selectedMovie.director}</span>
+                <span>{movie.director}</span>
               </div>
               <div className="movie-view-text--actors">
                 <h2>Actors</h2>
                 <span>
-                  {selectedMovie.actors
-                    ? selectedMovie.actors.map((name) => (
-                        <div key={name}>{name}</div>
-                      ))
+                  {movie.actors
+                    ? movie.actors.map((name) => <div key={name}>{name}</div>)
                     : null}
                 </span>
               </div>
               <br />
-              <Button variant="outline-primary" onClick={onBackClick}>
-                Back to Menu
-              </Button>
+              <Button variant="outline-primary">Back to Menu</Button>
             </Col>
           </Row>
         </Col>
@@ -95,5 +95,4 @@ MovieView.propTypes = {
     url: PropTypes.string.isRequired,
     image: PropTypes.string,
   }),
-  onBackClick: PropTypes.func.isRequired,
 };
