@@ -101,6 +101,7 @@ export const SignupView = () => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          minLength={5}
           required
         />
       </label>
