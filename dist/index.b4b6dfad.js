@@ -27508,7 +27508,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","../header-view/header-view":"53Jo5"}],"8z54c":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","../header-view/header-view":"53Jo5","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"8z54c":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28619,6 +28619,7 @@ const LoginView = ({ onLoggedIn })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
+                        minLength: 5,
                         value: username,
                         onChange: (e)=>setUsername(e.target.value),
                         required: true
@@ -28638,7 +28639,7 @@ const LoginView = ({ onLoggedIn })=>{
                     "Password:",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                         fileName: "components/login-view/login-view.jsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -28648,13 +28649,13 @@ const LoginView = ({ onLoggedIn })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "components/login-view/login-view.jsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/login-view/login-view.jsx",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28662,7 +28663,7 @@ const LoginView = ({ onLoggedIn })=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "components/login-view/login-view.jsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28676,7 +28677,7 @@ const LoginView = ({ onLoggedIn })=>{
                 children: "Signup"
             }, void 0, false, {
                 fileName: "components/login-view/login-view.jsx",
-                lineNumber: 61,
+                lineNumber: 62,
                 columnNumber: 7
             }, undefined)
         ]
@@ -28859,7 +28860,7 @@ const SignupView = ()=>{
                         value: username,
                         onChange: (e)=>setUsername(e.target.value),
                         required: true,
-                        minLength: 3
+                        minLength: 5
                     }, void 0, false, {
                         fileName: "components/signup-view/signup-view.jsx",
                         lineNumber: 89,
