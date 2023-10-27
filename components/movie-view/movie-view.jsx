@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-
-export const MovieView = ({ movies, token }) => {
+import { MovieCard } from '../movie-card/movie-card';
+export const MovieView = ({ movies, token, simMovies }) => {
   const { movieId } = useParams();
 
   const movie = movies.find((m) => m.id === movieId);
@@ -83,6 +83,19 @@ export const MovieView = ({ movies, token }) => {
                 <Button variant="outline-primary">Back to Menu</Button>
               </Link>
             </Col>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <hr />
+          <h2 className="similar-movies">Similar Movies</h2>
+          <Row className="justify-content-center">
+            {simMovies(movie).map((movie) => (
+              <Col className="mb-5" md={3} key={movie.id}>
+                <MovieCard movie={movie} />
+              </Col>
+            ))}
           </Row>
         </Col>
       </Row>

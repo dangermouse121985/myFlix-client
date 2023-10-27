@@ -10,17 +10,6 @@ import { LoginView } from '../login-view/login-view';
 import { SignupView } from '../signup-view/signup-view';
 import { HeaderView } from '../header-view/header-view';
 
-<Button
-  variant="outline-primary"
-  onClick={() => {
-    setUser(null);
-    setToken(null);
-    localStorage.clear();
-  }}
->
-  Logout
-</Button>;
-
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const storedToken = localStorage.getItem('token');
@@ -52,7 +41,17 @@ export const MainView = () => {
       });
   }, [token]);
 
-  
+  let simMovies = (selectedMovie) => {
+    {
+      return movies
+        .filter((movie) => {
+          return (
+            movie.genre.includes(selectedMovie.genre) && movie !== selectedMovie
+          );
+        })
+        .map((filteredName) => filteredName);
+    }
+  };
 
   return (
     <BrowserRouter>
@@ -95,32 +94,27 @@ export const MainView = () => {
             path="/movies/:movieId"
             element={
               <>
+                <Button
+                  variant="outline-primary"
+                  onClick={() => {
+                    setUser(null);
+                    setToken(null);
+                    localStorage.clear();
+                  }}
+                >
+                  Logout
+                </Button>
                 {!user ? (
                   <Navigate to="/login" replace />
                 ) : movies.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
-                  let similarMovies;
-  if (selectedMovie) {
-    similarMovies = movies
-      .filter((movie) => {
-        return (
-          movie.genre.includes(selectedMovie.genre) && movie !== selectedMovie
-        );
-      })
-      .map((filteredName) => filteredName);
-  }
                   <>
-                  
-                    <MovieView key={movies.id} movies={movies} />
-                    <hr />
-                    <h2 className="similar-movies">Similar Movies</h2>
-
-                    {similarMovies.map((movie) => (
-                      <Col md={3} key={movie.id}>
-                        <MovieCard movie={movie} />
-                      </Col>
-                    ))}
+                    <MovieView
+                      key={movies.id}
+                      movies={movies}
+                      simMovies={simMovies}
+                    />
                   </>
                 )}
               </>

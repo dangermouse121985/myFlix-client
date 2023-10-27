@@ -5,21 +5,21 @@ import { Link } from 'react-router-dom';
 
 export const MovieCard = ({ movie }) => {
   return (
-    <Card className="movie-card h-100">
-      <Card.Img variant="top" src={movie.image} alt={movie.title} />
-      <Card.Body>
-        <Card.Title className="movie-title">
-          <span className="titleText">{movie.title}</span>
-        </Card.Title>
-        <Card.Text>{movie.description.slice(0, 50)}...</Card.Text>
-      </Card.Body>
-      <Link
-        to={`/movies/${encodeURIComponent(movie.id)}`}
-        className="movie-card--button"
-      >
-        <Button variant="primary">View</Button>
-      </Link>
-    </Card>
+    <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+      <Card className="movie-card h-100">
+        <Card.Img variant="top" src={movie.image} alt={movie.title} />
+        <Card.Body>
+          <Card.Title className="movie-title">
+            <span className="titleText">{movie.title}</span>
+          </Card.Title>
+          <Card.Text>{movie.description.slice(0, 50)}...</Card.Text>
+        </Card.Body>
+
+        <Button className="movie-card--button" variant="primary">
+          View
+        </Button>
+      </Card>
+    </Link>
   );
 };
 
