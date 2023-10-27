@@ -48388,6 +48388,7 @@ const SignupView = ()=>{
                                     type: "password",
                                     value: password,
                                     onChange: (e)=>setPassword(e.target.value),
+                                    minLength: 5,
                                     required: true
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
@@ -48406,7 +48407,7 @@ const SignupView = ()=>{
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 113,
+                            lineNumber: 114,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -48421,7 +48422,7 @@ const SignupView = ()=>{
                             children: "Return to Login"
                         }, void 0, false, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 116,
+                            lineNumber: 117,
                             columnNumber: 11
                         }, undefined)
                     ]
