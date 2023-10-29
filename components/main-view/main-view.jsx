@@ -19,6 +19,9 @@ export const MainView = () => {
   const [token, setToken] = useState(storedToken ? storedToken : null);
 
   useEffect(() => {
+    if (!token) {
+      return;
+    }
     fetch('https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}` },
     })
