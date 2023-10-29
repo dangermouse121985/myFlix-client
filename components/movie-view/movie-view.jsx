@@ -9,37 +9,8 @@ import { useParams } from 'react-router';
 import { MovieCard } from '../movie-card/movie-card';
 export const MovieView = ({ movies, token, simMovies }) => {
   const { movieId } = useParams();
-
   const movie = movies.find((m) => m.id === movieId);
-  console.log(movie);
-  /*  let url =
-    `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com` + movie.url;
-  useEffect(() => {
-    if (!token) {
-      return;
-    }
 
-    fetch(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const actorNames = data.actors.map((actors) => {
-          return actors.name;
-        });
-        const dataFromMovie = {
-          id: data._id,
-          title: data.title,
-          description: data.description,
-          director: data.director.name,
-          actors: actorNames,
-          genre: data.genre.name,
-        };
-
-        setMovie(dataFromMovie);
-      });
-  }, []); */
-  console.log(movie.actors);
   return (
     <div className="one-movie--main">
       <Row className="justify-content-center">

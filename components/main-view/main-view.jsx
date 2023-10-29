@@ -91,7 +91,7 @@ export const MainView = () => {
                 {user ? (
                   <Navigate to="/" />
                 ) : (
-                  <div className="signup--view hide--signup-or-login">
+                  <div>
                     <SignupView />
                   </div>
                 )}

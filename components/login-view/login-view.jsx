@@ -69,10 +69,7 @@ export const LoginView = ({ onLoggedIn }) => {
             className="signup--button"
             variant="outline-primary"
             onClick={() => {
-              let loginView = document.querySelector('.login--view');
-              loginView.classList.add('hide--signup-or-login');
-              let signupView = document.querySelector('.signup--view');
-              signupView.classList.remove('hide--signup-or-login');
+              window.location.href = '/signup';
             }}
           >
             Signup

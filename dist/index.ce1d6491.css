@@ -13213,7 +13213,7 @@ body {
   font-family: Permanent Marker, cursive;
 }
 
-.logo.login-page {
+.logo.login-page, .logo.signup-page {
   text-align: center;
   color: #d52941;
   margin: 0 auto;

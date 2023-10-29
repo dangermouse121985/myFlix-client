@@ -27412,7 +27412,6 @@ const MainView = ()=>{
                                 children: user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                     to: "/"
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "signup--view hide--signup-or-login",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
@@ -47787,34 +47786,6 @@ const MovieView = ({ movies, token, simMovies })=>{
     _s();
     const { movieId } = (0, _reactRouter.useParams)();
     const movie = movies.find((m)=>m.id === movieId);
-    console.log(movie);
-    /*  let url =
-    `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com` + movie.url;
-  useEffect(() => {
-    if (!token) {
-      return;
-    }
-
-    fetch(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const actorNames = data.actors.map((actors) => {
-          return actors.name;
-        });
-        const dataFromMovie = {
-          id: data._id,
-          title: data.title,
-          description: data.description,
-          director: data.director.name,
-          actors: actorNames,
-          genre: data.genre.name,
-        };
-
-        setMovie(dataFromMovie);
-      });
-  }, []); */ console.log(movie.actors);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "one-movie--main",
         children: [
@@ -47836,17 +47807,17 @@ const MovieView = ({ movies, token, simMovies })=>{
                                         alt: movie.title
                                     }, void 0, false, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 50,
+                                        lineNumber: 21,
                                         columnNumber: 17
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 49,
+                                    lineNumber: 20,
                                     columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/movie-view/movie-view.jsx",
-                                lineNumber: 48,
+                                lineNumber: 19,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -47860,18 +47831,18 @@ const MovieView = ({ movies, token, simMovies })=>{
                                                 children: movie.title
                                             }, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 59,
+                                                lineNumber: 30,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 60,
+                                                lineNumber: 31,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 58,
+                                        lineNumber: 29,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47880,12 +47851,12 @@ const MovieView = ({ movies, token, simMovies })=>{
                                             children: movie.description
                                         }, void 0, false, {
                                             fileName: "components/movie-view/movie-view.jsx",
-                                            lineNumber: 63,
+                                            lineNumber: 34,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 62,
+                                        lineNumber: 33,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47896,20 +47867,20 @@ const MovieView = ({ movies, token, simMovies })=>{
                                                 children: "Genre"
                                             }, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 66,
+                                                lineNumber: 37,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                 children: movie.genre
                                             }, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 67,
+                                                lineNumber: 38,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 65,
+                                        lineNumber: 36,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47919,20 +47890,20 @@ const MovieView = ({ movies, token, simMovies })=>{
                                                 children: "Director"
                                             }, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 70,
+                                                lineNumber: 41,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                 children: movie.director.name
                                             }, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 71,
+                                                lineNumber: 42,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 69,
+                                        lineNumber: 40,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47942,7 +47913,7 @@ const MovieView = ({ movies, token, simMovies })=>{
                                                 children: "Actors"
                                             }, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 74,
+                                                lineNumber: 45,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -47951,24 +47922,24 @@ const MovieView = ({ movies, token, simMovies })=>{
                                                         children: actor.name
                                                     }, actor.id, false, {
                                                         fileName: "components/movie-view/movie-view.jsx",
-                                                        lineNumber: 77,
+                                                        lineNumber: 48,
                                                         columnNumber: 28
                                                     }, undefined);
                                                 })
                                             }, void 0, false, {
                                                 fileName: "components/movie-view/movie-view.jsx",
-                                                lineNumber: 75,
+                                                lineNumber: 46,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 73,
+                                        lineNumber: 44,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 81,
+                                        lineNumber: 52,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -47978,34 +47949,34 @@ const MovieView = ({ movies, token, simMovies })=>{
                                             children: "Back to Menu"
                                         }, void 0, false, {
                                             fileName: "components/movie-view/movie-view.jsx",
-                                            lineNumber: 83,
+                                            lineNumber: 54,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 82,
+                                        lineNumber: 53,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "components/movie-view/movie-view.jsx",
-                                lineNumber: 57,
+                                lineNumber: 28,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/movie-view/movie-view.jsx",
-                        lineNumber: 47,
+                        lineNumber: 18,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "components/movie-view/movie-view.jsx",
-                    lineNumber: 46,
+                    lineNumber: 17,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/movie-view/movie-view.jsx",
-                lineNumber: 45,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -48013,7 +47984,7 @@ const MovieView = ({ movies, token, simMovies })=>{
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                             fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 91,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -48021,7 +47992,7 @@ const MovieView = ({ movies, token, simMovies })=>{
                             children: "Similar Movies"
                         }, void 0, false, {
                             fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 92,
+                            lineNumber: 63,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -48033,34 +48004,34 @@ const MovieView = ({ movies, token, simMovies })=>{
                                         movie: movie
                                     }, void 0, false, {
                                         fileName: "components/movie-view/movie-view.jsx",
-                                        lineNumber: 96,
+                                        lineNumber: 67,
                                         columnNumber: 17
                                     }, undefined)
                                 }, movie.id, false, {
                                     fileName: "components/movie-view/movie-view.jsx",
-                                    lineNumber: 95,
+                                    lineNumber: 66,
                                     columnNumber: 15
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "components/movie-view/movie-view.jsx",
-                            lineNumber: 93,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/movie-view/movie-view.jsx",
-                    lineNumber: 90,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/movie-view/movie-view.jsx",
-                lineNumber: 89,
+                lineNumber: 60,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/movie-view/movie-view.jsx",
-        lineNumber: 44,
+        lineNumber: 15,
         columnNumber: 5
     }, undefined);
 };
@@ -48211,10 +48182,7 @@ const LoginView = ({ onLoggedIn })=>{
                             className: "signup--button",
                             variant: "outline-primary",
                             onClick: ()=>{
-                                let loginView = document.querySelector(".login--view");
-                                loginView.classList.add("hide--signup-or-login");
-                                let signupView = document.querySelector(".signup--view");
-                                signupView.classList.remove("hide--signup-or-login");
+                                window.location.href = "/signup";
                             },
                             children: "Signup"
                         }, void 0, false, {
@@ -48296,11 +48264,7 @@ const SignupView = ()=>{
         }).then((response)=>{
             if (response.ok) {
                 alert("Signup Successful");
-                window.location.reload();
-                let loginView = document.querySelector(".login--view");
-                loginView.classList.remove("hide--signup-or-login");
-                let signupView = document.querySelector(".signup--view");
-                signupView.classList.add("hide--signup-or-login");
+                window.location.href = "/login";
             } else alert("Signup Failed");
         });
     };
@@ -48311,11 +48275,11 @@ const SignupView = ()=>{
             className: "login-signup--page",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "logo",
+                    className: "logo signup-page",
                     children: "myFLIX"
                 }, void 0, false, {
                     fileName: "components/signup-view/signup-view.jsx",
-                    lineNumber: 48,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -48327,7 +48291,7 @@ const SignupView = ()=>{
                                 "First Name:",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 52,
+                                    lineNumber: 48,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -48338,13 +48302,13 @@ const SignupView = ()=>{
                                     minLength: 2
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 53,
+                                    lineNumber: 49,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 50,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -48352,7 +48316,7 @@ const SignupView = ()=>{
                                 "Last Name:",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -48363,13 +48327,13 @@ const SignupView = ()=>{
                                     minLength: 2
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 64,
+                                    lineNumber: 60,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 61,
+                            lineNumber: 57,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -48377,7 +48341,7 @@ const SignupView = ()=>{
                                 "Email:",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 74,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -48387,13 +48351,13 @@ const SignupView = ()=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 75,
+                                    lineNumber: 71,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 72,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -48401,7 +48365,7 @@ const SignupView = ()=>{
                                 "Birthday:",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 84,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -48411,13 +48375,13 @@ const SignupView = ()=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 85,
+                                    lineNumber: 81,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 82,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -48425,7 +48389,7 @@ const SignupView = ()=>{
                                 "Username:",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 94,
+                                    lineNumber: 90,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -48436,13 +48400,13 @@ const SignupView = ()=>{
                                     minLength: 5
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 95,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 92,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -48450,7 +48414,7 @@ const SignupView = ()=>{
                                 "Password:",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 105,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -48461,13 +48425,13 @@ const SignupView = ()=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "components/signup-view/signup-view.jsx",
-                                    lineNumber: 106,
+                                    lineNumber: 102,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 103,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -48476,39 +48440,36 @@ const SignupView = ()=>{
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 114,
+                            lineNumber: 110,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                             variant: "outline-primary",
                             className: "signup--button",
                             onClick: ()=>{
-                                let loginView = document.querySelector(".login--view");
-                                loginView.classList.remove("hide--signup-or-login");
-                                let signupView = document.querySelector(".signup--view");
-                                signupView.classList.add("hide--signup-or-login");
+                                window.location.href = "/login";
                             },
                             children: "Return to Login"
                         }, void 0, false, {
                             fileName: "components/signup-view/signup-view.jsx",
-                            lineNumber: 117,
+                            lineNumber: 113,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/signup-view/signup-view.jsx",
-                    lineNumber: 49,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "components/signup-view/signup-view.jsx",
-            lineNumber: 47,
+            lineNumber: 43,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "components/signup-view/signup-view.jsx",
-        lineNumber: 46,
+        lineNumber: 42,
         columnNumber: 5
     }, undefined);
 };
@@ -48561,35 +48522,36 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
                     id: "basic-navbar-nav",
+                    className: "justify-content-end",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
-                        className: "me-auto",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                                href: "/login",
-                                children: "Login"
-                            }, void 0, false, {
-                                fileName: "components/navigation-bar/navigation-bar.jsx",
-                                lineNumber: 14,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                                href: "/signup",
-                                children: "Signup"
-                            }, void 0, false, {
-                                fileName: "components/navigation-bar/navigation-bar.jsx",
-                                lineNumber: 15,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                                onClick: onLoggedOut,
-                                children: "Log Out"
-                            }, void 0, false, {
-                                fileName: "components/navigation-bar/navigation-bar.jsx",
-                                lineNumber: 16,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
+                        children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                    href: "/login",
+                                    children: "Login"
+                                }, void 0, false, {
+                                    fileName: "components/navigation-bar/navigation-bar.jsx",
+                                    lineNumber: 16,
+                                    columnNumber: 17
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                    href: "/signup",
+                                    children: "Signup"
+                                }, void 0, false, {
+                                    fileName: "components/navigation-bar/navigation-bar.jsx",
+                                    lineNumber: 17,
+                                    columnNumber: 17
+                                }, undefined)
+                            ]
+                        }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                            onClick: onLoggedOut,
+                            children: "Log Out"
+                        }, void 0, false, {
+                            fileName: "components/navigation-bar/navigation-bar.jsx",
+                            lineNumber: 20,
+                            columnNumber: 15
+                        }, undefined)
+                    }, void 0, false, {
                         fileName: "components/navigation-bar/navigation-bar.jsx",
                         lineNumber: 13,
                         columnNumber: 11

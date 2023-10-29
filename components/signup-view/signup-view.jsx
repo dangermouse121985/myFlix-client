@@ -32,11 +32,7 @@ export const SignupView = () => {
     }).then((response) => {
       if (response.ok) {
         alert('Signup Successful');
-        window.location.reload();
-        let loginView = document.querySelector('.login--view');
-        loginView.classList.remove('hide--signup-or-login');
-        let signupView = document.querySelector('.signup--view');
-        signupView.classList.add('hide--signup-or-login');
+        window.location.href = '/login';
       } else {
         alert('Signup Failed');
       }
@@ -45,7 +41,7 @@ export const SignupView = () => {
   return (
     <Row className="justify-content-center">
       <Col md={4} className="login-signup--page">
-        <div className="logo">myFLIX</div>
+        <div className="logo signup-page">myFLIX</div>
         <form className="signup--form" onSubmit={handleSubmit}>
           <label>
             First Name:
@@ -118,10 +114,7 @@ export const SignupView = () => {
             variant="outline-primary"
             className="signup--button"
             onClick={() => {
-              let loginView = document.querySelector('.login--view');
-              loginView.classList.remove('hide--signup-or-login');
-              let signupView = document.querySelector('.signup--view');
-              signupView.classList.add('hide--signup-or-login');
+              window.location.href = '/login';
             }}
           >
             Return to Login
