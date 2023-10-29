@@ -41,7 +41,7 @@ export const LoginView = ({ onLoggedIn }) => {
   return (
     <Row className="justify-content-center">
       <Col md={4} className="login-signup--page">
-        <div className="logo">myFLIX</div>
+        <div className="logo login-page">myFLIX</div>
         <form className="login--form" onSubmit={handleSubmit}>
           <label>
             Username:

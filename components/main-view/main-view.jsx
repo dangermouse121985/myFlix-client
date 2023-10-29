@@ -8,7 +8,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { SignupView } from '../signup-view/signup-view';
-import { HeaderView } from '../header-view/header-view';
+import { NavigationBar } from '../navigation-bar/navigation-bar';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -55,7 +55,15 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
-      <Row className="justify-content-md-center">
+      <NavigationBar
+        user={user}
+        onLoggedOut={() => {
+          setUser(null);
+          setToken(null);
+          localStorage.clear();
+        }}
+      ></NavigationBar>
+      <Row className="justify-content-md-center main">
         <Routes>
           <Route
             path="/login"
@@ -94,16 +102,6 @@ export const MainView = () => {
             path="/movies/:movieId"
             element={
               <>
-                <Button
-                  variant="outline-primary"
-                  onClick={() => {
-                    setUser(null);
-                    setToken(null);
-                    localStorage.clear();
-                  }}
-                >
-                  Logout
-                </Button>
                 {!user ? (
                   <Navigate to="/login" replace />
                 ) : movies.length === 0 ? (

@@ -6,7 +6,10 @@ import { Link } from 'react-router-dom';
 export const MovieCard = ({ movie }) => {
   return (
     <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
-      <Card className="movie-card h-100">
+      <Card
+        className="movie-card h-100"
+        onClick={window.scrollTo({ top: 0, behavior: 'instant' })}
+      >
         <Card.Img variant="top" src={movie.image} alt={movie.title} />
         <Card.Body>
           <Card.Title className="movie-title">
