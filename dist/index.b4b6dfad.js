@@ -48544,14 +48544,26 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                     columnNumber: 17
                                 }, undefined)
                             ]
-                        }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                            onClick: onLoggedOut,
-                            children: "Log Out"
-                        }, void 0, false, {
-                            fileName: "components/navigation-bar/navigation-bar.jsx",
-                            lineNumber: 20,
-                            columnNumber: 15
-                        }, undefined)
+                        }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                    href: "/",
+                                    children: "Home"
+                                }, void 0, false, {
+                                    fileName: "components/navigation-bar/navigation-bar.jsx",
+                                    lineNumber: 21,
+                                    columnNumber: 17
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                    onClick: onLoggedOut,
+                                    children: "Log Out"
+                                }, void 0, false, {
+                                    fileName: "components/navigation-bar/navigation-bar.jsx",
+                                    lineNumber: 22,
+                                    columnNumber: 17
+                                }, undefined)
+                            ]
+                        }, void 0, true)
                     }, void 0, false, {
                         fileName: "components/navigation-bar/navigation-bar.jsx",
                         lineNumber: 13,

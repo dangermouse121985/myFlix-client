@@ -13233,12 +13233,16 @@ body {
   color: #eaf2ef;
 }
 
-.header .logo {
+.header a:hover, .header .logo {
   color: #d52941;
 }
 
 .main {
   margin: 80px 5px;
+}
+
+.main a {
+  text-decoration: none;
 }
 
 img {
@@ -13273,22 +13277,14 @@ h1, .h1, h2, .h2 {
   color: #eaf2ef;
 }
 
-.hide--signup-or-login {
-  display: none;
-}
-
 .movie-card--button {
   margin: 10px;
   position: absolute;
 }
 
 .movie-card:hover {
-  background: #0000001a;
+  background: #0000004d;
   box-shadow: 1px 1px 10px #000;
-}
-
-.main a {
-  text-decoration: none;
 }
 
 .one-movie--view {
