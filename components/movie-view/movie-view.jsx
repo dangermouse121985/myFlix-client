@@ -9,6 +9,7 @@ import { useParams } from 'react-router';
 import { MovieCard } from '../movie-card/movie-card';
 export const MovieView = ({ movies, token, simMovies }) => {
   const { movieId } = useParams();
+
   const movie = movies.find((m) => m.id === movieId);
 
   return (
@@ -62,9 +63,9 @@ export const MovieView = ({ movies, token, simMovies }) => {
           <hr />
           <h2 className="similar-movies">Similar Movies</h2>
           <Row className="justify-content-center">
-            {simMovies(movie).map((movie) => (
-              <Col className="mb-5" md={3} key={movie.id}>
-                <MovieCard movie={movie} />
+            {simMovies(movie).map((m) => (
+              <Col className="mb-5" md={3} key={m.id}>
+                <MovieCard movie={m} key={m.id} />
               </Col>
             ))}
           </Row>

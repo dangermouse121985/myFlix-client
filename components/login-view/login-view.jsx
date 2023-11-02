@@ -30,7 +30,7 @@ export const LoginView = ({ onLoggedIn }) => {
           localStorage.setItem('token', data.token);
           onLoggedIn(data.user, data.token);
         } else {
-          alert('No Such User');
+          alert('Sorry. The username or password is incorrect');
         }
       })
       .catch((e) => {

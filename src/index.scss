@@ -90,9 +90,26 @@ h2 {
   }
 }
 
+.card-text,
+.titleText {
+  color: $body-color;
+}
+.movie-card {
+  z-index: 998;
+}
+
 .movie-card--button {
+  top: 0;
   position: absolute;
   margin: $std-spacing;
+}
+
+.movie-favorites-button {
+  margin: $std-spacing;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .movie-card:hover {

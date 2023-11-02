@@ -9,6 +9,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { SignupView } from '../signup-view/signup-view';
 import { NavigationBar } from '../navigation-bar/navigation-bar';
+import { UserView } from '../user-view/user-view';
+import { FavoritesView } from '../favorites-view/favorites-view';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -121,7 +123,40 @@ export const MainView = () => {
               </>
             }
           />
-          {/* <Row className="justify-content-md-center home-page--main"> */}
+          <Route
+            path="/user"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : (
+                  <>
+                    <UserView user={user} />
+                  </>
+                )}
+              </>
+            }
+          ></Route>
+          <Route
+            path="/user/favorites"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : user.favorites.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <>
+                    <FavoritesView
+                      user={user}
+                      key={movies.id}
+                      movies={movies}
+                    ></FavoritesView>
+                  </>
+                )}
+              </>
+            }
+          ></Route>
           <Route
             path="/"
             element={
@@ -135,7 +170,11 @@ export const MainView = () => {
                     {movies.map((movie) => {
                       return (
                         <Col className="mb-5" key={movie.id} md={3}>
-                          <MovieCard movie={movie} />
+                          <MovieCard
+                            movies={movies}
+                            movie={movie}
+                            user={user}
+                          />
                         </Col>
                       );
                     })}

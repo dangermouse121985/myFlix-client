@@ -13273,13 +13273,26 @@ h1, .h1, h2, .h2 {
   width: 100%;
 }
 
-.login--form label, .signup--form label {
+.login--form label, .signup--form label, .card-text, .titleText {
   color: #eaf2ef;
+}
+
+.movie-card {
+  z-index: 998;
 }
 
 .movie-card--button {
   margin: 10px;
   position: absolute;
+  top: 0;
+}
+
+.movie-favorites-button {
+  z-index: 999;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .movie-card:hover {
