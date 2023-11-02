@@ -13289,6 +13289,9 @@ h1, .h1, h2, .h2 {
 
 .movie-favorites-button {
   z-index: 999;
+  opacity: 1;
+  background: #000c;
+  border-color: #d52941cc;
   margin: 10px;
   position: absolute;
   top: 0;

@@ -3,7 +3,7 @@
 
 $body-bg: rgb(46, 82, 102);
 $dark: rgba(32, 57, 71);
-$primary: #d52941;
+$primary: rgb(213, 41, 65);
 $body-color: #eaf2ef;
 $card-bg-color: rgba(0, 0, 0, 0.3);
 $std-spacing: 10px;
@@ -110,6 +110,9 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(213, 41, 65, 0.8);
 }
 
 .movie-card:hover {

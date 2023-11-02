@@ -68,7 +68,7 @@ export const MovieCard = ({ movies, movie, user }) => {
         id={movie.title}
         className="mb-2 movie-favorites-button"
         type="checkbox"
-        variant="secondary"
+        variant="outline-primary"
         checked={checked}
         value="1"
         onChange={(e) => setChecked(e.currentTarget.checked)}
