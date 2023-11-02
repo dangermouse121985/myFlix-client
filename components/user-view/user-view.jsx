@@ -8,12 +8,12 @@ export const UserView = ({ user }) => {
   const storedToken = localStorage.getItem('token');
   const [token, setToken] = useState(storedToken ? storedToken : null);
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [birthday, setBirthday] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState(user.first_name);
+  const [lastName, setLastName] = useState(user.last_name);
+  const [email, setEmail] = useState(user.email);
+  const [birthday, setBirthday] = useState(user.birth);
+  const [username, setUsername] = useState(user.username);
+  const [password, setPassword] = useState(user.password);
 
   useEffect(() => {
     if (!token) {
@@ -34,7 +34,8 @@ export const UserView = ({ user }) => {
       });
   }, [token]);
 
-  const updateUser = () => {
+  const updateUser = (e) => {
+    e.preventDefault();
     const data = {
       first_name: firstName,
       last_name: lastName,
@@ -44,6 +45,7 @@ export const UserView = ({ user }) => {
       password: password,
     };
 
+    console.log(firstName);
     fetch(
       `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
       {
@@ -54,26 +56,32 @@ export const UserView = ({ user }) => {
         body: JSON.stringify(data),
         method: 'PUT',
       }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const userFromApi = {
-          username: data.username,
-        };
-        setUserInfo(userFromApi);
-      });
+    ).then((response) => {
+      if (response.ok) {
+        alert('User Info Successfully Updated');
+        window.location.href = '/login';
+      } else {
+        alert('User Update Failed');
+      }
+    });
   };
 
-  console.log(userInfo);
   const deregister = (e) => {
     e.preventDefault();
-    fetch(
-      `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
-      {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${token}` },
-      }
+    let response = confirm(
+      'Are you sure, you want to delete this account. This acction is not reversible!'
     );
+
+    console.log(response);
+    if (response) {
+      fetch(
+        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
+        {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+    }
   };
 
   birth = new Date(user.birth);
@@ -85,13 +93,13 @@ export const UserView = ({ user }) => {
 
   return (
     <>
-      <Form>
+      <Form onSubmit={updateUser}>
         <Form.Group className="mb-3">
           <Form.Label>First Name</Form.Label>
           <Form.Control
             type="text"
             defaultValue={user.first_name}
-            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -99,23 +107,31 @@ export const UserView = ({ user }) => {
           <Form.Control
             type="text"
             defaultValue={user.last_name}
-            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" defaultValue={user.email} value={email} />
+          <Form.Control
+            type="email"
+            defaultValue={user.email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Birth Date</Form.Label>
-          <Form.Control type="date" value={birthday}></Form.Control>
+          <Form.Control
+            type="date"
+            value={birthString}
+            onChange={(e) => setBirthday(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
             defaultValue={user.username}
-            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -123,16 +139,18 @@ export const UserView = ({ user }) => {
           <Form.Control
             type="password"
             placeholder="Password"
-            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button className="update-user--button" variant="success" type="submit">
           Submit
         </Button>
-        <Button variant="primary" onClick={deregister}>
+        <Button
+          className="delete-user--button"
+          variant="danger"
+          onClick={deregister}
+        >
           Delete User
         </Button>
       </Form>

@@ -133,3 +133,8 @@ h2 {
     padding-bottom: $std-spacing;
   }
 }
+
+.update-user--button,
+.delete-user--button {
+  margin-right: $std-spacing;
+}

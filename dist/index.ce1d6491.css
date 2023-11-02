@@ -13317,4 +13317,8 @@ h1, .h1, h2, .h2 {
   padding-bottom: 10px;
 }
 
+.update-user--button, .delete-user--button {
+  margin-right: 10px;
+}
+
 /*# sourceMappingURL=index.ce1d6491.css.map */
