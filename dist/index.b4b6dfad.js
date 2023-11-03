@@ -27567,7 +27567,7 @@ const MovieCard = ({ movies, movie, user })=>{
             localStorage.setItem("user", JSON.stringify(data));
         });
     };
-    const addFav = ()=>{
+    const addFav = (event)=>{
         fetch(`https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -27654,13 +27654,13 @@ const MovieCard = ({ movies, movie, user })=>{
                 checked: checked,
                 value: "1",
                 onChange: (e)=>setChecked(e.currentTarget.checked),
-                onClick: ()=>{
+                onClick: (event)=>{
                     if (!user.favorites) ;
                     else if (user.favorites.indexOf(movie.id) > -1) {
-                        delFav();
+                        delFav(event);
                         let card = document.getElementById(movie.id);
                         if (window.location.pathname === "/user/favorites") card.style.display = "none";
-                    } else addFav();
+                    } else addFav(event);
                 },
                 children: "Favorite"
             }, void 0, false, {
