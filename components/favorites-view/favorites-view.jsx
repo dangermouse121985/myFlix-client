@@ -8,26 +8,9 @@ import { useParams } from 'react-router';
 import { MovieCard } from '../movie-card/movie-card';
 
 export const FavoritesView = ({ movies, user }) => {
-  const [userForFav, setUser] = useState([]);
   const token = localStorage.getItem('token');
 
-  useEffect(() => {
-    if (!token) {
-      return;
-    }
-    fetch(
-      `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setUser(data);
-      });
-  }, [token]);
+  const userForFav = JSON.parse(localStorage.getItem('user'));
 
   const favoriteMovies = movies.filter((m) => {
     return userForFav.favorites.includes(m.id);

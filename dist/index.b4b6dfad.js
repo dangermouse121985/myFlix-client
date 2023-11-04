@@ -49079,23 +49079,9 @@ var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _reactRouterDom = require("react-router-dom");
 var _reactRouter = require("react-router");
 var _movieCard = require("../movie-card/movie-card");
-var _s = $RefreshSig$();
 const FavoritesView = ({ movies, user })=>{
-    _s();
-    const [userForFav, setUser] = (0, _react.useState)([]);
     const token = localStorage.getItem("token");
-    (0, _react.useEffect)(()=>{
-        if (!token) return;
-        fetch(`https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>response.json()).then((data)=>{
-            setUser(data);
-        });
-    }, [
-        token
-    ]);
+    const userForFav = JSON.parse(localStorage.getItem("user"));
     const favoriteMovies = movies.filter((m)=>{
         return userForFav.favorites.includes(m.id);
     });
@@ -49106,7 +49092,7 @@ const FavoritesView = ({ movies, user })=>{
                     children: "My Favorites"
                 }, void 0, false, {
                     fileName: "components/favorites-view/favorites-view.jsx",
-                    lineNumber: 39,
+                    lineNumber: 22,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -49119,32 +49105,31 @@ const FavoritesView = ({ movies, user })=>{
                                 user: user
                             }, void 0, false, {
                                 fileName: "components/favorites-view/favorites-view.jsx",
-                                lineNumber: 43,
+                                lineNumber: 26,
                                 columnNumber: 15
                             }, undefined)
                         }, movie.id, false, {
                             fileName: "components/favorites-view/favorites-view.jsx",
-                            lineNumber: 42,
+                            lineNumber: 25,
                             columnNumber: 13
                         }, undefined))
                 }, void 0, false, {
                     fileName: "components/favorites-view/favorites-view.jsx",
-                    lineNumber: 40,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "components/favorites-view/favorites-view.jsx",
-            lineNumber: 38,
+            lineNumber: 21,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "components/favorites-view/favorites-view.jsx",
-        lineNumber: 37,
+        lineNumber: 20,
         columnNumber: 5
     }, undefined);
 };
-_s(FavoritesView, "sG4oJtd9HO3ujKRQiZYqwa5zPPg=");
 _c = FavoritesView;
 var _c;
 $RefreshReg$(_c, "FavoritesView");
