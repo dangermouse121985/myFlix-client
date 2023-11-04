@@ -27494,9 +27494,7 @@ const MainView = ()=>{
                                             className: "mb-5",
                                             md: 3,
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                                movies: movies,
-                                                movie: movie,
-                                                user: user
+                                                movie: movie
                                             }, void 0, false, void 0, void 0)
                                         }, movie.id, false, void 0, void 0);
                                     })
@@ -27552,9 +27550,10 @@ var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
-const MovieCard = ({ movies, movie, user })=>{
+const MovieCard = ({ movie })=>{
     _s();
     const token = localStorage.getItem("token");
+    let user = JSON.parse(localStorage.getItem("user"));
     const [checked, setChecked] = (0, _react.useState)(user.favorites.indexOf(movie.id) > -1 ? true : false);
     //Delete Movie From User's Favorites List
     const delFav = ()=>{
@@ -27595,7 +27594,7 @@ const MovieCard = ({ movies, movie, user })=>{
                         alt: movie.title
                     }, void 0, false, {
                         fileName: "components/movie-card/movie-card.jsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -27607,12 +27606,12 @@ const MovieCard = ({ movies, movie, user })=>{
                                     children: movie.title
                                 }, void 0, false, {
                                     fileName: "components/movie-card/movie-card.jsx",
-                                    lineNumber: 56,
+                                    lineNumber: 57,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/movie-card/movie-card.jsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
@@ -27622,13 +27621,13 @@ const MovieCard = ({ movies, movie, user })=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "components/movie-card/movie-card.jsx",
-                                lineNumber: 58,
+                                lineNumber: 59,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/movie-card/movie-card.jsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -27637,13 +27636,13 @@ const MovieCard = ({ movies, movie, user })=>{
                         children: "View"
                     }, void 0, false, {
                         fileName: "components/movie-card/movie-card.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.ToggleButton), {
@@ -27655,23 +27654,24 @@ const MovieCard = ({ movies, movie, user })=>{
                 value: "1",
                 onChange: (e)=>setChecked(e.currentTarget.checked),
                 onClick: (event)=>{
+                    user = JSON.parse(localStorage.getItem("user"));
                     if (!user.favorites) return;
                     else if (user.favorites.indexOf(movie.id) > -1) {
                         delFav(event);
                         let card = document.getElementById(movie.id);
-                        if (window.location.pathname === "/user/favorites") card.style.display = "none";
+                        if (window.location.pathname === "/user/favorites") card.parentNode.parentNode.removeChild(card.parentNode);
                     } else addFav(event);
                 },
                 children: "Favorite"
             }, void 0, false, {
                 fileName: "components/movie-card/movie-card.jsx",
-                lineNumber: 65,
+                lineNumber: 66,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/movie-card/movie-card.jsx",
-        lineNumber: 47,
+        lineNumber: 48,
         columnNumber: 5
     }, undefined);
 };
@@ -48778,6 +48778,7 @@ var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _reactRouter = require("react-router");
+var _reactBootstrap = require("react-bootstrap");
 var _s = $RefreshSig$();
 const UserView = ({ user })=>{
     _s();
@@ -48847,190 +48848,202 @@ const UserView = ({ user })=>{
         day: "numeric",
         year: "numeric"
     });
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-            onSubmit: updateUser,
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    className: "mb-3",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "First Name"
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 98,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "text",
-                            defaultValue: user.first_name,
-                            onChange: (e)=>setFirstName(e.target.value)
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 99,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 97,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    className: "mb-3",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Last Name"
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 106,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "text",
-                            defaultValue: user.last_name,
-                            onChange: (e)=>setLastName(e.target.value)
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 107,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 105,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    className: "mb-3",
-                    controlId: "formBasicEmail",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Email address"
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 114,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "email",
-                            defaultValue: user.email,
-                            onChange: (e)=>setEmail(e.target.value)
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 115,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 113,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    className: "mb-3",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Birth Date"
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 122,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "date",
-                            value: birthString,
-                            onChange: (e)=>setBirthday(e.target.value)
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 123,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 121,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    className: "mb-3",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Username"
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 130,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "text",
-                            defaultValue: user.username,
-                            onChange: (e)=>setUsername(e.target.value)
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 131,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 129,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    className: "mb-3",
-                    controlId: "formBasicPassword",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Password"
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 138,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "password",
-                            placeholder: "Password",
-                            onChange: (e)=>setPassword(e.target.value),
-                            required: true
-                        }, void 0, false, {
-                            fileName: "components/user-view/user-view.jsx",
-                            lineNumber: 139,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 137,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                    className: "update-user--button",
-                    variant: "success",
-                    type: "submit",
-                    children: "Submit"
-                }, void 0, false, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 146,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                    className: "delete-user--button",
-                    variant: "danger",
-                    onClick: deregister,
-                    children: "Delete User"
-                }, void 0, false, {
-                    fileName: "components/user-view/user-view.jsx",
-                    lineNumber: 149,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+        className: "justify-content-center",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+            md: 8,
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                onSubmit: updateUser,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        className: "mb-3",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "First Name"
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 100,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                defaultValue: user.first_name,
+                                onChange: (e)=>setFirstName(e.target.value)
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 101,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 99,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        className: "mb-3",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Last Name"
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 108,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                defaultValue: user.last_name,
+                                onChange: (e)=>setLastName(e.target.value)
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 109,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 107,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        className: "mb-3",
+                        controlId: "formBasicEmail",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Email address"
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 116,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "email",
+                                defaultValue: user.email,
+                                onChange: (e)=>setEmail(e.target.value)
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 117,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 115,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        className: "mb-3",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Birth Date"
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 124,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "date",
+                                value: birthString,
+                                onChange: (e)=>setBirthday(e.target.value)
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 125,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 123,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        className: "mb-3",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Username"
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 132,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                defaultValue: user.username,
+                                onChange: (e)=>setUsername(e.target.value)
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 133,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 131,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        className: "mb-3",
+                        controlId: "formBasicPassword",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Password"
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 140,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "password",
+                                placeholder: "Password",
+                                onChange: (e)=>setPassword(e.target.value),
+                                required: true
+                            }, void 0, false, {
+                                fileName: "components/user-view/user-view.jsx",
+                                lineNumber: 141,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 139,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                        className: "update-user--button",
+                        variant: "success",
+                        type: "submit",
+                        children: "Update User"
+                    }, void 0, false, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 148,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                        className: "delete-user--button",
+                        variant: "danger",
+                        onClick: deregister,
+                        children: "Delete User"
+                    }, void 0, false, {
+                        fileName: "components/user-view/user-view.jsx",
+                        lineNumber: 155,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/user-view/user-view.jsx",
+                lineNumber: 98,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
             fileName: "components/user-view/user-view.jsx",
-            lineNumber: 96,
+            lineNumber: 97,
             columnNumber: 7
         }, undefined)
-    }, void 0, false);
+    }, void 0, false, {
+        fileName: "components/user-view/user-view.jsx",
+        lineNumber: 96,
+        columnNumber: 5
+    }, undefined);
 };
 _s(UserView, "GGXlKuB48PbMY8r8bCBC0wgs3RQ=");
 _c = UserView;
@@ -49042,7 +49055,7 @@ $RefreshReg$(_c, "UserView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-router":"dbWyW","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"5QZnV":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-router":"dbWyW","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","react-bootstrap":"3AD9A"}],"5QZnV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0455 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

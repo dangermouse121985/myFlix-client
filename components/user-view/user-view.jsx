@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useParams } from 'react-router';
+import { Row, Col } from 'react-bootstrap';
 
 export const UserView = ({ user }) => {
   const [userInfo, setUserInfo] = useState('');
@@ -92,68 +93,74 @@ export const UserView = ({ user }) => {
   });
 
   return (
-    <>
-      <Form onSubmit={updateUser}>
-        <Form.Group className="mb-3">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            type="text"
-            defaultValue={user.first_name}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            type="text"
-            defaultValue={user.last_name}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            defaultValue={user.email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Birth Date</Form.Label>
-          <Form.Control
-            type="date"
-            value={birthString}
-            onChange={(e) => setBirthday(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            defaultValue={user.username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </Form.Group>
-        <Button className="update-user--button" variant="success" type="submit">
-          Submit
-        </Button>
-        <Button
-          className="delete-user--button"
-          variant="danger"
-          onClick={deregister}
-        >
-          Delete User
-        </Button>
-      </Form>
-    </>
+    <Row className="justify-content-center">
+      <Col md={8}>
+        <Form onSubmit={updateUser}>
+          <Form.Group className="mb-3">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control
+              type="text"
+              defaultValue={user.first_name}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control
+              type="text"
+              defaultValue={user.last_name}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              defaultValue={user.email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Birth Date</Form.Label>
+            <Form.Control
+              type="date"
+              value={birthString}
+              onChange={(e) => setBirthday(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
+              defaultValue={user.username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Button
+            className="update-user--button"
+            variant="success"
+            type="submit"
+          >
+            Update User
+          </Button>
+          <Button
+            className="delete-user--button"
+            variant="danger"
+            onClick={deregister}
+          >
+            Delete User
+          </Button>
+        </Form>
+      </Col>
+    </Row>
   );
 };

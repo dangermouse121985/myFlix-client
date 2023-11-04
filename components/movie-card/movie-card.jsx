@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { Button, ToggleButton, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export const MovieCard = ({ movies, movie, user }) => {
+export const MovieCard = ({ movie }) => {
   const token = localStorage.getItem('token');
+  let user = JSON.parse(localStorage.getItem('user'));
   const [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );
@@ -71,13 +72,14 @@ export const MovieCard = ({ movies, movie, user }) => {
         value="1"
         onChange={(e) => setChecked(e.currentTarget.checked)}
         onClick={(event) => {
+          user = JSON.parse(localStorage.getItem('user'));
           if (!user.favorites) {
             return;
           } else if (user.favorites.indexOf(movie.id) > -1) {
             delFav(event);
             let card = document.getElementById(movie.id);
             if (window.location.pathname === '/user/favorites') {
-              card.style.display = 'none';
+              card.parentNode.parentNode.removeChild(card.parentNode);
             }
           } else {
             addFav(event);
