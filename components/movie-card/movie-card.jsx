@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Button, ToggleButton, Card } from 'react-bootstrap';
-import { StarRating } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FavoritesView } from '../favorites-view/favorites-view';
 
 export const MovieCard = ({ movies, movie, user }) => {
   const token = localStorage.getItem('token');
@@ -11,6 +9,7 @@ export const MovieCard = ({ movies, movie, user }) => {
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );
 
+  //Delete Movie From User's Favorites List
   const delFav = () => {
     {
       fetch(
@@ -27,6 +26,7 @@ export const MovieCard = ({ movies, movie, user }) => {
     }
   };
 
+  //Add Movie to User's Favorites List
   const addFav = (event) => {
     {
       fetch(
@@ -42,8 +42,6 @@ export const MovieCard = ({ movies, movie, user }) => {
         });
     }
   };
-
-  function refreshPage() {}
 
   return (
     <Card
@@ -66,7 +64,7 @@ export const MovieCard = ({ movies, movie, user }) => {
       </Link>
       <ToggleButton
         id={movie.title}
-        className="mb-2 movie-favorites-button"
+        className="mb-2 movie-card--favorites-button"
         type="checkbox"
         variant="outline-primary"
         checked={checked}
@@ -74,6 +72,7 @@ export const MovieCard = ({ movies, movie, user }) => {
         onChange={(e) => setChecked(e.currentTarget.checked)}
         onClick={(event) => {
           if (!user.favorites) {
+            return;
           } else if (user.favorites.indexOf(movie.id) > -1) {
             delFav(event);
             let card = document.getElementById(movie.id);

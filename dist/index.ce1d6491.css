@@ -13308,13 +13308,16 @@ input[type="password"]::-moz-placeholder {
   top: 0;
 }
 
-.movie-favorites-button {
+.movie-card--favorites-button, .movie-view--favorites-button {
   z-index: 999;
   opacity: 1;
   background: #000c;
   border: 2px solid #d52941cc;
   width: 85px;
   margin: 10px;
+}
+
+.movie-card--favorites-button {
   position: absolute;
   top: 0;
   right: 0;

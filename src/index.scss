@@ -131,16 +131,20 @@ input[type='password']::-ms-input-placeholder {
   border: 2px solid rgba(213, 41, 65, 0.8);
 }
 
-.movie-favorites-button {
+.movie-card--favorites-button,
+.movie-view--favorites-button {
   margin: $std-spacing;
   z-index: 999;
-  position: absolute;
   width: 85px;
-  top: 0;
-  right: 0;
   opacity: 1;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid rgba(213, 41, 65, 0.8);
+}
+
+.movie-card--favorites-button {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .movie-card:hover {

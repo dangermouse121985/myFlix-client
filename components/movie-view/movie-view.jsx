@@ -3,14 +3,53 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import { Button, ToggleButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { MovieCard } from '../movie-card/movie-card';
-export const MovieView = ({ movies, token, simMovies }) => {
-  const { movieId } = useParams();
 
+export const MovieView = ({ movies, user, simMovies }) => {
+  const { movieId } = useParams();
   const movie = movies.find((m) => m.id === movieId);
+
+  const token = localStorage.getItem('token');
+  const [checked, setChecked] = useState(
+    user.favorites.indexOf(movie.id) > -1 ? true : false
+  );
+
+  //Delete Movie From User's Favorites List
+  const delFav = () => {
+    {
+      fetch(
+        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          method: 'DELETE',
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem('user', JSON.stringify(data));
+        });
+    }
+  };
+
+  //Add Movie to User's Favorites List
+  const addFav = (event) => {
+    {
+      fetch(
+        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          method: 'PUT',
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem('user', JSON.stringify(data));
+        });
+    }
+  };
 
   return (
     <div className="one-movie--main">
@@ -18,7 +57,7 @@ export const MovieView = ({ movies, token, simMovies }) => {
         <Col md={8}>
           <Row className="justify-content-center one-movie--view " flex="1">
             <Col className="movie-view--image_container" md={6}>
-              <div>
+              <div className="movie-view--card">
                 <img
                   className="movie-view--image"
                   src={movie.image}
@@ -46,11 +85,35 @@ export const MovieView = ({ movies, token, simMovies }) => {
                 <h2>Actors</h2>
                 <span>
                   {movie.actors.map((actor) => {
-                    return <div key={actor.id}>{actor.name}</div>;
+                    return <div key={actor._id}>{actor.name}</div>;
                   })}
                 </span>
               </div>
               <br />
+              <ToggleButton
+                id={movie.title}
+                className="mb-2 movie-view--favorites-button"
+                type="checkbox"
+                variant="outline-primary"
+                checked={checked}
+                value="1"
+                onChange={(e) => setChecked(e.currentTarget.checked)}
+                onClick={(event) => {
+                  if (!user.favorites) {
+                    return;
+                  } else if (user.favorites.indexOf(movie.id) > -1) {
+                    delFav(event);
+                    let card = document.getElementById(movie.id);
+                    if (window.location.pathname === '/user/favorites') {
+                      card.style.display = 'none';
+                    }
+                  } else {
+                    addFav(event);
+                  }
+                }}
+              >
+                Favorite
+              </ToggleButton>
               <Link to={'/'}>
                 <Button variant="outline-primary">Back to Menu</Button>
               </Link>
@@ -65,7 +128,7 @@ export const MovieView = ({ movies, token, simMovies }) => {
           <Row className="justify-content-center">
             {simMovies(movie).map((m) => (
               <Col className="mb-5" md={3} key={m.id}>
-                <MovieCard movie={m} key={m.id} />
+                <MovieCard movie={m} user={user} key={m.id} />
               </Col>
             ))}
           </Row>
@@ -81,5 +144,13 @@ MovieView.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     image: PropTypes.string,
+  }),
+  user: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    first_name: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    favorites: PropTypes.array.isRequired,
   }),
 };
