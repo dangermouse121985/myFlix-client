@@ -1,5 +1,6 @@
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
@@ -19,9 +20,19 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
             ) : (
               <>
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/user/favorites">My Favorites</Nav.Link>
-                <Nav.Link href="/user/">My Profile</Nav.Link>
-                <Nav.Link onClick={onLoggedOut}>Log Out</Nav.Link>
+                <NavDropdown
+                  title={`${user.first_name} ${user.last_name}`}
+                  id="navbarScrollingDropdown"
+                >
+                  <NavDropdown.Item href="/user/">My Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="/user/favorites">
+                    My Favorites
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={onLoggedOut}>
+                    Log Out
+                  </NavDropdown.Item>
+                </NavDropdown>
               </>
             )}
           </Nav>
@@ -29,4 +40,18 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
       </Container>
     </Navbar>
   );
+};
+
+NavigationBar.propTypes = {
+  user: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    first_name: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    birth: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    favorites: PropTypes.array.isRequired,
+  }),
+  onLoggedOut: PropTypes.func.isRequired,
 };

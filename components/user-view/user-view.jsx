@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useParams } from 'react-router';
 import { Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 export const UserView = ({ user }) => {
   const [userInfo, setUserInfo] = useState('');
@@ -163,4 +163,17 @@ export const UserView = ({ user }) => {
       </Col>
     </Row>
   );
+};
+
+UserView.propTypes = {
+  user: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    first_name: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    birth: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    favorites: PropTypes.array.isRequired,
+  }).isRequired,
 };

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
@@ -149,8 +149,11 @@ MovieView.propTypes = {
     _id: PropTypes.string.isRequired,
     first_name: PropTypes.string.isRequired,
     last_name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    birth: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
     favorites: PropTypes.array.isRequired,
-  }),
+  }).isRequired,
+  simMovies: PropTypes.func.isRequired,
 };

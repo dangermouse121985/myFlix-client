@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { MovieCard } from '../movie-card/movie-card';

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, ToggleButton, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ export const MovieCard = ({ movie }) => {
   };
 
   //Add Movie to User's Favorites List
-  const addFav = (event) => {
+  const addFav = (e) => {
     {
       fetch(
         `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`,
@@ -76,13 +76,13 @@ export const MovieCard = ({ movie }) => {
           if (!user.favorites) {
             return;
           } else if (user.favorites.indexOf(movie.id) > -1) {
-            delFav(event);
+            delFav();
             let card = document.getElementById(movie.id);
             if (window.location.pathname === '/user/favorites') {
               card.parentNode.parentNode.removeChild(card.parentNode);
             }
           } else {
-            addFav(event);
+            addFav();
           }
         }}
       >
