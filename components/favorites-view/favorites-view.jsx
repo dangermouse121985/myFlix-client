@@ -2,12 +2,15 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { MovieCard } from '../movie-card/movie-card';
+import { useSelector, useDispatch } from 'react-redux';
 
-export const FavoritesView = ({ movies, user }) => {
+export const FavoritesView = () => {
   const userForFav = JSON.parse(localStorage.getItem('user'));
+  const user = useSelector((state) => state.user);
+  const movies = useSelector((state) => state.movies);
 
   const favoriteMovies = movies.filter((m) => {
-    return userForFav.favorites.includes(m.id);
+    return user.favorites.includes(m.id);
   });
 
   return (
@@ -26,7 +29,7 @@ export const FavoritesView = ({ movies, user }) => {
   );
 };
 
-FavoritesView.propTypes = {
+/* FavoritesView.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -43,4 +46,4 @@ FavoritesView.propTypes = {
     password: PropTypes.string.isRequired,
     favorites: PropTypes.array.isRequired,
   }),
-};
+}; */

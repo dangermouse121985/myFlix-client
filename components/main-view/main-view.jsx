@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useResolvedPath,
+} from 'react-router-dom';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setMovies } from '../../src/redux/reducers/movies';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -14,9 +23,17 @@ import { FavoritesView } from '../favorites-view/favorites-view';
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const storedToken = localStorage.getItem('token');
-  const [movies, setMovies] = useState([]);
-  const [user, setUser] = useState(storedUser ? storedUser : null);
-  const [token, setToken] = useState(storedToken ? storedToken : null);
+
+  const movies = useSelector((state) => state.movies);
+  //const [movies, setMovies] = useState([]);
+
+  const user = useSelector((state) => state.user);
+  //const [user, setUser] = useState(storedUser ? storedUser : null);
+
+  const token = useSelector((state) => state.token);
+  //const [token, setToken] = useState(storedToken ? storedToken : null);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!token) {
@@ -40,7 +57,8 @@ export const MainView = () => {
             featured: movie.featured,
           };
         });
-        setMovies(moviesFromApi);
+        dispatch(setMovies(moviesFromApi));
+        //setMovies(moviesFromApi);
       });
   }, [token]);
 
@@ -58,14 +76,7 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
-      <NavigationBar
-        user={user}
-        onLoggedOut={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
-        }}
-      ></NavigationBar>
+      <NavigationBar></NavigationBar>
       <Row className="justify-content-md-center main">
         <Routes>
           <Route
@@ -76,12 +87,7 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <div className="login--view">
-                    <LoginView
-                      onLoggedIn={(user, token) => {
-                        setUser(user);
-                        setToken(token);
-                      }}
-                    />
+                    <LoginView />
                   </div>
                 )}
               </>
@@ -111,12 +117,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <MovieView
-                      key={movies.id}
-                      movies={movies}
-                      user={user}
-                      simMovies={simMovies}
-                    />
+                    <MovieView key={movies.id} simMovies={simMovies} />
                   </>
                 )}
               </>
@@ -146,11 +147,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <FavoritesView
-                      user={user}
-                      key={movies.id}
-                      movies={movies}
-                    ></FavoritesView>
+                    <FavoritesView key={movies.id} user={user}></FavoritesView>
                   </>
                 )}
               </>

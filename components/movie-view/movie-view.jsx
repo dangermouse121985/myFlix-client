@@ -7,11 +7,14 @@ import { Button, ToggleButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { MovieCard } from '../movie-card/movie-card';
+import { useSelector, useDispatch } from 'react-redux';
 
-export const MovieView = ({ movies, user, simMovies }) => {
+export const MovieView = ({ simMovies }) => {
   const { movieId } = useParams();
+  const movies = useSelector((state) => state.movies);
   const movie = movies.find((m) => m.id === movieId);
 
+  const user = useSelector((state) => state.user);
   const token = localStorage.getItem('token');
   const [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
@@ -138,7 +141,7 @@ export const MovieView = ({ movies, user, simMovies }) => {
   );
 };
 
-MovieView.propTypes = {
+/* MovieView.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -156,4 +159,4 @@ MovieView.propTypes = {
     favorites: PropTypes.array.isRequired,
   }).isRequired,
   simMovies: PropTypes.func.isRequired,
-};
+}; */

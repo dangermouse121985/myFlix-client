@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Button, ToggleButton, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 export const MovieCard = ({ movie }) => {
-  const token = localStorage.getItem('token');
-  let user = JSON.parse(localStorage.getItem('user'));
+  //const token = localStorage.getItem('token');
+  const token = useSelector((state) => state.token);
+  //let user = JSON.parse(localStorage.getItem('user'));
+  const user = useSelector((state) => state.user);
   const [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );

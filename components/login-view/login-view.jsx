@@ -3,10 +3,15 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { setUser } from '../../src/redux/reducers/user';
+import { setToken } from '../../src/redux/reducers/token';
 
-export const LoginView = ({ onLoggedIn }) => {
+export const LoginView = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,7 +34,8 @@ export const LoginView = ({ onLoggedIn }) => {
         if (data.user) {
           localStorage.setItem('user', JSON.stringify(data.user));
           localStorage.setItem('token', data.token);
-          onLoggedIn(data.user, data.token);
+          dispatch(setUser(data.user));
+          dispatch(setToken(data.token));
         } else {
           alert('Sorry. The username or password is incorrect');
         }
@@ -81,6 +87,6 @@ export const LoginView = ({ onLoggedIn }) => {
   );
 };
 
-LoginView.propTypes = {
+/* LoginView.propTypes = {
   onLoggedIn: PropTypes.func.isRequired,
-};
+}; */
