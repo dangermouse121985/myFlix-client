@@ -8,6 +8,7 @@ export const FavoritesView = () => {
   const userForFav = JSON.parse(localStorage.getItem('user'));
   const user = useSelector((state) => state.user);
   const movies = useSelector((state) => state.movies);
+  console.log(user);
 
   const favoriteMovies = movies.filter((m) => {
     return user.favorites.includes(m.id);

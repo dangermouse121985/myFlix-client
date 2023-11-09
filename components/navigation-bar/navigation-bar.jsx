@@ -8,6 +8,7 @@ import { setToken } from '../../src/redux/reducers/token';
 export const NavigationBar = () => {
   const user = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
+
   const dispatch = useDispatch();
   return (
     <Navbar className="header" bg="dark" expand="lg">
@@ -25,34 +26,13 @@ export const NavigationBar = () => {
               </>
             ) : (
               <>
-                <Nav.Link
-                  href="/"
-                  onClick={() => {
-                    return user, token;
-                  }}
-                >
-                  Home
-                </Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown
                   title={`${user.first_name} ${user.last_name}`}
                   id="navbarScrollingDropdown"
                 >
-                  <NavDropdown.Item
-                    href="/user/"
-                    onClick={() => {
-                      dispatch(setUser(user));
-                      dispatch(setToken(token));
-                    }}
-                  >
-                    My Profile
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    href="/user/favorites"
-                    onClick={() => {
-                      dispatch(setUser(user));
-                      dispatch(setToken(token));
-                    }}
-                  >
+                  <NavDropdown.Item href="/user/">My Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="/user/favorites">
                     My Favorites
                   </NavDropdown.Item>
                   <NavDropdown.Divider />

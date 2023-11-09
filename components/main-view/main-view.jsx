@@ -27,7 +27,7 @@ export const MainView = () => {
   const movies = useSelector((state) => state.movies);
   //const [movies, setMovies] = useState([]);
 
-  const user = useSelector((state) => state.user);
+  let user = useSelector((state) => state.user);
   //const [user, setUser] = useState(storedUser ? storedUser : null);
 
   const token = useSelector((state) => state.token);
@@ -147,7 +147,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <FavoritesView key={movies.id} user={user}></FavoritesView>
+                    <FavoritesView key={movies.id}></FavoritesView>
                   </>
                 )}
               </>

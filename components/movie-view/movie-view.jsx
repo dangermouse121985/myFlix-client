@@ -13,9 +13,8 @@ export const MovieView = ({ simMovies }) => {
   const { movieId } = useParams();
   const movies = useSelector((state) => state.movies);
   const movie = movies.find((m) => m.id === movieId);
-
   const user = useSelector((state) => state.user);
-  const token = localStorage.getItem('token');
+  const token = useSelector((state) => state.token);
   const [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );
