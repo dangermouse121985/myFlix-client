@@ -27351,7 +27351,7 @@ const MainView = ()=>{
     //const [movies, setMovies] = useState([]);
     //const user = useSelector((state) => state.user);
     //const [user, setUser] = useState(storedUser ? storedUser : null);
-    const user = (0, _reactRedux.useSelector)((state)=>state.user.user);
+    const user = (0, _reactRedux.useSelector)((state)=>state.user.userProfile);
     const token = (0, _reactRedux.useSelector)((state)=>state.user.token);
     //const token = useSelector((state) => state.token);
     //const [token, setToken] = useState(storedToken ? storedToken : null);
@@ -50032,16 +50032,15 @@ const LoginView = ()=>{
         lineNumber: 48,
         columnNumber: 5
     }, undefined);
-};
+}; /* LoginView.propTypes = {
+  onLoggedIn: PropTypes.func.isRequired,
+}; */ 
 _s(LoginView, "2if1r6vstauAacdYWcokco+Nl8Q=", false, function() {
     return [
         (0, _reactRedux.useDispatch)
     ];
 });
 _c = LoginView;
-LoginView.propTypes = {
-    onLoggedIn: (0, _propTypesDefault.default).func.isRequired
-};
 var _c;
 $RefreshReg$(_c, "LoginView");
 
@@ -50059,15 +50058,15 @@ var _toolkit = require("@reduxjs/toolkit");
 const userSlice = (0, _toolkit.createSlice)({
     name: "user",
     initialState: {
-        user: null,
+        userProfile: null,
         token: null
     },
     reducers: {
-        setBody: (state, action)=>{
-            return action.payload;
+        setUserProfile: (state, action)=>{
+            state.userProfile = action.payload;
         },
         setToken: (state, action)=>{
-            return action.payload;
+            state.token = action.payload;
         }
     }
 });
@@ -54269,12 +54268,11 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactRedux = require("react-redux");
 var _user = require("../../src/redux/reducers/user");
-var _token = require("../../src/redux/reducers/token");
 var _s = $RefreshSig$();
 const NavigationBar = ()=>{
     _s();
-    const user = (0, _reactRedux.useSelector)((state)=>state.user);
-    const token = (0, _reactRedux.useSelector)((state)=>state.token);
+    const user = (0, _reactRedux.useSelector)((state)=>state.user.userProfile);
+    const token = (0, _reactRedux.useSelector)((state)=>state.user.token);
     const dispatch = (0, _reactRedux.useDispatch)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
         className: "header",
@@ -54289,14 +54287,14 @@ const NavigationBar = ()=>{
                     children: "MyFlix"
                 }, void 0, false, {
                     fileName: "components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 16,
+                    lineNumber: 15,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Toggle, {
                     "aria-controls": "basic-navbar-nav"
                 }, void 0, false, {
                     fileName: "components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 19,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
@@ -54310,7 +54308,7 @@ const NavigationBar = ()=>{
                                     children: "Login"
                                 }, void 0, false, {
                                     fileName: "components/navigation-bar/navigation-bar.jsx",
-                                    lineNumber: 24,
+                                    lineNumber: 23,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
@@ -54318,7 +54316,7 @@ const NavigationBar = ()=>{
                                     children: "Signup"
                                 }, void 0, false, {
                                     fileName: "components/navigation-bar/navigation-bar.jsx",
-                                    lineNumber: 25,
+                                    lineNumber: 24,
                                     columnNumber: 17
                                 }, undefined)
                             ]
@@ -54329,7 +54327,7 @@ const NavigationBar = ()=>{
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "components/navigation-bar/navigation-bar.jsx",
-                                    lineNumber: 29,
+                                    lineNumber: 28,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown), {
@@ -54341,7 +54339,7 @@ const NavigationBar = ()=>{
                                             children: "My Profile"
                                         }, void 0, false, {
                                             fileName: "components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 34,
+                                            lineNumber: 33,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
@@ -54349,49 +54347,52 @@ const NavigationBar = ()=>{
                                             children: "My Favorites"
                                         }, void 0, false, {
                                             fileName: "components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 35,
+                                            lineNumber: 34,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Divider, {}, void 0, false, {
                                             fileName: "components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 38,
+                                            lineNumber: 37,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
-                                            onClick: ()=>dispatch((0, _user.setUser)(null)),
+                                            onClick: ()=>{
+                                                dispatch((0, _user.setUser)(null));
+                                                dispatch((0, _user.setToken)(null));
+                                            },
                                             children: "Log Out"
                                         }, void 0, false, {
                                             fileName: "components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 39,
+                                            lineNumber: 38,
                                             columnNumber: 19
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/navigation-bar/navigation-bar.jsx",
-                                    lineNumber: 30,
+                                    lineNumber: 29,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true)
                     }, void 0, false, {
                         fileName: "components/navigation-bar/navigation-bar.jsx",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 20,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 15,
+            lineNumber: 14,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "components/navigation-bar/navigation-bar.jsx",
-        lineNumber: 14,
+        lineNumber: 13,
         columnNumber: 5
     }, undefined);
 }; /* NavigationBar.propTypes = {
@@ -54423,24 +54424,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","prop-types":"7wKI2","react-redux":"bdVon","../../src/redux/reducers/user":"e6tdF","../../src/redux/reducers/token":"4eTad"}],"4eTad":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "setToken", ()=>setToken);
-var _toolkit = require("@reduxjs/toolkit");
-const tokenSlice = (0, _toolkit.createSlice)({
-    name: "token",
-    initialState: null,
-    reducers: {
-        setToken: (state, action)=>{
-            return action.payload;
-        }
-    }
-});
-const { setToken } = tokenSlice.actions;
-exports.default = tokenSlice.reducer;
-
-},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"9Kl2K":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","prop-types":"7wKI2","react-redux":"bdVon","../../src/redux/reducers/user":"e6tdF"}],"9Kl2K":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ce93 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -55015,8 +54999,6 @@ var _movies = require("./reducers/movies");
 var _moviesDefault = parcelHelpers.interopDefault(_movies);
 var _user = require("./reducers/user");
 var _userDefault = parcelHelpers.interopDefault(_user);
-var _token = require("./reducers/token");
-var _tokenDefault = parcelHelpers.interopDefault(_token);
 const store = (0, _toolkit.configureStore)({
     reducer: {
         movies: (0, _moviesDefault.default),
@@ -55024,6 +55006,6 @@ const store = (0, _toolkit.configureStore)({
     }
 });
 
-},{"@reduxjs/toolkit":"lL1Ef","./reducers/movies":"l0qwl","./reducers/user":"e6tdF","./reducers/token":"4eTad","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}]},["fvLlA","lt0Qw","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"@reduxjs/toolkit":"lL1Ef","./reducers/movies":"l0qwl","./reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}]},["fvLlA","lt0Qw","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

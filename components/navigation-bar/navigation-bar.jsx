@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser, setToken } from '../../src/redux/reducers/user';
-import { setToken } from '../../src/redux/reducers/token';
 
 export const NavigationBar = (/* { user, onLoggedOut } */) => {
-  const user = useSelector((state) => state.user);
-  const token = useSelector((state) => state.token);
+  const user = useSelector((state) => state.user.userProfile);
+  const token = useSelector((state) => state.user.token);
 
   const dispatch = useDispatch();
   return (
@@ -37,7 +36,10 @@ export const NavigationBar = (/* { user, onLoggedOut } */) => {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item
-                    onClick={() => dispatch(setUser(null))} /* {onLoggedOut} */
+                    onClick={() => {
+                      dispatch(setUser(null));
+                      dispatch(setToken(null));
+                    }} /* {onLoggedOut} */
                   >
                     Log Out
                   </NavDropdown.Item>

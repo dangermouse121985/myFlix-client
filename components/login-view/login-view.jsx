@@ -86,6 +86,6 @@ export const LoginView = () => {
   );
 };
 
-LoginView.propTypes = {
+/* LoginView.propTypes = {
   onLoggedIn: PropTypes.func.isRequired,
-};
+}; */
