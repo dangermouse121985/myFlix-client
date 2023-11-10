@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setUser, setToken } from '../../src/redux/reducers/user';
 import { setToken } from '../../src/redux/reducers/token';
 
-export const NavigationBar = () => {
+export const NavigationBar = (/* { user, onLoggedOut } */) => {
   const user = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
 
@@ -37,10 +37,7 @@ export const NavigationBar = () => {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item
-                    onClick={() => {
-                      dispatch(setUser(null));
-                      dispatch(setToken(null));
-                    }}
+                    onClick={() => dispatch(setUser(null))} /* {onLoggedOut} */
                   >
                     Log Out
                   </NavDropdown.Item>

@@ -4,5 +4,5 @@ import userReducer from "./reducers/user";
 import tokenReducer from "./reducers/token";
 
 export const store = configureStore({
-    reducer: { movies: moviesReducer, user: userReducer, token: tokenReducer }
+    reducer: { movies: moviesReducer, user: userReducer }
 });

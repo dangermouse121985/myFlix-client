@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import { MovieCard } from '../movie-card/movie-card';
 import { useSelector } from 'react-redux';
 
-export const FavoritesView = () => {
+export const FavoritesView = ({ user }) => {
   const userForFav = JSON.parse(localStorage.getItem('user'));
-  const user = useSelector((state) => state.user);
-  const movies = useSelector((state) => state.movies);
+  //const user = useSelector((state) => state.user);
+  const movies = useSelector((state) => state.movies.list);
   console.log(user);
 
   const favoriteMovies = movies.filter((m) => {

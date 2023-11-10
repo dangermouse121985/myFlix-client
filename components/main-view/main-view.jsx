@@ -13,18 +13,20 @@ import { SignupView } from '../signup-view/signup-view';
 import { NavigationBar } from '../navigation-bar/navigation-bar';
 import { UserView } from '../user-view/user-view';
 import { FavoritesView } from '../favorites-view/favorites-view';
+import { MoviesList } from '../movies-list/movies-list';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const storedToken = localStorage.getItem('token');
 
-  const movies = useSelector((state) => state.movies);
+  const movies = useSelector((state) => state.movies.list);
   //const [movies, setMovies] = useState([]);
 
-  const user = useSelector((state) => state.user);
+  //const user = useSelector((state) => state.user);
   //const [user, setUser] = useState(storedUser ? storedUser : null);
-
-  const token = useSelector((state) => state.token);
+  const user = useSelector((state) => state.user.user);
+  const token = useSelector((state) => state.user.token);
+  //const token = useSelector((state) => state.token);
   //const [token, setToken] = useState(storedToken ? storedToken : null);
 
   const dispatch = useDispatch();
@@ -52,7 +54,6 @@ export const MainView = () => {
           };
         });
         dispatch(setMovies(moviesFromApi));
-        //setMovies(moviesFromApi);
       });
   }, [token]);
 
@@ -70,7 +71,14 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
-      <NavigationBar></NavigationBar>
+      <NavigationBar
+      /* user={user}
+        onLoggedOut={() => {
+          setUser(null);
+          setToken(null);
+          localStorage.clear();
+        }} */
+      ></NavigationBar>
       <Row className="justify-content-md-center main">
         <Routes>
           <Route
@@ -81,7 +89,12 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <div className="login--view">
-                    <LoginView />
+                    <LoginView
+                    /* onLoggedIn={(user, token) => {
+                        setUser(user);
+                        setToken(token);
+                      }} */
+                    />
                   </div>
                 )}
               </>
@@ -111,7 +124,12 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <MovieView key={movies.id} simMovies={simMovies} />
+                    <MovieView
+                      key={movies.id}
+                      movies={movies}
+                      user={user}
+                      simMovies={simMovies}
+                    />
                   </>
                 )}
               </>
@@ -141,7 +159,11 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <FavoritesView key={movies.id}></FavoritesView>
+                    <FavoritesView
+                      user={user}
+                      key={movies.id}
+                      movies={movies}
+                    ></FavoritesView>
                   </>
                 )}
               </>
@@ -157,13 +179,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => {
-                      return (
-                        <Col className="mb-5" key={movie.id} md={3}>
-                          <MovieCard movie={movie} />
-                        </Col>
-                      );
-                    })}
+                    <MoviesList />
                   </>
                 )}
               </>

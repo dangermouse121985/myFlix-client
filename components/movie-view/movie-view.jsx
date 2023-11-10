@@ -9,12 +9,13 @@ import { useParams } from 'react-router';
 import { MovieCard } from '../movie-card/movie-card';
 import { useSelector } from 'react-redux';
 
-export const MovieView = ({ simMovies }) => {
+export const MovieView = ({ user, simMovies }) => {
   const { movieId } = useParams();
-  const movies = useSelector((state) => state.movies);
+  const movies = useSelector((state) => state.movies.list);
   const movie = movies.find((m) => m.id === movieId);
-  const user = useSelector((state) => state.user);
-  const token = useSelector((state) => state.token);
+  //const user = useSelector((state) => state.user);
+  //const token = useSelector((state) => state.token);
+  const token = localStorage.getItem('token');
   const [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );
