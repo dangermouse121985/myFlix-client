@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-  useResolvedPath,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setMovies } from '../../src/redux/reducers/movies';
@@ -27,7 +21,7 @@ export const MainView = () => {
   const movies = useSelector((state) => state.movies);
   //const [movies, setMovies] = useState([]);
 
-  let user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   //const [user, setUser] = useState(storedUser ? storedUser : null);
 
   const token = useSelector((state) => state.token);

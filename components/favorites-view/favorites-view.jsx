@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { MovieCard } from '../movie-card/movie-card';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export const FavoritesView = () => {
   const userForFav = JSON.parse(localStorage.getItem('user'));

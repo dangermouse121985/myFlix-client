@@ -7,7 +7,7 @@ import { Button, ToggleButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { MovieCard } from '../movie-card/movie-card';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export const MovieView = ({ simMovies }) => {
   const { movieId } = useParams();

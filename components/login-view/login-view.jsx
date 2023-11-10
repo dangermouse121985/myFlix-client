@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUser } from '../../src/redux/reducers/user';
+import { setUser, setToken } from '../../src/redux/reducers/user';
 import { setToken } from '../../src/redux/reducers/token';
 
 export const LoginView = () => {

@@ -2,7 +2,7 @@ import { Navbar, Nav, NavDropdown, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUser } from '../../src/redux/reducers/user';
+import { setUser, setToken } from '../../src/redux/reducers/user';
 import { setToken } from '../../src/redux/reducers/token';
 
 export const NavigationBar = () => {
