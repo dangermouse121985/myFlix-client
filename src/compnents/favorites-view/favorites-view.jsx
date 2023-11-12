@@ -4,11 +4,10 @@ import Row from 'react-bootstrap/Row';
 import { MovieCard } from '../movie-card/movie-card';
 import { useSelector } from 'react-redux';
 
-export const FavoritesView = ({ user }) => {
-  const userForFav = JSON.parse(localStorage.getItem('user'));
+export const FavoritesView = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
   //const user = useSelector((state) => state.user);
   const movies = useSelector((state) => state.movies.list);
-  console.log(user);
 
   const favoriteMovies = movies.filter((m) => {
     return user.favorites.includes(m.id);
@@ -19,11 +18,20 @@ export const FavoritesView = ({ user }) => {
       <Col>
         <h2>My Favorites</h2>
         <Row className="justify-content-center">
-          {favoriteMovies.map((movie) => (
+          {favoriteMovies.length === 0 ? (
+            <Col>The list is empty!</Col>
+          ) : (
+            favoriteMovies.map((movie) => (
+              <Col className="mb-5" md={3} key={movie.id}>
+                <MovieCard movie={movie} user={user} />
+              </Col>
+            ))
+          )}
+          {/* {favoriteMovies.map((movie) => (
             <Col className="mb-5" md={3} key={movie.id}>
               <MovieCard movie={movie} user={user} />
             </Col>
-          ))}
+          ))} */}
         </Row>
       </Col>
     </Row>

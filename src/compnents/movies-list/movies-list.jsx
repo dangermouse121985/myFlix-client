@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { MovieCard } from '../movie-card/movie-card';
-import { MoviesFilter } from '../movies-filter/movies-filter';
+import { MoviesFilter } from '../../compnents/movies-filter/movies-filter';
 import { Col, Row } from 'react-bootstrap';
 
 export const MoviesList = () => {
@@ -9,15 +9,20 @@ export const MoviesList = () => {
   const filter = useSelector((state) => state.movies.filter)
     .trim()
     .toLowerCase();
+  const genres = useSelector((state) => state.genres);
+  const directors = useSelector((state) => state.directors);
 
-  const filteredMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(filter)
+  const filteredMovies = movies.filter(
+    (movie) =>
+      movie.title.toLowerCase().includes(filter) ||
+      movie.genre.toLowerCase().includes(filter) ||
+      movie.director.name.toLowerCase().includes(filter)
   );
 
   return (
     <>
       <Row>
-        <MoviesFilter />
+        <MoviesFilter genres={genres} />
       </Row>
       <Row>
         {movies.length === 0 ? (

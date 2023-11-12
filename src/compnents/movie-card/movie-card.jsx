@@ -3,16 +3,20 @@ import { useState } from 'react';
 import { Button, ToggleButton, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { setUserProfile } from '../../redux/reducers/user';
+import { MoviesFilter } from '../../compnents/movies-filter/movies-filter';
 
 export const MovieCard = ({ movie }) => {
   const token = localStorage.getItem('token');
   //const token = useSelector((state) => state.token);
   let user = JSON.parse(localStorage.getItem('user'));
+  //let user = useSelector((state) => state.user.userProfile);
   //const user = useSelector((state) => state.user);
   const [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );
 
+  const dispatch = useDispatch();
   //Delete Movie From User's Favorites List
   const delFav = () => {
     {
@@ -81,8 +85,9 @@ export const MovieCard = ({ movie }) => {
           } else if (user.favorites.indexOf(movie.id) > -1) {
             delFav();
             let card = document.getElementById(movie.id);
+            let parent = card.parentNode;
             if (window.location.pathname === '/user/favorites') {
-              card.parentNode.parentNode.removeChild(card.parentNode);
+              parent.parentNode.removeChild(parent);
             }
           } else {
             addFav();

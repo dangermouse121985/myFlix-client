@@ -6,19 +6,23 @@ import Row from 'react-bootstrap/Row';
 import { Button, ToggleButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { MovieCard } from '../movie-card/movie-card';
+import { MovieCard } from '../../compnents/movie-card/movie-card';
 import { useSelector } from 'react-redux';
+import { setUserProfile, setToken } from '../../redux/reducers/user';
+import { useDispatch } from 'react-redux';
 
-export const MovieView = ({ user, simMovies }) => {
+export const MovieView = ({ /* user,  */ simMovies }) => {
+  let user = JSON.parse(localStorage.getItem('user'));
+  const token = useSelector((state) => state.user.token);
   const { movieId } = useParams();
   const movies = useSelector((state) => state.movies.list);
   const movie = movies.find((m) => m.id === movieId);
-  //const user = useSelector((state) => state.user);
-  //const token = useSelector((state) => state.token);
-  const token = localStorage.getItem('token');
+
   const [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );
+
+  const dispatch = useDispatch();
 
   //Delete Movie From User's Favorites List
   const delFav = () => {
@@ -33,6 +37,7 @@ export const MovieView = ({ user, simMovies }) => {
         .then((response) => response.json())
         .then((data) => {
           localStorage.setItem('user', JSON.stringify(data));
+          dispatch(setUserProfile(data));
         });
     }
   };
@@ -50,6 +55,7 @@ export const MovieView = ({ user, simMovies }) => {
         .then((response) => response.json())
         .then((data) => {
           localStorage.setItem('user', JSON.stringify(data));
+          dispatch(setUserProfile(data));
         });
     }
   };
@@ -94,7 +100,7 @@ export const MovieView = ({ user, simMovies }) => {
               </div>
               <br />
               <ToggleButton
-                id={movie.title}
+                id={movie.id}
                 className="mb-2 movie-view--favorites-button"
                 type="checkbox"
                 variant="outline-primary"

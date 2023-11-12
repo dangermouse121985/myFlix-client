@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { setToken, setUser } from '../../src/redux/reducers/user';
+import { setToken, setUserProfile } from '../../redux/reducers/user';
 
 export const LoginView = () => {
   const [username, setUsername] = useState('');
@@ -28,12 +28,11 @@ export const LoginView = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Login response: '.data);
         if (data.user) {
           localStorage.setItem('user', JSON.stringify(data.user));
           localStorage.setItem('token', data.token);
-          /* onLoggedIn(data.user, data.token); */
-          dispatch(setUser(data.user));
+          localStorage.setItem('isAuthenticated', true);
+          dispatch(setUserProfile(data.user));
           dispatch(setToken(data.token));
         } else {
           alert('Sorry. The username or password is incorrect');

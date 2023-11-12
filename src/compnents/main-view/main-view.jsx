@@ -4,7 +4,9 @@ import Col from 'react-bootstrap/Col';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setMovies } from '../../src/redux/reducers/movies';
+import { setMovies } from '../../redux/reducers/movies';
+import { setGenres } from '../../redux/reducers/genres';
+import { setDirectors } from '../../redux/reducers/directors';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -14,20 +16,27 @@ import { NavigationBar } from '../navigation-bar/navigation-bar';
 import { UserView } from '../user-view/user-view';
 import { FavoritesView } from '../favorites-view/favorites-view';
 import { MoviesList } from '../movies-list/movies-list';
+import { setToken, setUserProfile } from '../../redux/reducers/user';
+import { setDirectors } from '../../redux/reducers/directors';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
-  const storedToken = localStorage.getItem('token');
+  const isAuthenticated = localStorage.getItem('isAuthenticated');
 
   const movies = useSelector((state) => state.movies.list);
   //const [movies, setMovies] = useState([]);
-
-  //const user = useSelector((state) => state.user);
-  //const [user, setUser] = useState(storedUser ? storedUser : null);
   const user = useSelector((state) => state.user.userProfile);
   const token = useSelector((state) => state.user.token);
+  const genres = useSelector((state) => state.genres);
+  const directors = useSelector((state) => state.directors);
+
+  //const user = useSelector((state) => state.user);
+  const [userisAuth, setUser] = useState(storedUser ? storedUser : null);
+
   //const token = useSelector((state) => state.token);
   //const [token, setToken] = useState(storedToken ? storedToken : null);
+
+  //const [genres, setGenres] = useState();
 
   const dispatch = useDispatch();
 
@@ -53,7 +62,19 @@ export const MainView = () => {
             featured: movie.featured,
           };
         });
+        const genresFromApi = data.map((movie) => {
+          return { name: movie.genre.name };
+        });
+        const directorsFromApi = data.map((movie) => {
+          return { name: movie.director.name };
+        });
         dispatch(setMovies(moviesFromApi));
+        const genresArr = genresFromApi.map((genre) => genre.name);
+        const genresUnique = Array.from(new Set(genresArr));
+        dispatch(setGenres(genresUnique));
+        const directorsArr = directorsFromApi.map((director) => director.name);
+        const directorsUnique = Array.from(new Set(directorsArr));
+        dispatch(setDirectors(directorsUnique));
       });
   }, [token]);
 
@@ -179,7 +200,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <MoviesList />
+                    <MoviesList genres={genres} />
                   </>
                 )}
               </>

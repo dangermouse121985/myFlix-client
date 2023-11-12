@@ -2,7 +2,7 @@ import { Navbar, Nav, NavDropdown, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUser, setToken } from '../../src/redux/reducers/user';
+import { setUserProfile, setToken } from '../../redux/reducers/user';
 
 export const NavigationBar = (/* { user, onLoggedOut } */) => {
   const user = useSelector((state) => state.user.userProfile);
@@ -20,25 +20,34 @@ export const NavigationBar = (/* { user, onLoggedOut } */) => {
           <Nav>
             {!user ? (
               <>
-                <Nav.Link href="/login">Login</Nav.Link>
-                <Nav.Link href="/signup">Signup</Nav.Link>
+                <Nav.Link as={Link} to="/login">
+                  Login
+                </Nav.Link>
+                <Nav.Link as={Link} to="/signup">
+                  Signup
+                </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link as={Link} to="/">
+                  Home
+                </Nav.Link>
                 <NavDropdown
                   title={`${user.first_name} ${user.last_name}`}
                   id="navbarScrollingDropdown"
                 >
-                  <NavDropdown.Item href="/user/">My Profile</NavDropdown.Item>
-                  <NavDropdown.Item href="/user/favorites">
+                  <NavDropdown.Item as={Link} to="/user/">
+                    My Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/user/favorites">
                     My Favorites
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item
                     onClick={() => {
-                      dispatch(setUser(null));
+                      dispatch(setUserProfile(null));
                       dispatch(setToken(null));
+                      localStorage.setItem('isAuthenticated', false);
                     }} /* {onLoggedOut} */
                   >
                     Log Out
