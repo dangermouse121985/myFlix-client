@@ -44,15 +44,23 @@ body {
 
   .logo {
     color: $primary;
+    font-size: 30px;
   }
 }
 
 .main {
-  margin: 80px 5px;
+  margin: 100px 5px;
 
   a {
     text-decoration: none;
   }
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 img {

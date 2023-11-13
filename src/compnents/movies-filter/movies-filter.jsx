@@ -2,14 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import { setFilter } from '../../redux/reducers/movies';
-import React, { useEffect, useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import React from 'react';
+import { Dropdown, Button } from 'react-bootstrap';
 import { Row, Col } from 'react-bootstrap';
 
 export const MoviesFilter = () => {
   const filter = useSelector((state) => state.movies.filter);
   const dispatch = useDispatch();
-  const token = localStorage.getItem('token');
   const genres = useSelector((state) => state.genres);
   const directors = useSelector((state) => state.directors);
   const actors = useSelector((state) => state.actors);
@@ -29,7 +28,7 @@ export const MoviesFilter = () => {
       <Row className="justify-content-md-center gap-3 filter-bar">
         <Col sm={12} md={2}>
           <Dropdown>
-            <Dropdown.Toggle className="filter--selectors" variant="secondary">
+            <Dropdown.Toggle className="filter--selectors" variant="primary">
               Genres
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -115,13 +114,16 @@ export const MoviesFilter = () => {
           </Dropdown>
         </Col>
         <Col md={2}>
-          <Form.Control
+          <Button
+            variant="secondary"
             className="filter--selectors"
             type="button"
             placeholder="Search..."
             value="Clear"
             onClick={(e) => dispatch(setFilter(''))}
-          />
+          >
+            Clear
+          </Button>
         </Col>
       </Row>
     </>

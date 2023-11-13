@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import { setUserProfile, setToken } from '../../redux/reducers/user';
 import { useDispatch } from 'react-redux';
 
-export const MovieView = ({ /* user,  */ simMovies }) => {
+export const MovieView = ({ simMovies }) => {
   let user = JSON.parse(localStorage.getItem('user'));
   const token = useSelector((state) => state.user.token);
   const { movieId } = useParams();
@@ -147,22 +147,6 @@ export const MovieView = ({ /* user,  */ simMovies }) => {
   );
 };
 
-/* MovieView.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    image: PropTypes.string,
-  }),
-  user: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    first_name: PropTypes.string.isRequired,
-    last_name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    birth: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-    favorites: PropTypes.array.isRequired,
-  }).isRequired,
+MovieView.propTypes = {
   simMovies: PropTypes.func.isRequired,
-}; */
+};

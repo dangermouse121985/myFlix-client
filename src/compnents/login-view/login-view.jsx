@@ -3,10 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setToken, setUserProfile } from '../../redux/reducers/user';
 
-export const LoginView = () => {
+export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -31,9 +31,9 @@ export const LoginView = () => {
         if (data.user) {
           localStorage.setItem('user', JSON.stringify(data.user));
           localStorage.setItem('token', data.token);
-          localStorage.setItem('isAuthenticated', true);
           dispatch(setUserProfile(data.user));
           dispatch(setToken(data.token));
+          onLoggedIn(data.user, data.token);
         } else {
           alert('Sorry. The username or password is incorrect');
         }
@@ -85,6 +85,6 @@ export const LoginView = () => {
   );
 };
 
-/* LoginView.propTypes = {
+LoginView.propTypes = {
   onLoggedIn: PropTypes.func.isRequired,
-}; */
+};

@@ -7,8 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setMovies } from '../../redux/reducers/movies';
 import { setGenres } from '../../redux/reducers/genres';
 import { setDirectors } from '../../redux/reducers/directors';
+import { setActors } from '../../redux/reducers/actors';
 
-import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { SignupView } from '../signup-view/signup-view';
@@ -16,28 +16,16 @@ import { NavigationBar } from '../navigation-bar/navigation-bar';
 import { UserView } from '../user-view/user-view';
 import { FavoritesView } from '../favorites-view/favorites-view';
 import { MoviesList } from '../movies-list/movies-list';
-import { setToken, setUserProfile } from '../../redux/reducers/user';
-import { setDirectors } from '../../redux/reducers/directors';
-import actors, { setActors } from '../../redux/reducers/actors';
+//import { setToken, setUserProfile } from '../../redux/reducers/user';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
-  const isAuthenticated = localStorage.getItem('isAuthenticated');
+  const storedToken = localStorage.getItem('token');
 
   const movies = useSelector((state) => state.movies.list);
-  //const [movies, setMovies] = useState([]);
-  const user = useSelector((state) => state.user.userProfile);
-  const token = useSelector((state) => state.user.token);
-  const genres = useSelector((state) => state.genres);
-  const directors = useSelector((state) => state.directors);
 
-  //const user = useSelector((state) => state.user);
-  const [userisAuth, setUser] = useState(storedUser ? storedUser : null);
-
-  //const token = useSelector((state) => state.token);
-  //const [token, setToken] = useState(storedToken ? storedToken : null);
-
-  //const [genres, setGenres] = useState();
+  const [user, setUser] = useState(storedUser ? storedUser : null);
+  const [token, setToken] = useState(storedToken ? storedToken : null);
 
   const dispatch = useDispatch();
 
@@ -101,7 +89,6 @@ export const MainView = () => {
         }
         const actorsUnique = Array.from(new Set(actorsArrSimp));
         dispatch(setActors(actorsUnique));
-        console.log(movies);
       });
   }, [token]);
 
@@ -120,12 +107,12 @@ export const MainView = () => {
   return (
     <BrowserRouter>
       <NavigationBar
-      /* user={user}
+        user={user}
         onLoggedOut={() => {
           setUser(null);
           setToken(null);
           localStorage.clear();
-        }} */
+        }}
       ></NavigationBar>
       <Row className="justify-content-md-center main">
         <Routes>
@@ -138,10 +125,10 @@ export const MainView = () => {
                 ) : (
                   <div className="login--view">
                     <LoginView
-                    /* onLoggedIn={(user, token) => {
+                      onLoggedIn={(user, token) => {
                         setUser(user);
                         setToken(token);
-                      }} */
+                      }}
                     />
                   </div>
                 )}
@@ -227,7 +214,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <MoviesList genres={genres} />
+                    <MoviesList />
                   </>
                 )}
               </>

@@ -9,8 +9,6 @@ export const MoviesList = () => {
   const filter = useSelector((state) => state.movies.filter)
     .trim()
     .toLowerCase();
-  const genres = useSelector((state) => state.genres);
-  const directors = useSelector((state) => state.directors);
 
   const filteredMovies = movies.filter(
     (movie) =>
@@ -23,7 +21,7 @@ export const MoviesList = () => {
   return (
     <>
       <Row>
-        <MoviesFilter genres={genres} />
+        <MoviesFilter />
       </Row>
       <Row>
         {movies.length === 0 ? (

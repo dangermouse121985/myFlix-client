@@ -46,7 +46,6 @@ export const UserView = ({ user }) => {
       password: password,
     };
 
-    console.log(firstName);
     fetch(
       `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
       {
@@ -59,8 +58,9 @@ export const UserView = ({ user }) => {
       }
     ).then((response) => {
       if (response.ok) {
-        alert('User Info Successfully Updated');
-        window.location.href = '/login';
+        alert(
+          'User Info Successfully Updated! Please Logout to See the Updated Information Reflected in Your Account'
+        );
       } else {
         alert('User Update Failed');
       }

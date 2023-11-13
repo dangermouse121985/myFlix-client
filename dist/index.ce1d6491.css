@@ -13233,16 +13233,28 @@ body {
   color: #eaf2ef;
 }
 
-.header a:hover, .header .logo {
+.header a:hover {
   color: #d52941;
 }
 
+.header .logo {
+  color: #d52941;
+  font-size: 30px;
+}
+
 .main {
-  margin: 80px 5px;
+  margin: 100px 5px;
 }
 
 .main a {
   text-decoration: none;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 img {

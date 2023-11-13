@@ -1,14 +1,10 @@
 import { Navbar, Nav, NavDropdown, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
-import { setUserProfile, setToken } from '../../redux/reducers/user';
+/* import { useSelector, useDispatch } from 'react-redux';
+import { setUserProfile, setToken } from '../../redux/reducers/user'; */
 
-export const NavigationBar = (/* { user, onLoggedOut } */) => {
-  const user = useSelector((state) => state.user.userProfile);
-  const token = useSelector((state) => state.user.token);
-
-  const dispatch = useDispatch();
+export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
     <Navbar className="header" bg="dark" expand="lg">
       <Container>
@@ -43,13 +39,7 @@ export const NavigationBar = (/* { user, onLoggedOut } */) => {
                     My Favorites
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item
-                    onClick={() => {
-                      dispatch(setUserProfile(null));
-                      dispatch(setToken(null));
-                      localStorage.setItem('isAuthenticated', false);
-                    }} /* {onLoggedOut} */
-                  >
+                  <NavDropdown.Item onClick={onLoggedOut}>
                     Log Out
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -62,7 +52,7 @@ export const NavigationBar = (/* { user, onLoggedOut } */) => {
   );
 };
 
-/* NavigationBar.propTypes = {
+NavigationBar.propTypes = {
   user: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     first_name: PropTypes.string.isRequired,
@@ -74,4 +64,4 @@ export const NavigationBar = (/* { user, onLoggedOut } */) => {
     favorites: PropTypes.array.isRequired,
   }),
   onLoggedOut: PropTypes.func.isRequired,
-}; */
+};
