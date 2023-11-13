@@ -18,6 +18,7 @@ import { FavoritesView } from '../favorites-view/favorites-view';
 import { MoviesList } from '../movies-list/movies-list';
 import { setToken, setUserProfile } from '../../redux/reducers/user';
 import { setDirectors } from '../../redux/reducers/directors';
+import actors, { setActors } from '../../redux/reducers/actors';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -65,16 +66,42 @@ export const MainView = () => {
         const genresFromApi = data.map((movie) => {
           return { name: movie.genre.name };
         });
+
         const directorsFromApi = data.map((movie) => {
           return { name: movie.director.name };
         });
+
+        const actorsFromApi = data.map((movie) => {
+          return { actors: movie.actors };
+        });
         dispatch(setMovies(moviesFromApi));
+
         const genresArr = genresFromApi.map((genre) => genre.name);
         const genresUnique = Array.from(new Set(genresArr));
         dispatch(setGenres(genresUnique));
+
         const directorsArr = directorsFromApi.map((director) => director.name);
         const directorsUnique = Array.from(new Set(directorsArr));
         dispatch(setDirectors(directorsUnique));
+
+        //2 Dimensional Array
+        const actorsArr = actorsFromApi.map(({ actors }) => {
+          return actors.map(({ name }) => {
+            return name;
+          });
+        });
+
+        //Convert 2 dimenstional array to 1 dimensional array
+        actorsArrSimp = [];
+
+        for (let i = 0; i < actorsArr.length; i++) {
+          for (let j = 0; j < actorsArr[i].length; j++) {
+            actorsArrSimp.push(actorsArr[i][j]);
+          }
+        }
+        const actorsUnique = Array.from(new Set(actorsArrSimp));
+        dispatch(setActors(actorsUnique));
+        console.log(movies);
       });
   }, [token]);
 

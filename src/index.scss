@@ -71,6 +71,19 @@ h2 {
   transform: translate(0, -50%);
 }
 
+.filter--selectors {
+  width: 100%;
+}
+
+.filter-bar {
+  margin-bottom: $std-spacing;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -90,6 +103,7 @@ input[type='date']:hover {
   background-color: $body-color;
 }
 
+input[type='text']::placeholder,
 input[type='password']::placeholder,
 input[type='password']::-ms-input-placeholder {
   color: $body-bg;

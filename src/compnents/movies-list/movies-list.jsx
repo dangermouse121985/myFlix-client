@@ -16,7 +16,8 @@ export const MoviesList = () => {
     (movie) =>
       movie.title.toLowerCase().includes(filter) ||
       movie.genre.toLowerCase().includes(filter) ||
-      movie.director.name.toLowerCase().includes(filter)
+      movie.director.name.toLowerCase().includes(filter) ||
+      movie.actors.some((actor) => actor.name.toLowerCase() === filter)
   );
 
   return (

@@ -13260,6 +13260,19 @@ h1, .h1, h2, .h2 {
   transform: translate(0, -50%);
 }
 
+.filter--selectors {
+  width: 100%;
+}
+
+.filter-bar {
+  margin-bottom: 10px;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 1;
+}
+
 input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus {
   color: #2e5266;
   background-color: #eaf2ef;
@@ -13269,7 +13282,7 @@ input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hove
   background-color: #eaf2ef;
 }
 
-input[type="password"]::placeholder {
+input[type="text"]::placeholder, input[type="password"]::placeholder {
   color: #2e5266;
   opacity: .7;
 }

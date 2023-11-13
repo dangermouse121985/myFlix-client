@@ -41301,16 +41301,19 @@ var _genres = require("./reducers/genres");
 var _genresDefault = parcelHelpers.interopDefault(_genres);
 var _directors = require("./reducers/directors");
 var _directorsDefault = parcelHelpers.interopDefault(_directors);
+var _actors = require("./reducers/actors");
+var _actorsDefault = parcelHelpers.interopDefault(_actors);
 const store = (0, _toolkit.configureStore)({
     reducer: {
         movies: (0, _moviesDefault.default),
         user: (0, _userDefault.default),
         genres: (0, _genresDefault.default),
-        directors: (0, _directorsDefault.default)
+        directors: (0, _directorsDefault.default),
+        actors: (0, _actorsDefault.default)
     }
 });
 
-},{"@reduxjs/toolkit":"lL1Ef","./reducers/movies":"l0qwl","./reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","./reducers/genres":"iHAgd","./reducers/directors":"4PDTw"}],"lL1Ef":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"lL1Ef","./reducers/movies":"l0qwl","./reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","./reducers/genres":"iHAgd","./reducers/directors":"4PDTw","./reducers/actors":"8Nowu"}],"lL1Ef":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "EnhancerArray", ()=>EnhancerArray);
@@ -45305,6 +45308,23 @@ const directorsSlice = (0, _toolkit.createSlice)({
 const { setDirectors } = directorsSlice.actions;
 exports.default = directorsSlice.reducer;
 
+},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"8Nowu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "setActors", ()=>setActors);
+var _toolkit = require("@reduxjs/toolkit");
+const actorsSlice = (0, _toolkit.createSlice)({
+    name: "actiors",
+    initialState: [],
+    reducers: {
+        setActors: (state, actions)=>{
+            return actions.payload;
+        }
+    }
+});
+const { setActors } = actorsSlice.actions;
+exports.default = actorsSlice.reducer;
+
 },{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ"}],"bdVon":[function(require,module,exports) {
 // The primary entry point assumes we're working with standard ReactDOM/RN, but
 // older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
@@ -46992,6 +47012,8 @@ var _userView = require("../user-view/user-view");
 var _favoritesView = require("../favorites-view/favorites-view");
 var _moviesList = require("../movies-list/movies-list");
 var _user = require("../../redux/reducers/user");
+var _actors = require("../../redux/reducers/actors");
+var _actorsDefault = parcelHelpers.interopDefault(_actors);
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -47039,6 +47061,11 @@ const MainView = ()=>{
                     name: movie.director.name
                 };
             });
+            const actorsFromApi = data.map((movie)=>{
+                return {
+                    actors: movie.actors
+                };
+            });
             dispatch((0, _movies.setMovies)(moviesFromApi));
             const genresArr = genresFromApi.map((genre)=>genre.name);
             const genresUnique = Array.from(new Set(genresArr));
@@ -47046,6 +47073,18 @@ const MainView = ()=>{
             const directorsArr = directorsFromApi.map((director)=>director.name);
             const directorsUnique = Array.from(new Set(directorsArr));
             dispatch((0, _directors.setDirectors)(directorsUnique));
+            //2 Dimensional Array
+            const actorsArr = actorsFromApi.map(({ actors })=>{
+                return actors.map(({ name })=>{
+                    return name;
+                });
+            });
+            //Convert 2 dimenstional array to 1 dimensional array
+            actorsArrSimp = [];
+            for(let i = 0; i < actorsArr.length; i++)for(let j = 0; j < actorsArr[i].length; j++)actorsArrSimp.push(actorsArr[i][j]);
+            const actorsUnique = Array.from(new Set(actorsArrSimp));
+            dispatch((0, _actors.setActors)(actorsUnique));
+            console.log(movies);
         });
     }, [
         token
@@ -47059,7 +47098,7 @@ const MainView = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navigationBar.NavigationBar), {}, void 0, false, {
                 fileName: "src/compnents/main-view/main-view.jsx",
-                lineNumber: 95,
+                lineNumber: 122,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -47078,7 +47117,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/compnents/main-view/main-view.jsx",
-                            lineNumber: 105,
+                            lineNumber: 132,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -47092,7 +47131,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/compnents/main-view/main-view.jsx",
-                            lineNumber: 124,
+                            lineNumber: 151,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -47113,7 +47152,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/compnents/main-view/main-view.jsx",
-                            lineNumber: 138,
+                            lineNumber: 165,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -47130,7 +47169,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/compnents/main-view/main-view.jsx",
-                            lineNumber: 159,
+                            lineNumber: 186,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -47150,7 +47189,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/compnents/main-view/main-view.jsx",
-                            lineNumber: 173,
+                            lineNumber: 200,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -47169,24 +47208,24 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/compnents/main-view/main-view.jsx",
-                            lineNumber: 193,
+                            lineNumber: 220,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/compnents/main-view/main-view.jsx",
-                    lineNumber: 104,
+                    lineNumber: 131,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/compnents/main-view/main-view.jsx",
-                lineNumber: 103,
+                lineNumber: 130,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/compnents/main-view/main-view.jsx",
-        lineNumber: 94,
+        lineNumber: 121,
         columnNumber: 5
     }, undefined);
 };
@@ -47209,7 +47248,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","react-redux":"bdVon","../../redux/reducers/movies":"l0qwl","../movie-card/movie-card":"hK1Ef","../login-view/login-view":"auuYm","../favorites-view/favorites-view":"kBybc","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","../movie-view/movie-view":"5jd1d","../signup-view/signup-view":"bSZpe","../navigation-bar/navigation-bar":"b6AXI","../user-view/user-view":"24qAW","../movies-list/movies-list":"iJNGQ","../../redux/reducers/user":"e6tdF","../../redux/reducers/genres":"iHAgd","../../redux/reducers/directors":"4PDTw"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","react-redux":"bdVon","../../redux/reducers/movies":"l0qwl","../../redux/reducers/genres":"iHAgd","../../redux/reducers/directors":"4PDTw","../movie-card/movie-card":"hK1Ef","../movie-view/movie-view":"5jd1d","../login-view/login-view":"auuYm","../signup-view/signup-view":"bSZpe","../navigation-bar/navigation-bar":"b6AXI","../user-view/user-view":"24qAW","../favorites-view/favorites-view":"kBybc","../movies-list/movies-list":"iJNGQ","../../redux/reducers/user":"e6tdF","../../redux/reducers/actors":"8Nowu","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.17.0
  *
@@ -53566,7 +53605,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","../../redux/reducers/user":"e6tdF","../../compnents/movies-filter/movies-filter":"28EeH"}],"28EeH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-redux":"bdVon","../../redux/reducers/user":"e6tdF","../../compnents/movies-filter/movies-filter":"28EeH","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"28EeH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a1e6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53592,117 +53631,234 @@ const MoviesFilter = ()=>{
     const token = localStorage.getItem("token");
     const genres = (0, _reactRedux.useSelector)((state)=>state.genres);
     const directors = (0, _reactRedux.useSelector)((state)=>state.directors);
+    const actors = (0, _reactRedux.useSelector)((state)=>state.actors);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                type: "text",
-                placeholder: "Search...",
-                value: filter,
-                onChange: (e)=>dispatch((0, _movies.setFilter)(e.target.value))
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "justify-content-md-center gap-3 filter-bar",
+                md: 4,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    md: 10,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "text",
+                        placeholder: "Search...",
+                        value: filter,
+                        onChange: (e)=>dispatch((0, _movies.setFilter)(e.target.value))
+                    }, void 0, false, {
+                        fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                        lineNumber: 21,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                lineNumber: 17,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown), {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "justify-content-md-center gap-3 filter-bar",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
-                        variant: "primary",
-                        children: "Filter by Genres"
-                    }, void 0, false, {
-                        fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 24,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
-                                value: "",
-                                onClick: (e)=>{
-                                    dispatch((0, _movies.setFilter)(""));
-                                },
-                                children: "Show All Genres"
-                            }, "clear", false, {
-                                fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                lineNumber: 26,
-                                columnNumber: 11
-                            }, undefined),
-                            genres.map((genre, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
-                                    value: genre,
-                                    onClick: (e)=>{
-                                        dispatch((0, _movies.setFilter)(genre));
-                                    },
-                                    children: genre
-                                }, index, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        sm: 12,
+                        md: 2,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown), {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
+                                    className: "filter--selectors",
+                                    variant: "secondary",
+                                    children: "Genres"
+                                }, void 0, false, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                    lineNumber: 36,
+                                    lineNumber: 32,
                                     columnNumber: 13
-                                }, undefined))
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 25,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                lineNumber: 23,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown), {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
-                        variant: "primary",
-                        children: "Filter by Dorector"
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
+                                            value: "",
+                                            onClick: (e)=>{
+                                                dispatch((0, _movies.setFilter)(""));
+                                            },
+                                            children: "Show All Genres"
+                                        }, "clear", false, {
+                                            fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                            lineNumber: 36,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        genres.map((genre, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
+                                                value: genre,
+                                                onClick: (e)=>{
+                                                    dispatch((0, _movies.setFilter)(genre));
+                                                },
+                                                children: genre
+                                            }, index, false, {
+                                                fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                                lineNumber: 46,
+                                                columnNumber: 17
+                                            }, undefined))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                    lineNumber: 35,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                            lineNumber: 31,
+                            columnNumber: 11
+                        }, undefined)
                     }, void 0, false, {
                         fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 49,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
-                                value: "",
-                                onClick: (e)=>{
-                                    dispatch((0, _movies.setFilter)(""));
-                                },
-                                children: "Show All Directors"
-                            }, "clear", false, {
-                                fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                lineNumber: 51,
-                                columnNumber: 11
-                            }, undefined),
-                            directors.map((director, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
-                                    value: director,
-                                    onClick: (e)=>{
-                                        dispatch((0, _movies.setFilter)(director));
-                                    },
-                                    children: director
-                                }, index, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        sm: 12,
+                        md: 2,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown), {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
+                                    className: "filter--selectors",
+                                    variant: "primary",
+                                    children: "Directors"
+                                }, void 0, false, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
                                     lineNumber: 61,
                                     columnNumber: 13
-                                }, undefined))
-                        ]
-                    }, void 0, true, {
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
+                                            value: "",
+                                            onClick: (e)=>{
+                                                dispatch((0, _movies.setFilter)(""));
+                                            },
+                                            children: "Show All Directors"
+                                        }, "clear", false, {
+                                            fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                            lineNumber: 65,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        directors.map((director, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
+                                                value: director,
+                                                onClick: (e)=>{
+                                                    dispatch((0, _movies.setFilter)(director));
+                                                },
+                                                children: director
+                                            }, index, false, {
+                                                fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                                lineNumber: 75,
+                                                columnNumber: 17
+                                            }, undefined))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                    lineNumber: 64,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                            lineNumber: 60,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
                         fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 50,
+                        lineNumber: 59,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        sm: 12,
+                        md: 2,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown), {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
+                                    className: "filter--selectors",
+                                    variant: "primary",
+                                    children: "Actors"
+                                }, void 0, false, {
+                                    fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                    lineNumber: 90,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
+                                            value: "",
+                                            onClick: (e)=>{
+                                                dispatch((0, _movies.setFilter)(""));
+                                            },
+                                            children: "Show All Actors"
+                                        }, "clear", false, {
+                                            fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                            lineNumber: 94,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        actors.map((actor, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
+                                                value: actor,
+                                                onClick: (e)=>{
+                                                    dispatch((0, _movies.setFilter)(actor));
+                                                },
+                                                children: actor
+                                            }, index, false, {
+                                                fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                                lineNumber: 104,
+                                                columnNumber: 17
+                                            }, undefined))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                                    lineNumber: 93,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                            lineNumber: 89,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                        lineNumber: 88,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        md: 2,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                            className: "filter--selectors",
+                            type: "button",
+                            placeholder: "Search...",
+                            value: "Clear",
+                            onClick: (e)=>dispatch((0, _movies.setFilter)(""))
+                        }, void 0, false, {
+                            fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                            lineNumber: 118,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/compnents/movies-filter/movies-filter.jsx",
+                        lineNumber: 117,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                lineNumber: 48,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(MoviesFilter, "yADe82ZMtNhVJq8JShbT5M1Ljiw=", false, function() {
+_s(MoviesFilter, "5Bq5zrNh3reGfmp4o2CNL30QxR0=", false, function() {
     return [
         (0, _reactRedux.useSelector),
         (0, _reactRedux.useDispatch),
+        (0, _reactRedux.useSelector),
         (0, _reactRedux.useSelector),
         (0, _reactRedux.useSelector)
     ];
@@ -53716,290 +53872,7 @@ $RefreshReg$(_c, "MoviesFilter");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","../../redux/reducers/movies":"l0qwl","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","react-bootstrap":"3AD9A"}],"auuYm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$76b3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$76b3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactRedux = require("react-redux");
-var _user = require("../../redux/reducers/user");
-var _s = $RefreshSig$();
-const LoginView = ()=>{
-    _s();
-    const [username, setUsername] = (0, _react.useState)("");
-    const [password, setPassword] = (0, _react.useState)("");
-    const dispatch = (0, _reactRedux.useDispatch)();
-    const handleSubmit = (event)=>{
-        event.preventDefault();
-        const data = {
-            username: username,
-            password: password
-        };
-        fetch("https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then((response)=>response.json()).then((data)=>{
-            if (data.user) {
-                localStorage.setItem("user", JSON.stringify(data.user));
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("isAuthenticated", true);
-                dispatch((0, _user.setUserProfile)(data.user));
-                dispatch((0, _user.setToken)(data.token));
-            } else alert("Sorry. The username or password is incorrect");
-        }).catch((e)=>{
-            alert("Something went wrong");
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-        className: "justify-content-center",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-            md: 4,
-            className: "login-signup--page",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "logo login-page",
-                    children: "myFLIX"
-                }, void 0, false, {
-                    fileName: "src/compnents/login-view/login-view.jsx",
-                    lineNumber: 49,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                    className: "login--form",
-                    onSubmit: handleSubmit,
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            children: [
-                                "Username:",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/compnents/login-view/login-view.jsx",
-                                    lineNumber: 53,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    className: "form-input",
-                                    type: "text",
-                                    value: username,
-                                    onChange: (e)=>setUsername(e.target.value),
-                                    required: true
-                                }, void 0, false, {
-                                    fileName: "src/compnents/login-view/login-view.jsx",
-                                    lineNumber: 54,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/compnents/login-view/login-view.jsx",
-                            lineNumber: 51,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            children: [
-                                "Password:",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/compnents/login-view/login-view.jsx",
-                                    lineNumber: 64,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    type: "password",
-                                    value: password,
-                                    onChange: (e)=>setPassword(e.target.value),
-                                    required: true
-                                }, void 0, false, {
-                                    fileName: "src/compnents/login-view/login-view.jsx",
-                                    lineNumber: 65,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/compnents/login-view/login-view.jsx",
-                            lineNumber: 62,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            type: "submit",
-                            children: "Submit"
-                        }, void 0, false, {
-                            fileName: "src/compnents/login-view/login-view.jsx",
-                            lineNumber: 72,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            className: "signup--button",
-                            variant: "outline-primary",
-                            onClick: ()=>{
-                                window.location.href = "/signup";
-                            },
-                            children: "Signup"
-                        }, void 0, false, {
-                            fileName: "src/compnents/login-view/login-view.jsx",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/compnents/login-view/login-view.jsx",
-                    lineNumber: 50,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/compnents/login-view/login-view.jsx",
-            lineNumber: 48,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/compnents/login-view/login-view.jsx",
-        lineNumber: 47,
-        columnNumber: 5
-    }, undefined);
-}; /* LoginView.propTypes = {
-  onLoggedIn: PropTypes.func.isRequired,
-}; */ 
-_s(LoginView, "2if1r6vstauAacdYWcokco+Nl8Q=", false, function() {
-    return [
-        (0, _reactRedux.useDispatch)
-    ];
-});
-_c = LoginView;
-var _c;
-$RefreshReg$(_c, "LoginView");
-
-  $parcel$ReactRefreshHelpers$76b3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","prop-types":"7wKI2","react-redux":"bdVon","../../redux/reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"kBybc":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$7dce = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7dce.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "FavoritesView", ()=>FavoritesView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _movieCard = require("../movie-card/movie-card");
-var _reactRedux = require("react-redux");
-var _s = $RefreshSig$();
-const FavoritesView = ()=>{
-    _s();
-    const user = JSON.parse(localStorage.getItem("user"));
-    //const user = useSelector((state) => state.user);
-    const movies = (0, _reactRedux.useSelector)((state)=>state.movies.list);
-    const favoriteMovies = movies.filter((m)=>{
-        return user.favorites.includes(m.id);
-    });
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                    children: "My Favorites"
-                }, void 0, false, {
-                    fileName: "src/compnents/favorites-view/favorites-view.jsx",
-                    lineNumber: 19,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                    className: "justify-content-center",
-                    children: favoriteMovies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                        children: "The list is empty!"
-                    }, void 0, false, {
-                        fileName: "src/compnents/favorites-view/favorites-view.jsx",
-                        lineNumber: 22,
-                        columnNumber: 13
-                    }, undefined) : favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                            className: "mb-5",
-                            md: 3,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                movie: movie,
-                                user: user
-                            }, void 0, false, {
-                                fileName: "src/compnents/favorites-view/favorites-view.jsx",
-                                lineNumber: 26,
-                                columnNumber: 17
-                            }, undefined)
-                        }, movie.id, false, {
-                            fileName: "src/compnents/favorites-view/favorites-view.jsx",
-                            lineNumber: 25,
-                            columnNumber: 15
-                        }, undefined))
-                }, void 0, false, {
-                    fileName: "src/compnents/favorites-view/favorites-view.jsx",
-                    lineNumber: 20,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/compnents/favorites-view/favorites-view.jsx",
-            lineNumber: 18,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/compnents/favorites-view/favorites-view.jsx",
-        lineNumber: 17,
-        columnNumber: 5
-    }, undefined);
-}; /* FavoritesView.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    image: PropTypes.string,
-  }),
-  user: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    first_name: PropTypes.string.isRequired,
-    last_name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    birth: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-    favorites: PropTypes.array.isRequired,
-  }),
-}; */ 
-_s(FavoritesView, "eStvhP8slTt+s7x6M95dK6yXYA4=", false, function() {
-    return [
-        (0, _reactRedux.useSelector)
-    ];
-});
-_c = FavoritesView;
-var _c;
-$RefreshReg$(_c, "FavoritesView");
-
-  $parcel$ReactRefreshHelpers$7dce.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","../movie-card/movie-card":"hK1Ef","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"5jd1d":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","../../redux/reducers/movies":"l0qwl","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"5jd1d":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0f43 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -54366,7 +54239,180 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-router":"dbWyW","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","../../compnents/movie-card/movie-card":"hK1Ef","../../redux/reducers/user":"e6tdF"}],"bSZpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-router":"dbWyW","../../compnents/movie-card/movie-card":"hK1Ef","react-redux":"bdVon","../../redux/reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"auuYm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$76b3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$76b3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactRedux = require("react-redux");
+var _user = require("../../redux/reducers/user");
+var _s = $RefreshSig$();
+const LoginView = ()=>{
+    _s();
+    const [username, setUsername] = (0, _react.useState)("");
+    const [password, setPassword] = (0, _react.useState)("");
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        const data = {
+            username: username,
+            password: password
+        };
+        fetch("https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then((response)=>response.json()).then((data)=>{
+            if (data.user) {
+                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("isAuthenticated", true);
+                dispatch((0, _user.setUserProfile)(data.user));
+                dispatch((0, _user.setToken)(data.token));
+            } else alert("Sorry. The username or password is incorrect");
+        }).catch((e)=>{
+            alert("Something went wrong");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+        className: "justify-content-center",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+            md: 4,
+            className: "login-signup--page",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "logo login-page",
+                    children: "myFLIX"
+                }, void 0, false, {
+                    fileName: "src/compnents/login-view/login-view.jsx",
+                    lineNumber: 49,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                    className: "login--form",
+                    onSubmit: handleSubmit,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            children: [
+                                "Username:",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/compnents/login-view/login-view.jsx",
+                                    lineNumber: 53,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    className: "form-input",
+                                    type: "text",
+                                    value: username,
+                                    onChange: (e)=>setUsername(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/compnents/login-view/login-view.jsx",
+                                    lineNumber: 54,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/compnents/login-view/login-view.jsx",
+                            lineNumber: 51,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            children: [
+                                "Password:",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/compnents/login-view/login-view.jsx",
+                                    lineNumber: 64,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    type: "password",
+                                    value: password,
+                                    onChange: (e)=>setPassword(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/compnents/login-view/login-view.jsx",
+                                    lineNumber: 65,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/compnents/login-view/login-view.jsx",
+                            lineNumber: 62,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                            type: "submit",
+                            children: "Submit"
+                        }, void 0, false, {
+                            fileName: "src/compnents/login-view/login-view.jsx",
+                            lineNumber: 72,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                            className: "signup--button",
+                            variant: "outline-primary",
+                            onClick: ()=>{
+                                window.location.href = "/signup";
+                            },
+                            children: "Signup"
+                        }, void 0, false, {
+                            fileName: "src/compnents/login-view/login-view.jsx",
+                            lineNumber: 73,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/compnents/login-view/login-view.jsx",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/compnents/login-view/login-view.jsx",
+            lineNumber: 48,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/compnents/login-view/login-view.jsx",
+        lineNumber: 47,
+        columnNumber: 5
+    }, undefined);
+}; /* LoginView.propTypes = {
+  onLoggedIn: PropTypes.func.isRequired,
+}; */ 
+_s(LoginView, "2if1r6vstauAacdYWcokco+Nl8Q=", false, function() {
+    return [
+        (0, _reactRedux.useDispatch)
+    ];
+});
+_c = LoginView;
+var _c;
+$RefreshReg$(_c, "LoginView");
+
+  $parcel$ReactRefreshHelpers$76b3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","prop-types":"7wKI2","react-redux":"bdVon","../../redux/reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"bSZpe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a01e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -54810,7 +54856,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","prop-types":"7wKI2","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","../../redux/reducers/user":"e6tdF"}],"24qAW":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","prop-types":"7wKI2","react-redux":"bdVon","../../redux/reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"24qAW":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d593 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -55118,7 +55164,117 @@ $RefreshReg$(_c, "UserView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-bootstrap":"3AD9A","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"iJNGQ":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-bootstrap":"3AD9A","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"kBybc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7dce = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7dce.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FavoritesView", ()=>FavoritesView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _movieCard = require("../movie-card/movie-card");
+var _reactRedux = require("react-redux");
+var _s = $RefreshSig$();
+const FavoritesView = ()=>{
+    _s();
+    const user = JSON.parse(localStorage.getItem("user"));
+    //const user = useSelector((state) => state.user);
+    const movies = (0, _reactRedux.useSelector)((state)=>state.movies.list);
+    const favoriteMovies = movies.filter((m)=>{
+        return user.favorites.includes(m.id);
+    });
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: "My Favorites"
+                }, void 0, false, {
+                    fileName: "src/compnents/favorites-view/favorites-view.jsx",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                    className: "justify-content-center",
+                    children: favoriteMovies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                        children: "The list is empty!"
+                    }, void 0, false, {
+                        fileName: "src/compnents/favorites-view/favorites-view.jsx",
+                        lineNumber: 22,
+                        columnNumber: 13
+                    }, undefined) : favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                            className: "mb-5",
+                            md: 3,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                movie: movie,
+                                user: user
+                            }, void 0, false, {
+                                fileName: "src/compnents/favorites-view/favorites-view.jsx",
+                                lineNumber: 26,
+                                columnNumber: 17
+                            }, undefined)
+                        }, movie.id, false, {
+                            fileName: "src/compnents/favorites-view/favorites-view.jsx",
+                            lineNumber: 25,
+                            columnNumber: 15
+                        }, undefined))
+                }, void 0, false, {
+                    fileName: "src/compnents/favorites-view/favorites-view.jsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/compnents/favorites-view/favorites-view.jsx",
+            lineNumber: 18,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/compnents/favorites-view/favorites-view.jsx",
+        lineNumber: 17,
+        columnNumber: 5
+    }, undefined);
+}; /* FavoritesView.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    image: PropTypes.string,
+  }),
+  user: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    first_name: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    birth: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    favorites: PropTypes.array.isRequired,
+  }),
+}; */ 
+_s(FavoritesView, "eStvhP8slTt+s7x6M95dK6yXYA4=", false, function() {
+    return [
+        (0, _reactRedux.useSelector)
+    ];
+});
+_c = FavoritesView;
+var _c;
+$RefreshReg$(_c, "FavoritesView");
+
+  $parcel$ReactRefreshHelpers$7dce.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","../movie-card/movie-card":"hK1Ef","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}],"iJNGQ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9d7d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -55142,7 +55298,7 @@ const MoviesList = ()=>{
     const filter = (0, _reactRedux.useSelector)((state)=>state.movies.filter).trim().toLowerCase();
     const genres = (0, _reactRedux.useSelector)((state)=>state.genres);
     const directors = (0, _reactRedux.useSelector)((state)=>state.directors);
-    const filteredMovies = movies.filter((movie)=>movie.title.toLowerCase().includes(filter) || movie.genre.toLowerCase().includes(filter) || movie.director.name.toLowerCase().includes(filter));
+    const filteredMovies = movies.filter((movie)=>movie.title.toLowerCase().includes(filter) || movie.genre.toLowerCase().includes(filter) || movie.director.name.toLowerCase().includes(filter) || movie.actors.some((actor)=>actor.name.toLowerCase() === filter));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -55150,12 +55306,12 @@ const MoviesList = ()=>{
                     genres: genres
                 }, void 0, false, {
                     fileName: "src/compnents/movies-list/movies-list.jsx",
-                    lineNumber: 25,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/compnents/movies-list/movies-list.jsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -55163,7 +55319,7 @@ const MoviesList = ()=>{
                     children: "The List is Empty!"
                 }, void 0, false, {
                     fileName: "src/compnents/movies-list/movies-list.jsx",
-                    lineNumber: 29,
+                    lineNumber: 30,
                     columnNumber: 11
                 }, undefined) : filteredMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                         className: "mb-4",
@@ -55172,17 +55328,17 @@ const MoviesList = ()=>{
                             movie: movie
                         }, void 0, false, {
                             fileName: "src/compnents/movies-list/movies-list.jsx",
-                            lineNumber: 33,
+                            lineNumber: 34,
                             columnNumber: 15
                         }, undefined)
                     }, movie.id, false, {
                         fileName: "src/compnents/movies-list/movies-list.jsx",
-                        lineNumber: 32,
+                        lineNumber: 33,
                         columnNumber: 13
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/compnents/movies-list/movies-list.jsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 7
             }, undefined)
         ]
@@ -55205,6 +55361,6 @@ $RefreshReg$(_c, "MoviesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7","../movie-card/movie-card":"hK1Ef","../../compnents/movies-filter/movies-filter":"28EeH"}]},["fvLlA","lt0Qw","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","../movie-card/movie-card":"hK1Ef","../../compnents/movies-filter/movies-filter":"28EeH","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"hPuYQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bg7M7"}]},["fvLlA","lt0Qw","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
