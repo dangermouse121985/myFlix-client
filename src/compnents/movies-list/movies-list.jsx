@@ -23,7 +23,7 @@ export const MoviesList = () => {
       <Row>
         <MoviesFilter />
       </Row>
-      <Row>
+      <Row className="movie-list justify-content-md-center">
         {movies.length === 0 ? (
           <Col>The List is Empty!</Col>
         ) : (

@@ -7,11 +7,27 @@ $primary: rgb(213, 41, 65);
 $body-color: #eaf2ef;
 $card-bg-color: rgba(0, 0, 0, 0.3);
 $std-spacing: 10px;
+$info: $dark;
 
 @import '~bootstrap/scss/bootstrap.scss';
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* thumb */
+::-webkit-scrollbar-track {
+  background: $dark;
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+  background: $primary;
 }
 
 .logo {
@@ -63,6 +79,9 @@ body {
   padding-left: 0;
 }
 
+.movie-list {
+  margin-top: $std-spacing;
+}
 img {
   width: 100%;
   box-sizing: border-box;
@@ -79,12 +98,33 @@ h2 {
   transform: translate(0, -50%);
 }
 
-.filter--selectors {
+.filter--selectors,
+.clear--selectors,
+.dropdown-menu {
   width: 100%;
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.filter--selectors:hover,
+.clear--selectors:hover,
+.filter--selectors:focus,
+.clear--selectors:focus,
+.filter-textbox:hover,
+.filter-textbox:focus,
+.dropdown-menu {
+  box-shadow: 1px 1px $std-spacing #000;
 }
 
 .filter-bar {
   margin-bottom: $std-spacing;
+}
+
+.dropdown-item:hover {
+  color: $body-bg;
 }
 
 ::placeholder {

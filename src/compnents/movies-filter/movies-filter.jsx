@@ -3,8 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import { setFilter } from '../../redux/reducers/movies';
 import React from 'react';
-import { Dropdown, Button } from 'react-bootstrap';
+import { Dropdown, Button, Form } from 'react-bootstrap';
 import { Row, Col } from 'react-bootstrap';
+import { useState } from 'react';
 
 export const MoviesFilter = () => {
   const filter = useSelector((state) => state.movies.filter);
@@ -12,12 +13,14 @@ export const MoviesFilter = () => {
   const genres = useSelector((state) => state.genres);
   const directors = useSelector((state) => state.directors);
   const actors = useSelector((state) => state.actors);
+  const [value, setValue] = useState();
 
   return (
     <>
       <Row className="justify-content-md-center gap-3 filter-bar" md={4}>
         <Col md={10}>
           <Form.Control
+            className="filter-textbox"
             type="text"
             placeholder="Search..."
             value={filter}
@@ -28,7 +31,7 @@ export const MoviesFilter = () => {
       <Row className="justify-content-md-center gap-3 filter-bar">
         <Col sm={12} md={2}>
           <Dropdown>
-            <Dropdown.Toggle className="filter--selectors" variant="primary">
+            <Dropdown.Toggle className="filter--selectors" variant="info">
               Genres
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -57,7 +60,7 @@ export const MoviesFilter = () => {
         </Col>
         <Col sm={12} md={2}>
           <Dropdown>
-            <Dropdown.Toggle className="filter--selectors" variant="primary">
+            <Dropdown.Toggle className="filter--selectors" variant="info">
               Directors
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -86,7 +89,7 @@ export const MoviesFilter = () => {
         </Col>
         <Col sm={12} md={2}>
           <Dropdown>
-            <Dropdown.Toggle className="filter--selectors" variant="primary">
+            <Dropdown.Toggle className="filter--selectors" variant="info">
               Actors
             </Dropdown.Toggle>
             <Dropdown.Menu>

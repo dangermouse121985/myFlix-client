@@ -54983,6 +54983,7 @@ const MoviesList = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "movie-list justify-content-md-center",
                 children: movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     children: "The List is Empty!"
                 }, void 0, false, {
@@ -55053,6 +55054,7 @@ const MoviesFilter = ()=>{
     const genres = (0, _reactRedux.useSelector)((state)=>state.genres);
     const directors = (0, _reactRedux.useSelector)((state)=>state.directors);
     const actors = (0, _reactRedux.useSelector)((state)=>state.actors);
+    const [value, setValue] = (0, _react.useState)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -55060,24 +55062,25 @@ const MoviesFilter = ()=>{
                 md: 4,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     md: 10,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                        className: "filter-textbox",
                         type: "text",
                         placeholder: "Search...",
                         value: filter,
                         onChange: (e)=>dispatch((0, _movies.setFilter)(e.target.value))
                     }, void 0, false, {
                         fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 20,
+                        lineNumber: 22,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                    lineNumber: 19,
+                    lineNumber: 21,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                lineNumber: 18,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -55090,11 +55093,11 @@ const MoviesFilter = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
                                     className: "filter--selectors",
-                                    variant: "primary",
+                                    variant: "info",
                                     children: "Genres"
                                 }, void 0, false, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                    lineNumber: 31,
+                                    lineNumber: 34,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
@@ -55107,7 +55110,7 @@ const MoviesFilter = ()=>{
                                             children: "Show All Genres"
                                         }, "clear", false, {
                                             fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                            lineNumber: 35,
+                                            lineNumber: 38,
                                             columnNumber: 15
                                         }, undefined),
                                         genres.map((genre, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
@@ -55118,24 +55121,24 @@ const MoviesFilter = ()=>{
                                                 children: genre
                                             }, index, false, {
                                                 fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                                lineNumber: 45,
+                                                lineNumber: 48,
                                                 columnNumber: 17
                                             }, undefined))
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                    lineNumber: 34,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                            lineNumber: 30,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 29,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -55145,11 +55148,11 @@ const MoviesFilter = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
                                     className: "filter--selectors",
-                                    variant: "primary",
+                                    variant: "info",
                                     children: "Directors"
                                 }, void 0, false, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                    lineNumber: 60,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
@@ -55162,7 +55165,7 @@ const MoviesFilter = ()=>{
                                             children: "Show All Directors"
                                         }, "clear", false, {
                                             fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                            lineNumber: 64,
+                                            lineNumber: 67,
                                             columnNumber: 15
                                         }, undefined),
                                         directors.map((director, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
@@ -55173,24 +55176,24 @@ const MoviesFilter = ()=>{
                                                 children: director
                                             }, index, false, {
                                                 fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                                lineNumber: 74,
+                                                lineNumber: 77,
                                                 columnNumber: 17
                                             }, undefined))
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                            lineNumber: 59,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 58,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -55200,11 +55203,11 @@ const MoviesFilter = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Toggle, {
                                     className: "filter--selectors",
-                                    variant: "primary",
+                                    variant: "info",
                                     children: "Actors"
                                 }, void 0, false, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                    lineNumber: 89,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Menu, {
@@ -55217,7 +55220,7 @@ const MoviesFilter = ()=>{
                                             children: "Show All Actors"
                                         }, "clear", false, {
                                             fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                            lineNumber: 93,
+                                            lineNumber: 96,
                                             columnNumber: 15
                                         }, undefined),
                                         actors.map((actor, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Dropdown).Item, {
@@ -55228,24 +55231,24 @@ const MoviesFilter = ()=>{
                                                 children: actor
                                             }, index, false, {
                                                 fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                                lineNumber: 103,
+                                                lineNumber: 106,
                                                 columnNumber: 17
                                             }, undefined))
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                                    lineNumber: 92,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                            lineNumber: 88,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 87,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -55260,24 +55263,24 @@ const MoviesFilter = ()=>{
                             children: "Clear"
                         }, void 0, false, {
                             fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                            lineNumber: 117,
+                            lineNumber: 120,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                        lineNumber: 116,
+                        lineNumber: 119,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/compnents/movies-filter/movies-filter.jsx",
-                lineNumber: 28,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(MoviesFilter, "5Bq5zrNh3reGfmp4o2CNL30QxR0=", false, function() {
+_s(MoviesFilter, "hV2iCIwcTCMPfWi/nL+rdfKCZEI=", false, function() {
     return [
         (0, _reactRedux.useSelector),
         (0, _reactRedux.useDispatch),
