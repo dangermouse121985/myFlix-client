@@ -40928,6 +40928,7 @@ const MovieView = ({ simMovies })=>{
                                         to: "/",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                             variant: "outline-primary",
+                                            claaName: "movie-view--backToMenu-button",
                                             children: "Back to Menu"
                                         }, void 0, false, {
                                             fileName: "src/compnents/movie-view/movie-view.jsx",
@@ -40966,7 +40967,7 @@ const MovieView = ({ simMovies })=>{
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                             fileName: "src/compnents/movie-view/movie-view.jsx",
-                            lineNumber: 135,
+                            lineNumber: 140,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -40974,7 +40975,7 @@ const MovieView = ({ simMovies })=>{
                             children: "Similar Movies"
                         }, void 0, false, {
                             fileName: "src/compnents/movie-view/movie-view.jsx",
-                            lineNumber: 136,
+                            lineNumber: 141,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -40987,28 +40988,28 @@ const MovieView = ({ simMovies })=>{
                                         user: user
                                     }, m.id, false, {
                                         fileName: "src/compnents/movie-view/movie-view.jsx",
-                                        lineNumber: 140,
+                                        lineNumber: 145,
                                         columnNumber: 17
                                     }, undefined)
                                 }, m.id, false, {
                                     fileName: "src/compnents/movie-view/movie-view.jsx",
-                                    lineNumber: 139,
+                                    lineNumber: 144,
                                     columnNumber: 15
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/compnents/movie-view/movie-view.jsx",
-                            lineNumber: 137,
+                            lineNumber: 142,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/compnents/movie-view/movie-view.jsx",
-                    lineNumber: 134,
+                    lineNumber: 139,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/compnents/movie-view/movie-view.jsx",
-                lineNumber: 133,
+                lineNumber: 138,
                 columnNumber: 7
             }, undefined)
         ]

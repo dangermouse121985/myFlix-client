@@ -124,7 +124,12 @@ export const MovieView = ({ simMovies }) => {
                 Favorite
               </ToggleButton>
               <Link to={'/'}>
-                <Button variant="outline-primary">Back to Menu</Button>
+                <Button
+                  variant="outline-primary"
+                  claaName="movie-view--backToMenu-button"
+                >
+                  Back to Menu
+                </Button>
               </Link>
             </Col>
           </Row>
