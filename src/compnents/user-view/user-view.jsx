@@ -86,7 +86,7 @@ export const UserView = ({ user }) => {
   };
 
   let birth = new Date(user.birth);
-  birthString = birth.toLocaleDateString('sv-SE', {
+  let birthString = birth.toLocaleDateString('sv-SE', {
     month: 'numeric',
     day: 'numeric',
     year: 'numeric',
