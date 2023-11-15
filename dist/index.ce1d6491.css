@@ -13351,6 +13351,7 @@ input[type="password"]::-moz-placeholder {
 
 .movie-card {
   z-index: 998;
+  background-color: #203947;
 }
 
 .movie-card--button {
