@@ -193,7 +193,6 @@ input[type='password']::-ms-input-placeholder {
   border: 2px solid rgba(213, 41, 65, 0.8);
 }
 
-.movie-card--favorites-button,
 .movie-view--favorites-button {
   margin: $std-spacing;
   z-index: 999;
@@ -204,9 +203,18 @@ input[type='password']::-ms-input-placeholder {
 }
 
 .movie-card--favorites-button {
+  margin: $std-spacing;
+  z-index: 999;
+  opacity: 1;
+  border: none;
   position: absolute;
+  padding: 3px;
   top: 0;
   right: 0;
+  background-color: rgba(213, 41, 65, 0);
+  width: 35px;
+  border-radius: 35px;
+  border: 2px solid rgba(213, 41, 65, 0.8);
 }
 
 .movie-card:hover {

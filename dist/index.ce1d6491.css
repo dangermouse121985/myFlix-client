@@ -13361,7 +13361,7 @@ input[type="password"]::-moz-placeholder {
   top: 0;
 }
 
-.movie-card--favorites-button, .movie-view--favorites-button {
+.movie-view--favorites-button {
   z-index: 999;
   opacity: 1;
   background: #000c;
@@ -13371,6 +13371,14 @@ input[type="password"]::-moz-placeholder {
 }
 
 .movie-card--favorites-button {
+  z-index: 999;
+  opacity: 1;
+  background-color: #d5294100;
+  border: 2px solid #d52941cc;
+  border-radius: 35px;
+  width: 35px;
+  margin: 10px;
+  padding: 3px;
   position: absolute;
   top: 0;
   right: 0;
