@@ -1,14 +1,21 @@
 import { createRoot } from 'react-dom/client';
 
+import { MainView } from '../src/compnents/main-view/main-view';
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
+import { Container } from 'react-bootstrap';
 
-// Main component (will eventually use all the orthers)
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
+
+// Main component (will eventually use all the others)
 const MyFlixApplication = () => {
   return (
-    <div className="my-flix">
-      <div>Good Morning!</div>
-    </div>
+    <Provider store={store}>
+      <Container>
+        <MainView />
+      </Container>
+    </Provider>
   );
 };
 

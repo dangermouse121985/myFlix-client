@@ -1,5 +1,237 @@
-$color: steeleblue;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Permanent+Marker&family=Roboto:wght@500&display=swap');
 
-.my-filx {
-  color: $color;
+$body-bg: rgb(46, 82, 102);
+$dark: rgba(32, 57, 71);
+$primary: rgb(213, 41, 65);
+$body-color: #eaf2ef;
+$card-bg-color: rgba(0, 0, 0, 0.3);
+$std-spacing: 10px;
+$info: $dark;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* thumb */
+::-webkit-scrollbar-track {
+  background: $dark;
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+.logo {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.logo.login-page,
+.logo.signup-page {
+  font-size: 90px;
+  margin: 0 auto;
+  text-align: center;
+  color: $primary;
+}
+
+.header {
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  box-shadow: 1px 1px $std-spacing #000;
+
+  a {
+    color: $body-color;
+  }
+
+  a:hover {
+    color: $primary;
+  }
+
+  .logo {
+    color: $primary;
+    font-size: 30px;
+  }
+}
+
+.main {
+  margin: 100px 5px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.movie-list {
+  margin-top: $std-spacing;
+}
+img {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  color: $primary;
+}
+
+.login-signup--page {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.filter--selectors,
+.clear--selectors,
+.dropdown-menu {
+  width: 100%;
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.filter--selectors:hover,
+.clear--selectors:hover,
+.filter--selectors:focus,
+.clear--selectors:focus,
+.filter-textbox:hover,
+.filter-textbox:focus,
+.dropdown-menu {
+  box-shadow: 1px 1px $std-spacing #000;
+}
+
+.filter-bar {
+  margin-bottom: $std-spacing;
+}
+
+.dropdown-item:hover {
+  color: $body-bg;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='date']:focus {
+  background-color: $body-color;
+  color: $body-bg;
+}
+
+input[type='text']:hover,
+input[type='email']:hover,
+input[type='password']:hover,
+input[type='date']:hover {
+  background-color: $body-color;
+}
+
+input[type='text']::placeholder,
+input[type='password']::placeholder,
+input[type='password']::-ms-input-placeholder {
+  color: $body-bg;
+  opacity: 0.7;
+}
+
+.login--form,
+.signup--form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: $std-spacing;
+
+  input,
+  button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  label {
+    color: $body-color;
+  }
+}
+
+.card-text,
+.titleText {
+  color: $body-color;
+}
+.movie-card {
+  z-index: 998;
+}
+
+.movie-card--button {
+  top: 0;
+  position: absolute;
+  width: 85px;
+  margin: $std-spacing;
+  border: 2px solid rgba(213, 41, 65, 0.8);
+}
+
+.movie-card--favorites-button,
+.movie-view--favorites-button {
+  margin: $std-spacing;
+  z-index: 999;
+  width: 90px;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(213, 41, 65, 0.8);
+}
+
+.movie-card--favorites-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.movie-card:hover {
+  background: $card-bg-color;
+  box-shadow: 1px 1px $std-spacing #000;
+}
+
+.one-movie--view {
+  background-color: $card-bg-color;
+  box-shadow: 1px 3px $std-spacing #000;
+  box-sizing: border-box;
+  margin: 0 3px;
+
+  .col-md-6:first-child {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .col-md-6:last-child {
+    padding-top: $std-spacing;
+    padding-bottom: $std-spacing;
+  }
+}
+
+.update-user--button,
+.delete-user--button {
+  margin-right: $std-spacing;
 }
