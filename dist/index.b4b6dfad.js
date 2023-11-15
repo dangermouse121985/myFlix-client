@@ -54604,7 +54604,7 @@ const UserView = ({ user })=>{
             }
         });
     };
-    birth = new Date(user.birth);
+    let birth = new Date(user.birth);
     birthString = birth.toLocaleDateString("sv-SE", {
         month: "numeric",
         day: "numeric",
