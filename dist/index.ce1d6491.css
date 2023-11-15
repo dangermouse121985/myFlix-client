@@ -13361,22 +13361,23 @@ input[type="password"]::-moz-placeholder {
   top: 0;
 }
 
-.movie-view--favorites-button {
+.movie-view--favorites-button, .movie-card--favorites-button {
   z-index: 999;
   opacity: 1;
   background: #000c;
   border: 2px solid #d52941cc;
-  width: 90px;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
+}
+
+.movie-view--favorites-button, .movie-view--backToMenu-button {
+  width: 125px;
 }
 
 .movie-card--favorites-button {
-  z-index: 999;
   opacity: 1;
-  background-color: #d5294100;
   border: 2px solid #d52941cc;
-  width: 35px;
-  margin: 10px;
+  width: 40px;
+  height: 40px;
   padding: 3px;
   position: absolute;
   top: 0;

@@ -193,26 +193,29 @@ input[type='password']::-ms-input-placeholder {
   border: 2px solid rgba(213, 41, 65, 0.8);
 }
 
-.movie-view--favorites-button {
-  margin: $std-spacing;
+.movie-view--favorites-button,
+.movie-card--favorites-button {
+  margin: $std-spacing $std-spacing $std-spacing 0;
   z-index: 999;
-  width: 90px;
   opacity: 1;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid rgba(213, 41, 65, 0.8);
 }
 
+.movie-view--favorites-button,
+.movie-view--backToMenu-button {
+  width: 125px;
+}
+
 .movie-card--favorites-button {
-  margin: $std-spacing;
-  z-index: 999;
   opacity: 1;
   border: none;
   position: absolute;
   padding: 3px;
   top: 0;
   right: 0;
-  background-color: rgba(213, 41, 65, 0);
-  width: 35px;
+  width: 40px;
+  height: 40px;
   border: 2px solid rgba(213, 41, 65, 0.8);
 }
 
