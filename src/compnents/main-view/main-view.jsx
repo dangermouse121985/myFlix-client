@@ -80,7 +80,7 @@ export const MainView = () => {
         });
 
         //Convert 2 dimenstional array to 1 dimensional array
-        actorsArrSimp = [];
+        let actorsArrSimp = [];
 
         for (let i = 0; i < actorsArr.length; i++) {
           for (let j = 0; j < actorsArr[i].length; j++) {
