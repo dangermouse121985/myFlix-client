@@ -13375,7 +13375,6 @@ input[type="password"]::-moz-placeholder {
   opacity: 1;
   background-color: #d5294100;
   border: 2px solid #d52941cc;
-  border-radius: 35px;
   width: 35px;
   margin: 10px;
   padding: 3px;
