@@ -92,18 +92,6 @@ export const MainView = () => {
       });
   }, [token]);
 
-  let simMovies = (selectedMovie) => {
-    {
-      return movies
-        .filter((movie) => {
-          return (
-            movie.genre.includes(selectedMovie.genre) && movie !== selectedMovie
-          );
-        })
-        .map((filteredName) => filteredName);
-    }
-  };
-
   return (
     <BrowserRouter>
       <NavigationBar
@@ -159,12 +147,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <MovieView
-                      key={movies.id}
-                      movies={movies}
-                      user={user}
-                      simMovies={simMovies}
-                    />
+                    <MovieView key={movies.id} movies={movies} />
                   </>
                 )}
               </>

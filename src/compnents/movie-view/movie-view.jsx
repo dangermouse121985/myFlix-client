@@ -11,18 +11,29 @@ import { useSelector } from 'react-redux';
 import { setUserProfile, setToken } from '../../redux/reducers/user';
 import { useDispatch } from 'react-redux';
 
-export const MovieView = ({ simMovies }) => {
+export const MovieView = ({ movies }) => {
   let user = JSON.parse(localStorage.getItem('user'));
-  const token = useSelector((state) => state.user.token);
+  const token = localStorage.getItem('token');
   const { movieId } = useParams();
-  const movies = useSelector((state) => state.movies.list);
   const movie = movies.find((m) => m.id === movieId);
 
-  const [checked, setChecked] = useState(
+  let [checked, setChecked] = useState(
     user.favorites.indexOf(movie.id) > -1 ? true : false
   );
 
-  const dispatch = useDispatch();
+  console.log(user.favorites.indexOf(movie.id));
+
+  console.log(checked);
+
+  let simMovies = () => {
+    {
+      return movies
+        .filter((m) => {
+          return m.genre.includes(movie.genre) && m !== movie;
+        })
+        .map((filteredName) => filteredName);
+    }
+  };
 
   //Delete Movie From User's Favorites List
   const delFav = () => {
@@ -37,13 +48,12 @@ export const MovieView = ({ simMovies }) => {
         .then((response) => response.json())
         .then((data) => {
           localStorage.setItem('user', JSON.stringify(data));
-          dispatch(setUserProfile(data));
         });
     }
   };
 
   //Add Movie to User's Favorites List
-  const addFav = (event) => {
+  const addFav = () => {
     {
       fetch(
         `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`,
@@ -55,7 +65,6 @@ export const MovieView = ({ simMovies }) => {
         .then((response) => response.json())
         .then((data) => {
           localStorage.setItem('user', JSON.stringify(data));
-          dispatch(setUserProfile(data));
         });
     }
   };
@@ -105,19 +114,15 @@ export const MovieView = ({ simMovies }) => {
                 type="checkbox"
                 variant="outline-primary"
                 checked={checked}
-                value="1"
-                onChange={(e) => setChecked(e.currentTarget.checked)}
-                onClick={(event) => {
+                value={checked}
+                onChange={() => {
+                  setChecked(!checked);
                   if (!user.favorites) {
                     return;
                   } else if (user.favorites.indexOf(movie.id) > -1) {
-                    delFav(event);
-                    let card = document.getElementById(movie.id);
-                    if (window.location.pathname === '/user/favorites') {
-                      card.style.display = 'none';
-                    }
+                    delFav();
                   } else {
-                    addFav(event);
+                    addFav();
                   }
                 }}
               >
@@ -142,7 +147,7 @@ export const MovieView = ({ simMovies }) => {
           <Row className="justify-content-center">
             {simMovies(movie).map((m) => (
               <Col className="mb-5" md={3} key={m.id}>
-                <MovieCard movie={m} user={user} key={m.id} />
+                <MovieCard movie={m} key={m.id} />
               </Col>
             ))}
           </Row>
