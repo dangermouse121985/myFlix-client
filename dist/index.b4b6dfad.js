@@ -40711,7 +40711,7 @@ const MovieView = ({ movies })=>{
     const token = localStorage.getItem("token");
     const { movieId } = (0, _reactRouter.useParams)();
     const movie = movies.find((m)=>m.id === movieId);
-    let [checked, setChecked] = (0, _react.useState)(user.favorites.indexOf(movie.id) > -1 ? true : false);
+    const [checked, setChecked] = (0, _react.useState)(user.favorites.indexOf(movie.id) > -1 ? true : false);
     console.log(user.favorites.indexOf(movie.id));
     console.log(checked);
     let simMovies = ()=>{
