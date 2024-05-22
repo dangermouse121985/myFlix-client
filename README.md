@@ -6,7 +6,7 @@ MyFlix is a client side app used to view a list of movies. Users will be able to
 
 The front end is built using React and accesses the MyFlix API.
 
-## Desig# Table of Contents
+## Table of Contents
 
 - [Design Criteria](#design-criteria)
   - [User Stories](#user-stories)
