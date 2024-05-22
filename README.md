@@ -6,7 +6,7 @@ MyFlix is a client side app used to view a list of movies. Users will be able to
 
 The front end is built using React and accesses the MyFlix API.
 
-# Table of Contents
+## Desig# Table of Contents
 
 - [Design Criteria](#design-criteria)
   - [User Stories](#user-stories)
@@ -21,6 +21,7 @@ The front end is built using React and accesses the MyFlix API.
     - [Genre View](#genre-view)
     - [Director View](#director-view)
 - [Technical Requirements](#technical-requirements)
+- [Installation Insytructions](#installation-instructions)
 
 ## Design Criteria
 
@@ -62,19 +63,56 @@ Displays user registration details
 - Allows users to remove a movie from their list of favorites
 - Allows existing users to deregister
 
-## File Structure
+### Additional Views & Features
 
-package.json
-package-lock.json
-README.md
-src
+#### Actors View
 
-- index.html
-- index.jsx
-- index.scss
-  dist
-- index.###.js
-- index.###.js.map
-- index.###.css
-- index.###.css.map
-- index.html
+- Allows users to view information about different actors.
+
+#### Genre View
+
+- Returns data about a genre, with a name and description.
+- Displays example movies.
+
+#### Director View
+
+- Returns data about a director (name, bio, birth year, death year).
+- Displays example movies from the director.
+
+## Technical Requirements
+
+- The application is a single-page application (SPA).
+- The application uses state routing to navigate between views and share URLs.
+- The application gives users the option to filter movies using a “search” feature.
+- The application uses Parcel as its build tool.
+- The application is written using the React library and in ES2015+.
+- The application uses Bootstrap as a UI library for styling and responsiveness.
+- The application contains function components.
+- The application uses React Redux for state management for filtering the movies list.
+
+## Installation Instructions
+
+### Prerequisites
+
+- Node.js (version 12 or higher)
+- npm (version 6 or higher)
+
+### Steps
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/dangermouse121985/myFlix-client
+   cd myflix-client
+   ```
+
+2. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the App Locally**
+   ```bash
+   npm start
+   ```
