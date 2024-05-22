@@ -46,19 +46,29 @@ Displays user registration details
 - Allows users to remove a movie from their list of favorites
 - Allows existing users to deregister
 
-## File Structure
+## Installation Instructions
 
-package.json
-package-lock.json
-README.md
-src
+### Prerequisites
 
-- index.html
-- index.jsx
-- index.scss
-  dist
-- index.###.js
-- index.###.js.map
-- index.###.css
-- index.###.css.map
-- index.html
+- Node.js (version 12 or higher)
+- npm (version 6 or higher)
+
+### Steps
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/dangermouse121985/myFlix-client
+   cd myflix-client
+   ```
+
+2. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the App Locally**
+   ```bash
+   npm start
+   ```
