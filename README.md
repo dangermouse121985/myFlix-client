@@ -6,6 +6,22 @@ MyFlix is a client side app used to view a list of movies. Users will be able to
 
 The front end is built using React and accesses the MyFlix API.
 
+# Table of Contents
+
+- [Design Criteria](#design-criteria)
+  - [User Stories](#user-stories)
+  - [Essential Views & Features](#essential-views--features)
+    - [Main View](#main-view)
+    - [Single Movie View](#single-movie-view)
+    - [Login View](#login-view)
+    - [Signup View](#signup-view)
+    - [Profile View](#profile-view)
+  - [Additional Views & Features](#additional-views--features)
+    - [Actors View](#actors-view)
+    - [Genre View](#genre-view)
+    - [Director View](#director-view)
+- [Technical Requirements](#technical-requirements)
+
 ## Design Criteria
 
 ### User Stories
@@ -46,29 +62,19 @@ Displays user registration details
 - Allows users to remove a movie from their list of favorites
 - Allows existing users to deregister
 
-## Installation Instructions
+## File Structure
 
-### Prerequisites
+package.json
+package-lock.json
+README.md
+src
 
-- Node.js (version 12 or higher)
-- npm (version 6 or higher)
-
-### Steps
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/dangermouse121985/myFlix-client
-   cd myflix-client
-   ```
-
-2. **Install Dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Run the App Locally**
-   ```bash
-   npm start
-   ```
+- index.html
+- index.jsx
+- index.scss
+  dist
+- index.###.js
+- index.###.js.map
+- index.###.css
+- index.###.css.map
+- index.html
