@@ -23,7 +23,7 @@ export const SignupView = () => {
       password: password,
     };
 
-    fetch('https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users', {
+    fetch('http://54.83.179.8/users', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

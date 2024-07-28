@@ -18,7 +18,7 @@ export const MovieCard = ({ movie }) => {
   const delFav = () => {
     {
       fetch(
-        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`,
+        /* `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}` */ `http://54.83.179.8/users/${user.username}/favorites/${movie.id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           method: 'DELETE',
@@ -35,7 +35,7 @@ export const MovieCard = ({ movie }) => {
   const addFav = () => {
     {
       fetch(
-        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`,
+        /* `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}` */ `http://54.83.179.8/users/${user.username}/favorites/${movie.id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           method: 'PUT',

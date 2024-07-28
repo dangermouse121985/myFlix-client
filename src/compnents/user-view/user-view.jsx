@@ -20,12 +20,9 @@ export const UserView = ({ user }) => {
     if (!token) {
       return;
     }
-    fetch(
-      `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    )
+    fetch(`http://54.83.179.8/users/${user.username}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((response) => response.json())
       .then((data) => {
         const userFromApi = {
@@ -46,17 +43,14 @@ export const UserView = ({ user }) => {
       password: password,
     };
 
-    fetch(
-      `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        method: 'PUT',
-      }
-    ).then((response) => {
+    fetch(`http://54.83.179.8/users/${user.username}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+      method: 'PUT',
+    }).then((response) => {
       if (response.ok) {
         alert(
           'User Info Successfully Updated! Please Logout to See the Updated Information Reflected in Your Account'
@@ -75,13 +69,10 @@ export const UserView = ({ user }) => {
 
     console.log(response);
     if (response) {
-      fetch(
-        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
-        {
-          method: 'DELETE',
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      fetch(`http://54.83.179.8/users/${user.username}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}` },
+      });
     }
   };
 
