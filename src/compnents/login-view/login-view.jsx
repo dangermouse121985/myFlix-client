@@ -19,7 +19,10 @@ export const LoginView = ({ onLoggedIn }) => {
       password: password,
     };
 
-    fetch('http://54.83.179.8/login', {
+    const apiURL = process.env.MOVIE_FLIX_AWS_API_URL;
+    //const apiURL = process.env.MOVIE_FLIX_HEROKU_API_URL;
+
+    fetch(`${apiURL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

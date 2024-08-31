@@ -16,11 +16,14 @@ export const UserView = ({ user }) => {
   const [username, setUsername] = useState(user.username);
   const [password, setPassword] = useState(user.password);
 
+  const apiURL = process.env.MOVIE_FLIX_AWS_API_URL;
+  //const apiURL = process.env.MOVIE_FLIX_HEROKU_API_URL;
+
   useEffect(() => {
     if (!token) {
       return;
     }
-    fetch(`http://54.83.179.8/users/${user.username}`, {
+    fetch(`${apiURL}/users/${user.username}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
@@ -43,7 +46,7 @@ export const UserView = ({ user }) => {
       password: password,
     };
 
-    fetch(`http://54.83.179.8/users/${user.username}`, {
+    fetch(`${apiURL}/users/${user.username}`, {
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -69,10 +72,13 @@ export const UserView = ({ user }) => {
 
     console.log(response);
     if (response) {
-      fetch(`http://54.83.179.8/users/${user.username}`, {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      fetch(
+        `MyCFLoadBalancer-2097481282.us-east-1.elb.amazonaws.com/users/${user.username}`,
+        {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
     }
   };
 

@@ -246,3 +246,28 @@ input[type='password']::-ms-input-placeholder {
 .delete-user--button {
   margin-right: $std-spacing;
 }
+
+.image-uploader {
+  border: 2px dashed #007bff;
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 10px;
+  margin: $std-spacing;
+}
+
+.image-uploader-input-p {
+  margin: 16px auto;
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $std-spacing;
+  margin-bottom: $std-spacing;
+}
+
+.image-list img {
+  width: 200px;
+  height: auto;
+}

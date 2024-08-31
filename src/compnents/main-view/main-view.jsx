@@ -16,6 +16,8 @@ import { NavigationBar } from '../navigation-bar/navigation-bar';
 import { UserView } from '../user-view/user-view';
 import { FavoritesView } from '../favorites-view/favorites-view';
 import { MoviesList } from '../movies-list/movies-list';
+import ImageUploader from '../image-uploader/image-uploader';
+import ImageList from '../image-list/image-list';
 //import { setToken, setUserProfile } from '../../redux/reducers/user';
 
 export const MainView = () => {
@@ -29,16 +31,46 @@ export const MainView = () => {
 
   const dispatch = useDispatch();
 
+  const [images, setImages] = useState([]);
+
+  const apiURL = process.env.MOVIE_FLIX_AWS_API_URL;
+  //const apiURL = process.env.MOVIE_FLIX_HEROKU_API_URL;
+
+  const fetchImages = async () => {
+    try {
+      const response = await fetch(`${apiURL}/images`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setImages(data);
+      } else {
+        alert('Failed to fetch images');
+      }
+    } catch (err) {
+      console.error('Error fetching images:', err);
+      alert('Error fetching images');
+    }
+  };
+
+  useEffect(() => {
+    fetchImages(); // Fetch images on component mount
+  }, []);
+
+  const handleImageUpload = () => {
+    fetchImages(); // Refresh images after upload
+  };
+
   useEffect(() => {
     if (!token) {
       return;
     }
-    fetch(
-      /* 'https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies' */ 'http://54.83.179.8/movies',
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    )
+    fetch(`${apiURL}/movies`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((response) => response.json())
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
@@ -105,6 +137,7 @@ export const MainView = () => {
           localStorage.clear();
         }}
       ></NavigationBar>
+
       <Row className="justify-content-md-center main">
         <Routes>
           <Route
@@ -197,9 +230,13 @@ export const MainView = () => {
                 {!user ? (
                   <Navigate to="/login" replace />
                 ) : movies.length === 0 ? (
-                  <Col>The list is empty!</Col>
+                  <>
+                    <Col>The list is empty!</Col>
+                  </>
                 ) : (
                   <>
+                    <ImageUploader onImageUpload={handleImageUpload} />
+                    <ImageList images={images} />
                     <MoviesList />
                   </>
                 )}

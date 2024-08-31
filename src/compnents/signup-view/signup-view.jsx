@@ -23,7 +23,10 @@ export const SignupView = () => {
       password: password,
     };
 
-    fetch('http://54.83.179.8/users', {
+    const apiURL = process.env.MOVIE_FLIX_AWS_API_URL;
+    //const apiURL = process.env.MOVIE_FLIX_HEROKU_API_URL;
+
+    fetch(`${apiURL}/users`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
