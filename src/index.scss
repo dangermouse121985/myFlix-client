@@ -267,7 +267,22 @@ input[type='password']::-ms-input-placeholder {
   margin-bottom: $std-spacing;
 }
 
-.image-list img {
+.image-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: $std-spacing;
+  width: 80%;
+}
+
+.thumbnail {
   width: 200px;
-  height: auto;
+  text-align: center;
+  margin: $std-spacing;
+  cursor: pointer;
+}
+
+.modal-button {
+  position: absolute;
+  bottom: $std-spacing;
+  right: $std-spacing;
 }
