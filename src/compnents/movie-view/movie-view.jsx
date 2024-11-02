@@ -39,7 +39,7 @@ export const MovieView = ({ movies }) => {
   const delFav = () => {
     {
       fetch(
-        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}``,
+        `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}/favorites/${movie.id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           method: 'DELETE',
