@@ -20,9 +20,12 @@ export const UserView = ({ user }) => {
     if (!token) {
       return;
     }
-    fetch(`http://54.83.179.8/users/${user.username}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    fetch(
+      `https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/users/${user.username}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         const userFromApi = {

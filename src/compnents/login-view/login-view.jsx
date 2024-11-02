@@ -19,7 +19,7 @@ export const LoginView = ({ onLoggedIn }) => {
       password: password,
     };
 
-    fetch('http://54.83.179.8/login', {
+    fetch('https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

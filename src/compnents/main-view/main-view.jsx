@@ -33,12 +33,9 @@ export const MainView = () => {
     if (!token) {
       return;
     }
-    fetch(
-      /* 'https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies' */ 'http://54.83.179.8/movies',
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    )
+    fetch('https://dcrichlow-mymoviesflix-bb84bd41ee5a.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((response) => response.json())
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
